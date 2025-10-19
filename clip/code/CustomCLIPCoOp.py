@@ -15,23 +15,7 @@ from config import get_cfg_defaults
 import numpy as np
 
 
-CUSTOM_TEMPLATES = {
-    'oxfordpet': 'a photo of a {}, a type of pet.',
-    'flower102': 'a photo of a {}, a type of flower.',
-    'FGVCAircraft': 'a photo of a {}, a type of aircraft.',
-    'dtd': '{} texture.',
-    'EuroSAT': 'a centered satellite photo of {}.',
-    'StanfordCars': 'a photo of a {}.',
-    'Food101': 'a photo of {}, a type of food.',
-    'SUN397': 'a photo of a {}.',
-    'Caltech101': 'a photo of a {}.',
-    'UCF101': 'a photo of a person doing {}.',
-    'ImageNet': 'a photo of a {}.',
-    'ImageNetSketch': 'a photo of a {}.',
-    'ImageNetV2': 'a photo of a {}.',
-    'ImageNetA': 'a photo of a {}.',
-    'ImageNetR': 'a photo of a {}.'
-}
+TEMPLATES = "a photo of fungi {}"
 
 class CoOp(nn.Module):
     def __init__(self, cfg, model, device,use_context=False):
@@ -68,7 +52,7 @@ class CoOp(nn.Module):
         
         # prompt finalization     
         if use_context:
-          temp = CUSTOM_TEMPLATES[self.cfg.DATASET.NAME]
+          temp = TEMPLATES
           classnames = [temp.format(classname.replace("_", " ")) for classname in cfg.DATASET.CLASSNAMES]
           raw_prompts = [prefix + " " + classname + "." for classname in classnames]
         else:

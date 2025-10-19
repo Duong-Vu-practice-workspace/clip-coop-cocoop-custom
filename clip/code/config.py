@@ -6,7 +6,7 @@ _C.MODEL = CN()
 _C.MODEL.NAME = "RN50"
 
 _C.DATASET = CN()
-_C.DATASET.NAME = "dtd"
+_C.DATASET.NAME = "fungi"
 _C.DATASET.IMG_BATCH_SIZE = 32
 
 _C.TRAIN = CN()
@@ -29,7 +29,7 @@ _C.USE_COCOOP = False
 
 def get_cfg_defaults():
     names = []
-    with open(f"{_C.DATASET.NAME}_names.txt", 'r') as f:
+    with open(f"names.txt", 'r') as f:
         for line in f:
             names.append(line.replace('\'', '').strip())
     _C.DATASET.CLASSNAMES = names

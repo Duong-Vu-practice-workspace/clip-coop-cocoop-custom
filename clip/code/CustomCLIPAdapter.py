@@ -51,7 +51,7 @@ class CustomCLIPAdapter(nn.Module):
         self.text_encoder = TextEncoder(cfg, clip_model,device)
         self.logit_scale = clip_model.logit_scale
         self.dtype = clip_model.dtype
-        self.adapter = Adapter(1024, 4).to(clip_model.dtype)
+        self.adapter = Adapter(512, 4).to(clip_model.dtype)
 
         # for name, param in self.image_encoder.named_parameters():
         #     if 'adapter' not in name:

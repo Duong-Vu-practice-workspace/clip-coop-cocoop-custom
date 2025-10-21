@@ -35,6 +35,7 @@ def train(model, data, eval_data, criterion, optimizer, scheduler, n_epoch, devi
       scheduler.step()
       
   model.eval()
+  torch.save(model.state_dict(), f'/content/drive/MyDrive/Colab Notebooks/PTIT/XLA/BTL/clip/code/model_epoch_{epoch+1}.pt')
   running_loss = 0.0
   running_corr = 0
   ndata = 0 

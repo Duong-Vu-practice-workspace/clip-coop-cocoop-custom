@@ -5,12 +5,12 @@ import torch
 import clip
 import os
 
-model_path = '/content/drive/MyDrive/Colab Notebooks/clip/code/model_epoch_30 (1).pt'
+model_path = '/workspaces/clip-coop-cocoop-custom/clip/code/model_epoch_30.pt'
 
 st.set_page_config(page_title="CLIP Demo", layout="wide")
 st.title("CLIP Image/Text Retrieval")
 
-@st.cache(allow_output_mutation=True)
+@st.cache_resource()
 def load_model_from_path(path: str):
     """
     Load a saved PyTorch object with torch.load(path).

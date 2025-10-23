@@ -1,10 +1,38 @@
 import io
 from PIL import Image, ImageDraw, ImageFont
 import streamlit as st
+import torch
+import clip
+import os
 
-st.set_page_config(page_title="CLIP Demo - Base UI", layout="wide")
-st.title("CLIP Image/Text Retrieval — Base UI")
+model_path = '/content/drive/MyDrive/Colab Notebooks/clip/code/model_epoch_30 (1).pt'
 
+st.set_page_config(page_title="CLIP Demo", layout="wide")
+st.title("CLIP Image/Text Retrieval")
+
+@st.cache(allow_output_mutation=True)
+def load_model_from_path(path: str):
+    """
+    Load a saved PyTorch object with torch.load(path).
+    Returns whatever was saved (module, state_dict, dict, ...).
+    """
+    if not path:
+        raise FileNotFoundError("No model path provided")
+    if not os.path.isabs(path):
+        path = os.path.abspath(path)
+    if not os.path.isfile(path):
+        raise FileNotFoundError(path)
+    return torch.load(path, map_location="cpu")
+
+try:
+    with st.spinner("Loading model via torch.load(...)"):
+        model_obj = load_model_from_path(model_path)
+        st.session_state["model_obj"] = model_obj
+        st.session_state["model_loaded"] = True
+        st.success(f"Loaded model object from {model_path}")
+except Exception as e:
+    st.session_state["model_loaded"] = False
+    st.error(f"Failed to load model: {e}")
 # Sidebar: input controls
 st.sidebar.header("Query")
 text_query = st.sidebar.text_input("Text query")

@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="CLIP Demo - Base UI", layout="wide")
 st.title("CLIP Image/Text Retrieval — Base UI")
 
-# Sidebar: input controls (no backend wired)
+# Sidebar: input controls
 st.sidebar.header("Query")
 text_query = st.sidebar.text_input("Text query")
 uploaded_file = st.sidebar.file_uploader("Upload query image", type=["jpg", "jpeg", "png"])
@@ -19,16 +19,34 @@ if "results" not in st.session_state:
 if "feedback" not in st.session_state:
     st.session_state["feedback"] = {}  # idx -> vote
 
+
 def _make_placeholder_image(text: str, size=(320, 240)):
     img = Image.new("RGB", size, color=(200, 200, 200))
-    d = ImageDraw.Draw(img)
-    # try to use a default font if available
+    draw = ImageDraw.Draw(img)
     try:
-        f = ImageFont.load_default()
+        font = ImageFont.load_default()
     except Exception:
-        f = None
-    w, h = d.textsize(text, font=f)
-    d.text(((size[0]-w)/2, (size[1]-h)/2), text, fill=(60,60,60), font=f)
+        font = None
+
+    try:
+        bbox = draw.textbbox((0, 0), text, font=font)
+        w = bbox[2] - bbox[0]
+        h = bbox[3] - bbox[1]
+    except Exception:
+        try:
+            # textlength gives width; derive height from font metrics if available
+            w = int(draw.textlength(text, font=font))
+            if font is not None and hasattr(font, "getmetrics"):
+                ascent, descent = font.getmetrics()
+                h = ascent + descent
+            else:
+                h = 11
+        except Exception:
+            # final fallback: estimate
+            w = len(text) * 6
+            h = 11
+
+    draw.text(((size[0] - w) / 2, (size[1] - h) / 2), text, fill=(60, 60, 60), font=font)
     buf = io.BytesIO()
     img.save(buf, format="PNG")
     buf.seek(0)
@@ -69,7 +87,7 @@ with col_left:
             with c:
                 # image (placeholder)
                 ph = _make_placeholder_image(item["title"])
-                st.image(ph, use_column_width=True)
+                st.image(ph, use_container_width=True)
                 st.markdown(f"**{item['title']}**")
                 st.caption(f"idx: {item['idx']}")
 

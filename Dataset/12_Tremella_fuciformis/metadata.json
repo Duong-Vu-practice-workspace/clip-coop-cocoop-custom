@@ -1,0 +1,32 @@
+{
+  "binomialNomenclature": "Tremella fuciformis",
+  "commonNames": {
+    "en": ["snow fungus", "snow ear","silver ear fungus","white jelly mushroom", "white cloud ears"],
+    "vi": ["Nấm tuyết", "Mộc nhĩ trắng", "Ngân nhĩ"]
+  },
+  "habitat": "Found in tropical and subtropical regions; grows on dead hardwood logs after heavy rains.",
+  "shortDescription": "A gelatinous, frond-like mushroom prized for culinary, medicinal, and beauty-enhancing uses.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Rich in antioxidants, beta-glucans, and polysaccharides; boosts immune system, promotes skin health, cardiovascular and brain health, and bone density.",
+  "identification": {
+    "cap": "Fruiting bodies are whitish, nearly transparent, gelatinous, frond-like, up to 7.5 cm across.",
+    "gills": "",
+    "stem": "",
+    "flesh": "Gelatinous, soft texture",
+    "sporePrint": "",
+    "taste": "Little flavor",
+    "odor": "",
+    "microscopicFeatures": ""
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Ductifera pululahuana"
+    },
+    {
+      "binomialNomenclature": "Tremella reticulata"
+    }
+  ],
+  "medicinalProperties": "Supports skin hydration, anti-aging, immune system, brain health, cardiovascular health, and bone health.",
+  "note": "Historically, this mushroom was a rare delicacy, available only to nobles due to its difficulty to cultivate."
+}

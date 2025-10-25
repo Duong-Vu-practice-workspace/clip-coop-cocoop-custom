@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Amanita pantherina",
+  "commonNames": {
+    "en": ["Panther cap"],
+    "vi": ["Nấm mụn trắng", "nấm tán da báo"]
+  },
+  "habitat": "Mycorrhizal with trees (especially deciduous) in forests and meadows across Europe and western Asia in late summer and autumn.",
+  "shortDescription": "Highly poisonous, psychoactive mushroom with a brown-tan cap covered in white warts. Contains muscimol and ibotenic acid.",
+  "edibility": "Poisonous",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Highly poisonous, containing muscimol and ibotenic acid. Causes hallucinations, confusion, seizures, and can be fatal. Some research suggests potential therapeutic benefits of muscimol.",
+  "identification": {
+    "cap": "3-18 cm wide, convex to flat, sticky, brown to tan with small white warts.",
+    "gills": "Mostly free from the stem, white, crowded.",
+    "stem": "4-20 cm long, up to 2.5 cm thick, tapering upward with a swollen base. White, with a skirt-like ring.",
+    "flesh": "White, does not change color when cut.",
+    "sporePrint": "White",
+    "taste": "",
+    "odor": "Unpleasant, like raw potatoes.",
+    "microscopicFeatures": "Spores smooth, ellipsoid, 8-14 x 6-10 µm."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Amanita rubescens" },
+    { "binomialNomenclature": "Amanita excelsa" },
+    { "binomialNomenclature": "Amanita regalis" }
+  ],
+  "medicinalProperties": "Research suggests muscimol may reduce stress, relieve pain, support sleep, and have anti-tumor properties.",
+  "note": "First described by De Candolle in 1815 as Agaricus pantherinus, renamed by Kummer in 1871. The name 'pantherina' refers to its spotted cap. Used in various psychoactive products."
+}

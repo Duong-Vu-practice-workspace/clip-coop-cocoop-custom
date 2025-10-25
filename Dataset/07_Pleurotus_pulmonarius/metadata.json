@@ -1,0 +1,32 @@
+{
+  "binomialNomenclature": "Pleurotus pulmonarius",
+  "commonNames": {
+    "en": ["Indian Oyster", "Italian Oyster", "Phoenix Mushroom"],
+    "vi": ["Nấm bào ngư trắng", "Nấm sò"]
+  },
+  "habitat": "Grows in shelf-like clusters on both dead and living hardwood; widely distributed in forests of North America and worldwide. Fruits from late spring through September.",
+  "shortDescription": "An edible oyster mushroom closely related to Pleurotus ostreatus. It has smaller, paler caps, more developed stems, and prefers warmer conditions. Cultivated in Europe and North America.",
+  "edibility": "Edible and widely cultivated. Considered a healthy food, low in calories, fat, and sodium.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Contains β-D-Glucan with analgesic properties. Extracts show anti-inflammatory, antitumor, antihyperglycemic, antihypertensive, antioxidant, antiviral, and antiallergic activities. Potential use in cancer therapy, diabetes management, and cardiovascular support. May cause gastrointestinal distress due to arabitol in sensitive individuals.",
+  "identification": {
+    "cap": "3–10 cm; convex to flat or slightly depressed; fan-shaped to semicircular; whitish to beige or pale tan; smooth, bald, sometimes greasy when fresh; margin inrolled when young, later wavy.",
+    "gills": "Decurrent; close to nearly distant; whitish, turning yellowish with age.",
+    "stem": "0.5–1 cm thick, 1–4 cm long; eccentric, lateral, or central; whitish, smooth; may be rudimentary or absent.",
+    "flesh": "Thick, white, unchanging when cut.",
+    "sporePrint": "White to gray or lilac.",
+    "taste": "Mild mushroom flavor, slight anise note.",
+    "odor": "Mushroom-like.",
+    "microscopicFeatures": "Spores 7–11 × 2–3 µm, cylindric-ellipsoid, smooth, hyaline in KOH, inamyloid. Hymenial cystidia absent. Pileipellis a cutis with 5–10 µm wide hyaline elements."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Pleurotus populinus"
+    },
+    {
+      "binomialNomenclature": "Pleurocybella porrigens"
+    }
+  ],
+  "medicinalProperties": "Research indicates anticancer, antihypertensive (ACE inhibition), antioxidant, anti-inflammatory, antidiabetic, antirhinitis, and antiviral (including HIV-1 RT inhibition) effects. Polysaccharide-protein complexes and metabolites show immunomodulatory activity and potential therapeutic applications.",
+  "note": "Also cultivated for environmental uses such as biodegradable packaging, oil spill cleanup, and even disposable diaper degradation. Naturally contains lovastatin, associated with cholesterol reduction."
+}

@@ -1,0 +1,35 @@
+{
+  "binomialNomenclature": "Auricularia auricula-judae",
+  "commonNames": {
+    "en": ["Black wood ear", "Wood ear mushroom", "Jelly ear mushroom"],
+    "vi": ["Nấm mộc nhĩ"]
+  },
+  "habitat": "Saprobic or weakly parasitic on decaying wood of old deciduous trees and shrubs, especially elder, beech, ash, spindle, Acer pseudoplatanus. Found worldwide in temperate and subtropical zones, growing year-round in clusters, often after rain.",
+  "shortDescription": "An edible jelly fungus with ear-like, purplish-brown fruiting bodies. Tough, gelatinous, and elastic when fresh; hard and brittle when dry. Widely used in Asian soups and cuisine.",
+  "edibility": "Edible when cooked, but must not be eaten raw. Mild flavor, jelly-like crunchy texture. Commonly consumed in Asia and Eastern Europe. Dried specimens can be rehydrated, swelling 3–4 times in size.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Generally safe, with medicinal and nutritional benefits. Contains antibacterial, antitumor, antidiabetic, anticoagulant, antioxidant, antiviral, and cholesterol-lowering compounds. May negatively impact fertility; caution for pregnant or lactating women. Rehydrated mushrooms should be consumed within one day to avoid toxicity. Potential allergen for sensitive individuals.",
+  "identification": {
+    "cap": "Fruiting body up to 9 cm across, ~3 mm thick. Ear-shaped or cup-shaped, attached laterally, sometimes with a short stem. Upper surface reddish-tan to purplish brown, finely pilose, wrinkled with age. Undersurface lighter grey-brown, smooth to folded, sometimes veined.",
+    "gills": "",
+    "stem": "Usually absent; sometimes with a very short lateral attachment.",
+    "flesh": "Thin, dense, cartilaginous, gelatinous, translucent, no strong odor.",
+    "sporePrint": "White.",
+    "taste": "Mild, sometimes considered bland.",
+    "odor": "Not distinctive.",
+    "microscopicFeatures": "Spores 12–14 × 4–5.5 μm, allantoid, hyaline; basidia 65–75 × 4–5 μm, cylindric, 3-septate; flesh with gelatinized hyphae 2–3 μm; abhymenial surface with projecting hyaline hairs 40–125 × 7.5–12.5 μm."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Auricularia cerrina"
+    },
+    {
+      "binomialNomenclature": "Auricularia heimuer"
+    },
+    {
+      "binomialNomenclature": "Auricularia angiospermarum"
+    }
+  ],
+  "medicinalProperties": "Traditionally used for throat and eye ailments. Demonstrated antibacterial, antitumor (diazane), anticoagulant, antioxidant, radioprotective (melanin pigments), antidiabetic, anti-inflammatory, anti-obesity, antiviral (sulfated polysaccharides), and cholesterol-lowering effects. Shows immunomodulatory properties and potential as an oral drug delivery system. Used historically in Europe as gargle for sore throats and in poultices.",
+  "note": "First described as Tremella auricula by Linnaeus, later as Tremella auricula-judae by Bulliard. Renamed Exidia auricula-judae by Fries (1822) and finally placed in Auricularia by Schröter (1888). The epithet 'auricula-judae' means 'ear of Judas', linked to the legend of Judas Iscariot hanging from an elder tree."
+}

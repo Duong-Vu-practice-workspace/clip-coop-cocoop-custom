@@ -1,0 +1,25 @@
+{
+  "binomialNomenclature": "Lentinula edodes",
+  "commonNames": {
+    "en": ["Shiitake mushroom"],
+    "vi": ["Nấm hương"]
+  },
+  "habitat": "Saprobic on decaying hardwoods, especially chinquapin, chestnut, oak, maple, beech, sweetgum, poplar, hornbeam, ironwood, and mulberry. Grows naturally in warm and moist deciduous forests of Southeast Asia.",
+  "shortDescription": "An edible mushroom native to Asia, famous for both culinary and medicinal uses. It has a meaty texture, tan to brown umbrella-shaped cap, and is one of the most widely cultivated mushrooms in the world.",
+  "edibility": "Edible. The second most widely cultivated mushroom globally, rich in protein, fiber, B vitamins, vitamin C, vitamin D, copper, selenium, zinc, and iron. Popular in Asian cuisine for thousands of years.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Non-toxic. Contains lentinan, a polysaccharide complex known for immune-stimulating, anticancer, antimicrobial, antioxidant, antihypertensive, antidiabetic, liver-protective, bone-inducing, and antiviral properties.",
+  "identification": {
+    "cap": "5–15 cm; umbrella-shaped; tan to brown; edges rolled down and inward; underside with whitish to cream gills.",
+    "gills": "Adnexed; whitish to cream.",
+    "stem": "5–8 cm tall; whitish to cream, sometimes browning with age.",
+    "flesh": "",
+    "sporePrint": "White.",
+    "taste": "Meaty.",
+    "odor": "",
+    "microscopicFeatures": ""
+  },
+  "lookAlikes": [],
+  "medicinalProperties": "Lentinan boosts immune response, increases white blood cells, reduces inflammation. Exhibits antibacterial, antifungal, and anti-MRSA properties. Shown to have anticancer effects in colon, gastric, pancreatic, breast, liver cancers and leukemia. Provides liver protection, reduces blood pressure, improves bone health, lowers blood sugar, cholesterol, and triglycerides. Demonstrates antiviral activity against influenza, hepatitis, HIV, and herpes. Enhances survival and quality of life in some clinical cases.",
+  "note": "First described as Agaricus edodes by Miles Joseph Berkeley in 1877; transferred to genus Lentinula by David Pegler in 1976. Name 'shiitake' comes from Japanese: 'shii' (oak) + 'take' (mushroom)."
+}

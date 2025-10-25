@@ -1,0 +1,30 @@
+{
+  "binomialNomenclature": "Coprinopsis atramentaria",
+  "commonNames": {
+    "en": ["Ink cap"],
+    "vi": ["Nấm mực mỡ"]
+  },
+  "habitat": "Grows in clusters on dead tree roots in urban areas, lawns, and grasslands from spring to autumn. Widely distributed in Europe and North America.",
+  "shortDescription": "Widespread inky cap mushroom. Edible, but causes 'disulfiram syndrome' if consumed with alcohol.",
+  "edibility": "Edible if gills are white, but causes severe reaction with alcohol",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Causes 'disulfiram syndrome' when consumed with alcohol due to coprine. Symptoms include facial flushing, nausea, vomiting, and heart palpitations, but are generally not dangerous.",
+  "identification": {
+    "cap": "3-10 cm tall, oval becoming conical-convex, gray to gray-brown, smooth with fine scales.",
+    "gills": "White, crowded, turning black and melting into ink.",
+    "stem": "8-15 cm long, white, smooth or finely hairy, hollow.",
+    "flesh": "White to pale gray, thin, soft.",
+    "sporePrint": "Black",
+    "taste": "",
+    "odor": "",
+    "microscopicFeatures": "Spores 6.5-10.5 x 4-6.5 µ, elliptical, smooth. Clamp connections present."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Coprinellus micaceus" },
+    { "binomialNomenclature": "Coprinus comatus" },
+    { "binomialNomenclature": "Coprinopsis romagnesiana" },
+    { "binomialNomenclature": "Coprinopsis acuminata" }
+  ],
+  "medicinalProperties": "Has been used to cure alcoholism due to its effects when consumed with alcohol.",
+  "note": "Can be used to make ink. First described by Bulliard in 1786 as Agaricus atramentarius. Transferred to Coprinus by Fries in 1838. DNA analysis in 2001 placed it in Coprinopsis. The name 'atramentaria' refers to its black, inky substance."
+}

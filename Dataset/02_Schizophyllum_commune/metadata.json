@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Schizophyllum commune",
+  "commonNames": {
+    "en": ["Common Porecrust"],
+    "vi": ["Nấm chân chim"]
+  },
+  "habitat": "Saprobic on dead hardwoods or weakly parasitic on living trees. Found on logs, sticks, planks, and boards. Grows alone, gregariously, or in dense clusters. Occurs worldwide (all continents except Antarctica) and can survive cycles of dehydration and rehydration. Year-round fruiting.",
+  "shortDescription": "A tough, fan-shaped fungus with distinctive split gills that close in dry weather and reopen with moisture. Common worldwide and known for its remarkable resilience and medicinal properties.",
+  "edibility": "Edible, but with tough texture. Considered inedible in many Western guides due to poor culinary value. Widely consumed in Mexico, India (Manipur, Mizoram), and other tropical regions.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Non-toxic. Valued medicinally for immunomodulating, anticancer, antitumor, and antioxidant properties. Contains sizofilan (SPG), a glucan with clinical use in cancer therapy.",
+  "identification": {
+    "cap": "1–5 cm; fan-shaped, irregular, or shell-shaped depending on attachment; surface finely hairy to velvety; whitish, grayish, or brownish; dry; sometimes zoned.",
+    "gills": "Whitish to grayish, appearing split down the middle; distant and folded; capable of closing in dry conditions and reopening when moistened.",
+    "stem": "Absent.",
+    "flesh": "Whitish, tough, does not change when cut.",
+    "sporePrint": "White.",
+    "taste": "Aromatic but tough; little culinary value.",
+    "odor": "Aromatic.",
+    "microscopicFeatures": "Spores 4–6.5 × 1.5–2 µm, subcylindric to subellipsoid, smooth, hyaline in KOH, inamyloid. Hymenial cystidia absent. Pileipellis a cutis of 2.5–5 µm wide elements, sometimes forming bundles. Clamp connections present."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Plicaturopsis crispa"
+    }
+  ],
+  "medicinalProperties": "Produces sizofilan (SPG), a glucan used as an adjuvant immunotherapy for cancer, particularly head and neck cancers. Stimulates production of IFN-γ and IL-2, contributing to antitumor activity. Hot water and alkaline extracts show significant antioxidant effects, correlated with polysaccharide and polyphenol content.",
+  "note": "Described from Sweden; globally widespread. Known for its unique split gill mechanism that protects fertile surfaces during drought. Consumed traditionally in tropical regions but usually ignored in Western cuisine due to toughness."
+}

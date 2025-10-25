@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Cantharellus cibarius",
+  "commonNames": {
+    "en": ["golden chanterelle", "girolle", "girole"],
+    "vi": ["Nấm mồng gà", "Nấm mỡ gà"]
+  },
+  "habitat": "Deciduous forest soils near oak and beech trees; found across Canada, the U.S., Europe, Mediterranean, parts of eastern and southern Australia, and parts of Asia.",
+  "shortDescription": "A highly prized, fragrant, edible mushroom, bright yellow, found on forest floors in summer and autumn.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "",
+  "identification": {
+    "cap": "Funnel-shaped, up to 10 cm diameter, wavy irregular margin, color light yellow to deep egg-yolk yellow, Often curved, occasionally joined at",
+    "gills": "Ridges that are forked, blunt-edged, same color as mushroom, wavy, decurrent",
+    "stem": "Veins thick and decurrbaseent",
+    "flesh": "Thick, firm, apricot-like scent",
+    "sporePrint": "Pale yellow to creamy white, sometimes with slight pinkish tinge",
+    "taste": "",
+    "odor": "Somewhat apricot-like",
+    "microscopicFeatures": ""
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Clitocybe illudens"
+    }
+  ],
+  "medicinalProperties": "",
+  "note": "Important to distinguish from poisonous jack-o-lantern (Clitocybe illudens) which glows in the dark."
+}

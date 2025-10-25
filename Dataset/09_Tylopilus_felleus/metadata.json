@@ -1,0 +1,33 @@
+{
+  "binomialNomenclature": "Tylopilus felleus",
+  "commonNames": {
+    "en": ["bitter bolete", "bitter tylopilus"],
+    "vi": ["Nấm tràm"]
+  },
+  "habitat": "Widely distributed and common east of the Rocky Mountains wherever conifers occur naturally.",
+  "shortDescription": "An inedible bolete (but not poisonous) with slightly to distinctly pink pores on the underside of the bun-shaped brown cap, a dark net on the thick stem, and a very bitter taste.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "In some countries, used as a substitute for pepper.",
+  "identification": {
+    "cap": "5–13 cm; convex, becoming broadly convex or nearly flat; dry; bald and softly leathery; unpolished; sometimes cracked; brown, fading to tan.",
+    "gills": "",
+    "stem": "4–10 cm long; 1.5–4 cm thick; club-shaped; whitish to pale brownish above; pale brown to tan elsewhere; strongly reticulate with wide-meshed brown net at least on upper third; basal mycelium white.",
+    "flesh": "Thick; soft; white; unchanging when sliced.",
+    "sporePrint": "Brownish pink.",
+    "taste": "Very bitter.",
+    "odor": "Not distinctive.",
+    "microscopicFeatures": "Spores 10–16 × 3–4 µm; narrowly fusiform to subfusiform; smooth; hyaline to yellowish in KOH. Hymenial cystidia 30–40 × 8–10 µm; fusiform; smooth; thin-walled; hyaline in KOH; sometimes with golden inclusion. Pileipellis a tangled cutis of cylindric elements 5–7.5 µm wide; golden yellow in KOH; terminal cells erect, rounded to subacute."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Boletus edulis" },
+    { "binomialNomenclature": "Boletus subtomentosus" },
+    { "binomialNomenclature": "Tylopilus rubrobrunneus" },
+    { "binomialNomenclature": "Tylopilus variobrunneus" },
+    { "binomialNomenclature": "Tylopilus rhoadsiae" },
+    { "binomialNomenclature": "Tylopilus indecisus" },
+    { "binomialNomenclature": "Tylopilus ferrugineus" }
+  ],
+  "medicinalProperties": "",
+  "note": "Type species of Tylopilus; first described as Boletus felleus by Bulliard in 1788; transferred to Tylopilus by Karsten in 1881."
+}

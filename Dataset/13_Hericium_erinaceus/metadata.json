@@ -1,0 +1,35 @@
+{
+  "binomialNomenclature": "Hericium erinaceus",
+  "commonNames": {
+    "en": ["lion's mane", "yamabushitake", "bearded tooth fungus", "bearded hedgehog"],
+    "vi": ["Nấm hầu thủ", "Nấm đầu khỉ"]
+  },
+  "habitat": "Grows on dead wood, alone or in pairs; found in Europe, North America, Canada, Mexico, Central America, and Asia; fruits in late summer/fall or winter/spring in warm areas.",
+  "shortDescription": "A white fungus with long icicle-like spines, prized for culinary and medicinal uses.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Supports brain and nerve health, cognitive function, immune system, digestive health, antibacterial, anti-inflammatory, anti-cancer properties; may lower blood sugar; may cause itchy skin or affect blood clotting.",
+  "identification": {
+    "cap": "Fruiting body 8–25 cm wide, unbranched clump of soft spines 1–4 cm long; white, may turn brownish or yellowish with age; attached to tough base on tree.",
+    "gills": "",
+    "stem": "",
+    "flesh": "White, soft, spongy; does not change color when sliced.",
+    "sporePrint": "White",
+    "taste": "Mild, similar to lobster",
+    "odor": "Not distinctive",
+    "microscopicFeatures": "Spores 5–6 x 5.5–6 µm, globose to subglobose or subellipsoid, smooth or minutely roughened; hyaline; amyloid; gloeoplerous hyphae present, sometimes forming cystidia up to 50 x 6 µm."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Hericium americanum"
+    },
+    {
+      "binomialNomenclature": "Hericium cirrhatum"
+    },
+    {
+      "binomialNomenclature": "Hericium coralloides"
+    }
+  ],
+  "medicinalProperties": "Supports brain and nerve health, cognitive function, neuroprotection, immune system, digestive health, antibacterial, anti-inflammatory, anti-cancer, antioxidant activity.",
+  "note": "Lion's Mane can be consumed as powder, extract, tea, coffee, tincture, gummies, or vitamins; caution advised for pregnancy, breastfeeding, blood clotting disorders, or surgery. Also safe for pets under guidance."
+}

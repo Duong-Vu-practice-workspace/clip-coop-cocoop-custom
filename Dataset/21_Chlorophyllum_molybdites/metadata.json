@@ -1,0 +1,28 @@
+{
+  "binomialNomenclature": "Chlorophyllum molybdites",
+  "commonNames": {
+    "en": ["False Parasol", "Green Gill", "Green-Spored Parasol", "Green Spored Lepiota"],
+    "vi": ["Nấm ô tán trắng phiến xanh"]
+  },
+  "habitat": "Lawns, meadows, grassy areas, fairy rings, summer to fall, North America, South America, Europe, Asia, Africa, Australia.",
+  "shortDescription": "Poisonous mushroom with white cap turning scaly, green spores, causes gastrointestinal distress.",
+  "edibility": "Poisonous.",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Causes nausea, vomiting, diarrhea 1-3 hours after ingestion, non-lethal but may require hospital treatment.",
+  "identification": {
+    "cap": "10-35 cm, convex to flat, smooth then brown to pinkish-brown scales.",
+    "gills": "Free or attached, white to grayish-green or brownish-green.",
+    "stem": "8-20 cm, 1.5-3 cm thick, tapering top, white to brown, persistent white ring with greenish lower edge.",
+    "flesh": "White, thick, may stain reddish-brown.",
+    "sporePrint": "Dull grayish-green.",
+    "taste": "",
+    "odor": "",
+    "microscopicFeatures": "Spores 9-13 x 6-9 µm, amygdaliform to ellipsoid, smooth, small pore; cheilocystidia 40-55 x 10-15 µm, cylindric to subclavate; pileipellis trichoderm or cutis."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Chlorophyllum rhacodes" },
+    { "binomialNomenclature": "Macrolepiota procera" }
+  ],
+  "medicinalProperties": "",
+  "note": "Common in lawns, fairy rings, poisonous to pets too."
+}

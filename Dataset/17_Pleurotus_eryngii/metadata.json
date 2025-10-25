@@ -1,0 +1,36 @@
+{
+  "binomialNomenclature": "Pleurotus eryngii",
+  "commonNames": {
+    "en": [
+      "King Trumpet Mushroom",
+      "French Horn Mushroom",
+      "King Oyster Mushroom",
+      "King Brown Mushroom",
+      "Boletus Of The Steppes",
+      "Trumpet Royale",
+      "Ali'i Oyster"
+    ],
+    "vi": [
+      "Nấm đùi gà",
+      "Nấm bào ngư"
+    ]
+  },
+  "habitat": "Grows on dead or dying hardwood trees and in cultivation on sawdust and straw substrates. It typically fruits in the late summer to early fall. In the wild, they typically grow with a small stem and a large, dark cap.",
+  "shortDescription": "A thick, meaty mushroom with a small tan to brown cap and white to light brown gills that run down the stem. Known for its nutty flavor and versatility in cooking, it's highly prized in Italian cuisine and has the longest shelf-life among mushrooms.",
+  "edibility": "Edible, highly prized in many cuisines, particularly Italian, where it is often used in risottos, pastas, and other dishes.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Rich in nutrients, antioxidants, supports immune system, heart health, blood sugar regulation, anti-inflammatory, cancer and anti-inflammatory properties, potential in diabetes and cholesterol management, fights food contamination. Possible side effects include tummy trouble, rashes, headaches, dizziness, respiratory issues.",
+  "identification": {
+    "cap": "Convex to bell-shaped, 1-8 cm diameter, tan to brown.",
+    "gills": "White to light brown, run down the stem.",
+    "stem": "2-10 cm long, 2-3 cm wide, white to light brown.",
+    "flesh": "Meaty texture, nutty flavor.",
+    "sporePrint": "White.",
+    "taste": "Meaty, nutty.",
+    "odor": "Not distinctive.",
+    "microscopicFeatures": ""
+  },
+  "lookAlikes": [],
+  "medicinalProperties": "Rich in fiber, vitamins, and minerals, with low carbs, antioxidants like gallic acid and ergothioneine, beta-glucans for immune and heart health, anti-inflammatory, potential anti-cancer effects.",
+  "note": "The longest shelf-life and it is the third most popular mushroom in the world in terms of production."
+}

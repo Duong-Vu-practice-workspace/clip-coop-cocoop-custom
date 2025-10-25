@@ -1,0 +1,35 @@
+{
+  "binomialNomenclature": "Volvariella bombycina",
+  "commonNames": {
+    "en": ["Straw mushroom"],
+    "vi": ["Nấm rơm"]
+  },
+  "habitat": "Saprobic on decaying or wounded hardwoods (elm, beech, oak, maple, sycamore, poplar). Grows singly or in small clusters in hollows or cracks from late spring to fall. Widely distributed across Europe, North America, Central America, the Caribbean, Asia, Australia, and Oceania.",
+  "shortDescription": "A rare and majestic wood-inhabiting mushroom with a silky, snow-white cap, known for its striking beauty but of low culinary value due to its thin flesh.",
+  "edibility": "Edible, but not recommended due to rarity and low culinary value.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Non-poisonous. Has a faint radish-like taste and odor. Shows antioxidant and anticancer potential in pharmacological studies.",
+  "identification": {
+    "cap": "5–20 cm, ovoid to bell-shaped when young, later flattening; snow-white, becoming yellowish or brownish with age; surface covered with silky fibrils; inrolled margin when young.",
+    "gills": "Free from stem, crowded, fragile; white when young, turning flesh-pink with age; lightly scalloped edges.",
+    "stem": "7–15 cm tall, 1–2.5 cm thick; cylindrical, tapering toward the apex, sometimes curved; white to creamy; bald or finely powdery near the apex; ring absent; volva thick and bag-like, white aging to ochre or brown, often cracked.",
+    "flesh": "White, soft, unchanging when cut; faint radish-like odor; mild taste.",
+    "sporePrint": "Brownish pink; spores ellipsoid, smooth, 8–10 × 5–6 µm, thick-walled.",
+    "taste": "Mild, radish-like.",
+    "odor": "Faint horseradish- or radish-like.",
+    "microscopicFeatures": "Spores inamyloid, ellipsoid (6–9 × 3.5–5 µm); large lageniform pleurocystidia up to 70 µm; pileipellis composed of long aseptate non-gelatinous hyphae."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Amanita virosa"
+    },
+    {
+      "binomialNomenclature": "Volvopluteus gloiocephalus"
+    },
+    {
+      "binomialNomenclature": "Pluteus cervinus"
+    }
+  ],
+  "medicinalProperties": "Mycelial extracts and culture liquids show antioxidant activity and inhibition of lipid peroxidation, suggesting neuroprotective potential. Polysaccharides demonstrated 100% inhibition of mouse sarcoma and Ehrlich tumors at 300 mg/kg. Related Volvariella species are studied for anticancer effects.",
+  "note": "First described as Agaricus bombycinus by Schaeffer in 1762, later transferred to Volvariella by Rolf Singer in 1949. The epithet 'bombycina' means 'silky'. Includes var. flaviceps with a yellow cap (Florida). Considered rare and red-listed in parts of Russia."
+}

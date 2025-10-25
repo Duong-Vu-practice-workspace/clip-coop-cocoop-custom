@@ -1,0 +1,41 @@
+{
+  "binomialNomenclature": "Gyromitra esculenta",
+  "commonNames": {
+    "en": ["Brain mushroom"],
+    "vi": ["Nấm não"]
+  },
+  "habitat": "Found in spring under conifers; widespread in Europe, North America, and Asia.",
+  "shortDescription": "Highly poisonous fungus with a brain-like appearance, often mistaken for edible morels.",
+  "edibility": "Highly poisonous",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Highly toxic. Contains gyromitrin, which converts to MMH (monomethylhydrazine) in the body, damaging red blood cells and the liver. Can cause symptoms from nausea to death. Boiling may reduce toxins but inhaling vapors is hazardous.",
+  "identification": {
+    "cap": "4-8 cm high, 3-12 cm wide; irregular, convoluted, brain-like shape. Pinkish-tan to reddish-brown, becoming darker with age.",
+    "gills": "No gills - this is a false morel",
+    "stem": "3-9 cm long, 1-3.5 cm thick; pale yellowish-tan to rose-tinted.",
+    "flesh": "Thin, brittle, whitish to tan.",
+    "sporePrint": "Yellowish buff",
+    "taste": "",
+    "odor": "",
+    "microscopicFeatures": "Spores 19-28 x 10-13 µ, smooth, fusiform or nearly ellipsoid."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Morchella esculenta"
+    },
+    {
+      "binomialNomenclature": "Helvella crispa"
+    },
+    {
+      "binomialNomenclature": "Gyromitra infula"
+    },
+    {
+      "binomialNomenclature": "Gyromitra montana"
+    },
+    {
+      "binomialNomenclature": "Gyromitra californica"
+    }
+  ],
+  "medicinalProperties": "",
+  "note": "First described by Persoon in 1800 as Helvella esculenta, renamed by Fries in 1849. 'Esculenta' ironically means 'edible'. Belongs to the Discinaceae family."
+}

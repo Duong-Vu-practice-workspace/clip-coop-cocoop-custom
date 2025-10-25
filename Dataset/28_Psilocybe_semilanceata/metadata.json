@@ -1,0 +1,33 @@
+{
+  "binomialNomenclature": "Psilocybe semilanceata",
+  "commonNames": {
+    "en": ["liberty cap"],
+    "vi": ["Nấm thức thần", "Nấm ma thuật", "Nấm ảo giác"]
+  },
+  "habitat": "Grows in meadows and pastures (often sheep-grazed), but not on dung. Common in North America and Europe.",
+  "shortDescription": "Potent psilocybin mushroom known as 'Liberty Cap', with a distinct pimple on its cream-colored cap.",
+  "edibility": "Poisonous/Psychoactive",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Contains psilocybin and psilocin, causing potent hallucinogenic effects like distorted reality.",
+  "identification": {
+    "cap": "0.5-2 cm, cream-colored with a distinct pimple on top and striations that pronounce with age.",
+    "gills": "Olive-gray, turning purple-black as spores mature.",
+    "stem": "4-10 cm tall, slender, cream-colored, fibrous, and often wavy.",
+    "flesh": "",
+    "sporePrint": "Very dark purple-brown",
+    "taste": "",
+    "odor": "Musty odor",
+    "microscopicFeatures": "Spores ellipsoidal, smooth, 11.5-14.5 x 7-9μm"
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Panaeolus semiovatus" },
+    { "binomialNomenclature": "Panaeolina foenisecii" },
+    { "binomialNomenclature": "Psilocybe strictipes" },
+    { "binomialNomenclature": "Psilocybe mexicana" },
+    { "binomialNomenclature": "Psilocybe samuiensis" },
+    { "binomialNomenclature": "Psilocybe pelliculosa" },
+    { "binomialNomenclature": "Inocybe geophylla" }
+  ],
+  "medicinalProperties": "",
+  "note": "First described by Fries in 1838 as Agaricus semilanceatus, transferred to Psilocybe by Kummer in 1871. The name Psilocybe was conserved for this group in 2009. Cultivation is very difficult."
+}

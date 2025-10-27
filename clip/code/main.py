@@ -21,6 +21,10 @@ class Clip:
     def __init__(self):
         self.model, self.preprocess = clip.load(model_name, device=device)
         self.model.eval()
+        try:
+            self.model.to(device)
+        except Exception:
+            pass
 @st.cache_resource()
 def load_model_from_path(path: str):
     """
@@ -34,10 +38,6 @@ def load_model_from_path(path: str):
     if not os.path.isfile(path):
         raise FileNotFoundError(path)
     model = Clip()
-    try:
-        model.to(device)
-    except Exception:
-        pass  
     return model
     
 
@@ -66,18 +66,9 @@ def get_text_embedding(text: str, model_key: str = None):
     if model_wrapper is None:
         raise RuntimeError("Model not loaded (st.session_state['model_obj'] missing)")
 
-    # assume Clip wrapper: underlying CLIP model at .model
     clip_model = getattr(model_wrapper, "model", model_wrapper)
     if not hasattr(clip_model, "encode_text"):
         raise RuntimeError("Loaded object does not expose encode_text; expected Clip wrapper or CLIP model")
-
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    try:
-        clip_model.to(device)
-    except Exception:
-        pass
-    clip_model.eval()
-
     tokens = clip.tokenize([text]).to(device)
     with torch.no_grad():
         txt_emb = clip_model.encode_text(tokens).float()
@@ -99,7 +90,6 @@ def get_image_embedding(image_bytes: bytes):
     if model_wrapper is None:
         raise RuntimeError("Model not loaded (st.session_state['model_obj'] missing)")
 
-    # assume Clip wrapper: underlying CLIP model at .model and preprocess at .preprocess
     clip_model = getattr(model_wrapper, "model", model_wrapper)
     preprocess = getattr(model_wrapper, "preprocess", None)
     if preprocess is None:
@@ -110,14 +100,6 @@ def get_image_embedding(image_bytes: bytes):
 
     # open image from bytes (PIL)
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    try:
-        clip_model.to(device)
-    except Exception:
-        pass
-    clip_model.eval()
-
     # preprocess -> tensor batch
     img_t = preprocess(img).unsqueeze(0).to(device)
     with torch.no_grad():
@@ -137,7 +119,7 @@ search_btn = st.sidebar.button("Search")
 # quick test button to get text embedding (calls the new method)
 if st.sidebar.button("Get text embedding"):
     try:
-        emb = get_text_embedding(text_query or "test", model_path)
+        emb = get_text_embedding(text_query or "test")
         st.sidebar.success(f"Embedding length: {len(emb)}")
     except Exception as e:
         st.sidebar.error(f"Failed to get embedding: {e}")
@@ -151,12 +133,6 @@ if st.sidebar.button("Get image embedding"):
             img_bytes = uploaded_file.getvalue()
             img_emb = get_image_embedding(img_bytes)
             st.sidebar.success(f"Image embedding length: {len(img_emb)}")
-            st.sidebar.write(img_emb[:10])
-            # optional: save embedding file next to model
-            out_name = f"image_emb_{int(time.time())}.pt"
-            out_path = os.path.join(os.path.dirname(model_path), out_name)
-            torch.save(torch.tensor(img_emb), out_path)
-            st.sidebar.info(f"Saved embedding to {out_path}")
     except Exception as e:
         st.sidebar.error(f"Failed to get image embedding: {e}")
 
@@ -201,14 +177,15 @@ def _make_placeholder_image(text: str, size=(320, 240)):
 
 # When Search pressed, create placeholder results (backend will replace)
 if search_btn:
-    # placeholder: create top_k dummy entries
-    st.session_state["results"] = []
-    for i in range(int(top_k)):
-        st.session_state["results"].append({
-            "idx": i,
-            "title": f"Result #{i}",
-            "meta": {"dummy": True, "source": "placeholder"}
-        })
+    text_embeds = get_text_embedding(text_query)
+    st.success(f"Embedding length: {len(text_embeds)}")
+    # st.session_state["results"] = []
+    # for i in range(int(top_k)):
+    #     st.session_state["results"].append({
+    #         "idx": i,
+    #         "title": f"Result #{i}",
+    #         "meta": {"dummy": True, "source": "placeholder"}
+    #     })
 
 # Main area: show query summary and results grid
 col_left, col_right = st.columns([3, 1])
@@ -234,7 +211,7 @@ with col_left:
             with c:
                 # image (placeholder)
                 ph = _make_placeholder_image(item["title"])
-                st.image(ph, use_container_width=True)
+                st.image(ph, width = 'stretch')
                 st.markdown(f"**{item['title']}**")
                 st.caption(f"idx: {item['idx']}")
 

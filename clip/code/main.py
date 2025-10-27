@@ -6,7 +6,7 @@ import clip
 import os
 import time
 from config import get_cfg_defaults
-
+from torchvision.datasets import ImageFolder
 from CustomCLIPCoOp import CustomCLIPCoOp
 
 model_path = '/workspaces/clip-coop-cocoop-custom/clip/code/model_epoch_30.pt'
@@ -17,6 +17,8 @@ st.title("CLIP Image/Text Retrieval")
 cfg = get_cfg_defaults()
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model_name = "ViT-B/16"
+DATA_DIR = "/workspaces/clip-coop-cocoop-custom/Dataset"  # change to your path mounted or uploaded
+
 class Clip:
     def __init__(self):
         self.model, self.preprocess = clip.load(model_name, device=device)
@@ -25,6 +27,7 @@ class Clip:
             self.model.to(device)
         except Exception:
             pass
+        self.train_ds = ImageFolder(DATA_DIR, transform=self.preprocess)
 @st.cache_resource()
 def load_model_from_path(path: str):
     """
@@ -46,7 +49,6 @@ try:
         model_obj = load_model_from_path(model_path)
         st.session_state["model_obj"] = model_obj
         st.session_state["model_loaded"] = True
-        st.success(f"Loaded model object from clip")
 except Exception as e:
     st.session_state["model_loaded"] = False
     st.error(f"Failed to load model: {e}")
@@ -74,7 +76,7 @@ def get_text_embedding(text: str, model_key: str = None):
         txt_emb = clip_model.encode_text(tokens).float()
         txt_emb = txt_emb / (txt_emb.norm(dim=-1, keepdim=True) + 1e-10)
 
-    return txt_emb[0].cpu().numpy().tolist()
+    return txt_emb[0].cpu().numpy()
 
 @st.cache_data()
 def get_image_embedding(image_bytes: bytes):
@@ -106,7 +108,7 @@ def get_image_embedding(image_bytes: bytes):
         img_emb = clip_model.encode_image(img_t).float()
         img_emb = img_emb / (img_emb.norm(dim=-1, keepdim=True) + 1e-10)
 
-    return img_emb[0].cpu().numpy().tolist()
+    return img_emb[0].cpu().numpy()
 
 # Sidebar: input controls
 st.sidebar.header("Query")
@@ -115,6 +117,9 @@ uploaded_file = st.sidebar.file_uploader("Upload query image", type=["jpg", "jpe
 top_k = st.sidebar.number_input("Top K", min_value=1, max_value=48, value=12, step=1)
 combine = st.sidebar.checkbox("Combine text + image", value=False)
 search_btn = st.sidebar.button("Search")
+
+
+
 
 # Simple session state to hold placeholder results + feedback
 if "results" not in st.session_state:
@@ -158,7 +163,8 @@ def _make_placeholder_image(text: str, size=(320, 240)):
 # When Search pressed, create placeholder results (backend will replace)
 if search_btn:
     text_embeds = get_text_embedding(text_query)
-    st.success(f"Embedding length: {len(text_embeds)}")
+    image_embeds = get_image_embedding(uploaded_file.read())
+    similarity_scores = (text_embeds @ image_embeds.T)
     # st.session_state["results"] = []
     # for i in range(int(top_k)):
     #     st.session_state["results"].append({

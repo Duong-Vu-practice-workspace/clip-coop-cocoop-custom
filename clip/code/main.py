@@ -5,6 +5,7 @@ import torch
 import clip
 import os
 import time
+import json
 from config import get_cfg_defaults
 from torchvision.datasets import ImageFolder
 from CustomCLIPCoOp import CustomCLIPCoOp
@@ -179,28 +180,51 @@ def _make_placeholder_image(text: str, size=(320, 240)):
 
 # When Search pressed, create placeholder results (backend will replace)
 if search_btn:
-    similarity_scores = cal_similarity_text_with_pre_embed_image(text_query)
-    top_k_indices = torch.topk(similarity_scores, k=top_k).indices.tolist()
-    st.session_state["results"] = []
-    for rank, idx in enumerate(top_k_indices):
-        st.session_state["results"].append({
-            "idx": idx,
-            "title": f"Result #{rank + 1} (img idx {idx})",
-            "meta": {
-                "similarity_score": float(similarity_scores[idx].cpu().detach().numpy()),
-                "source": "calculated"
-            }
-        })
-    # st.session_state["results"] = []
-    # for i in range(int(top_k)):
-    #     st.session_state["results"].append({
-    #         "idx": i,
-    #         "title": f"Result #{i}",
-    #         "meta": {"dummy": True, "source": "placeholder"}
-    #     })
+    try:
+        similarity_scores = cal_similarity_text_with_pre_embed_image(text_query)
+        k = min(int(top_k), similarity_scores.shape[0])
+        top_k_indices = torch.topk(similarity_scores, k=k).indices.tolist()
+
+        st.session_state["results"] = []
+        model_wrapper = st.session_state.get("model_obj") or model_obj
+        for rank, idx in enumerate(top_k_indices):
+            # try to resolve image path and class from the ImageFolder
+            meta: dict = {}
+            try:
+                samples = model_wrapper.train_ds.samples  # list of (path, class_idx)
+                if 0 <= idx < len(samples):
+                    img_path, cls_idx = samples[idx]
+                    cls_name = model_wrapper.train_ds.classes[cls_idx]
+                    meta["class"] = cls_name
+                    meta["img_path"] = img_path
+                    # attempt to load per-class metadata.json from DATA_DIR/<class>/metadata.json
+                    meta_path = os.path.join(DATA_DIR, cls_name, "metadata.json")
+                    if os.path.isfile(meta_path):
+                        try:
+                            with open(meta_path, "r", encoding="utf-8") as mf:
+                                class_meta = json.load(mf)
+                                meta["class_metadata"] = class_meta
+                        except Exception as e:
+                            meta["class_metadata_error"] = f"failed to load {meta_path}: {e}"
+                else:
+                    meta["note"] = "index out of range for train_ds.samples"
+            except Exception as e:
+                meta["train_ds_error"] = str(e)
+
+            score_val = float(similarity_scores[idx].detach().cpu().item())
+            meta["similarity_score"] = score_val
+            meta["source"] = "calculated"
+
+            st.session_state["results"].append({
+                "idx": idx,
+                "title": f"Result #{rank + 1} (img idx {idx})",
+                "meta": meta
+            })
+    except Exception as e:
+        st.error(f"Failed computing similarity / building results: {e}")
 
 # Main area: show query summary and results grid
-col_left, col_right = st.columns([3, 1])
+col_left, col_right = st.columns([6, 1])
 
 with col_left:
     st.subheader("Query")
@@ -221,15 +245,21 @@ with col_left:
         for i, item in enumerate(results):
             c = cols[i % 2]
             with c:
-                # image (placeholder)
+                # show image placeholder (or real thumbnail if you want)
                 ph = _make_placeholder_image(item["title"])
-                st.image(ph, width = 'stretch')
+                st.image(ph, use_container_width=True)
                 st.markdown(f"**{item['title']}**")
                 st.caption(f"idx: {item['idx']}")
 
-                # Details expander
-                with st.expander("Details"):
-                    st.json(item["meta"])
+                # show a "View metadata" button that expands inline when clicked
+                view_key = f"view_meta_{item['idx']}"
+                if st.button("View metadata", key=view_key):
+                    st.session_state["view_meta"] = item["meta"]
+
+                # if metadata for this item is the currently selected, show it prominently
+                if st.session_state.get("view_meta") and st.session_state["view_meta"].get("img_path", None) == item["meta"].get("img_path", None):
+                    st.markdown("**Class metadata**")
+                    st.json(st.session_state["view_meta"])
 
                 # Like / Dislike buttons store in session state
                 like_key = f"like_{item['idx']}"

@@ -10,7 +10,7 @@ from torchvision.datasets import ImageFolder
 from CustomCLIPCoOp import CustomCLIPCoOp
 
 model_path = '/workspaces/clip-coop-cocoop-custom/clip/code/model_epoch_30.pt'
-
+image_embed_path = '/workspaces/clip-coop-cocoop-custom/clip/code/vit_image_embs.pt'
 st.set_page_config(page_title="CLIP Demo", layout="wide")
 st.title("CLIP Image/Text Retrieval")
 
@@ -28,6 +28,8 @@ class Clip:
         except Exception:
             pass
         self.train_ds = ImageFolder(DATA_DIR, transform=self.preprocess)
+        self.image_embeds = torch.load(image_embed_path, map_location=device).to(device)
+        self.image_embeds = self.image_embeds / (self.image_embeds.norm(dim=-1, keepdim=True) + 1e-10)
 @st.cache_resource()
 def load_model_from_path(path: str):
     """
@@ -110,6 +112,21 @@ def get_image_embedding(image_bytes: bytes):
 
     return img_emb[0].cpu().numpy()
 
+def cal_similarity_text_with_pre_embed_image(text: str):
+    text_embeds = get_text_embedding(text)  # numpy array (cpu)
+    model_wrapper = st.session_state.get("model_obj") or model_obj
+    image_embeds = model_wrapper.image_embeds  # tensor on device, possibly half
+
+    # convert text embedding to a tensor with the same dtype & device as image_embeds
+    text_t = torch.tensor(text_embeds, device=image_embeds.device, dtype=image_embeds.dtype)
+    text_t = text_t.unsqueeze(-1)  # (D,1)
+
+    # matrix multiply: (N, D) @ (D,1) -> (N,1) then squeeze
+    similarity_scores = (image_embeds @ text_t).squeeze(-1)
+
+    # ensure float32 on CPU for downstream use if desired
+    return similarity_scores
+
 # Sidebar: input controls
 st.sidebar.header("Query")
 text_query = st.sidebar.text_input("Text query")
@@ -162,9 +179,18 @@ def _make_placeholder_image(text: str, size=(320, 240)):
 
 # When Search pressed, create placeholder results (backend will replace)
 if search_btn:
-    text_embeds = get_text_embedding(text_query)
-    image_embeds = get_image_embedding(uploaded_file.read())
-    similarity_scores = (text_embeds @ image_embeds.T)
+    similarity_scores = cal_similarity_text_with_pre_embed_image(text_query)
+    top_k_indices = torch.topk(similarity_scores, k=top_k).indices.tolist()
+    st.session_state["results"] = []
+    for rank, idx in enumerate(top_k_indices):
+        st.session_state["results"].append({
+            "idx": idx,
+            "title": f"Result #{rank + 1} (img idx {idx})",
+            "meta": {
+                "similarity_score": float(similarity_scores[idx].cpu().detach().numpy()),
+                "source": "calculated"
+            }
+        })
     # st.session_state["results"] = []
     # for i in range(int(top_k)):
     #     st.session_state["results"].append({
@@ -191,9 +217,9 @@ with col_left:
     if not results:
         st.write("No results to show (backend not connected).")
     else:
-        cols = st.columns(4)
+        cols = st.columns(2)
         for i, item in enumerate(results):
-            c = cols[i % 4]
+            c = cols[i % 2]
             with c:
                 # image (placeholder)
                 ph = _make_placeholder_image(item["title"])

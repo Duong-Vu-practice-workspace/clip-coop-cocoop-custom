@@ -3,7 +3,7 @@ from yacs.config import CfgNode as CN
 _C = CN()
 
 _C.MODEL = CN()
-_C.MODEL.NAME = "RN50"
+_C.MODEL.NAME = "ViT-B/32"
 
 _C.DATASET = CN()
 _C.DATASET.NAME = "fungi"

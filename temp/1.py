@@ -1,11 +1,17 @@
 # ...existing code...
-import os
+import io
+from PIL import Image, ImageDraw, ImageFont
+import streamlit as st
 import torch
+import clip
+import os
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-CHECKPOINT_DIR = os.path.join(PROJECT_ROOT, "clip", "checkpoints")
+model_path = '/workspaces/clip-coop-cocoop-custom/clip/code/model_epoch_30.pt'
 
-@st.cache(allow_output_mutation=True)
+st.set_page_config(page_title="CLIP Demo", layout="wide")
+st.title("CLIP Image/Text Retrieval")
+
+@st.cache_resource()
 def load_model_from_path(path: str):
     """
     Load a saved PyTorch object with torch.load(path).
@@ -19,44 +25,210 @@ def load_model_from_path(path: str):
         raise FileNotFoundError(path)
     return torch.load(path, map_location="cpu")
 
-# Sidebar: model path input (no model choice UI)
-pt_candidates = []
-if os.path.isdir(CHECKPOINT_DIR):
-    pt_candidates = [os.path.join(CHECKPOINT_DIR, f) for f in os.listdir(CHECKPOINT_DIR) if f.endswith(".pt")]
-default_model_path = pt_candidates[0] if pt_candidates else ""
-
-model_path = st.sidebar.text_input("Model file path (torch.load)", value=default_model_path)
-load_model_btn = st.sidebar.button("Load model (torch.load)")
-
-if "model_loaded" not in st.session_state:
+try:
+    with st.spinner("Loading model via torch.load(...)"):
+        model_obj = load_model_from_path(model_path)
+        st.session_state["model_obj"] = model_obj
+        st.session_state["model_loaded"] = True
+        st.success(f"Loaded model object from {model_path}")
+except Exception as e:
     st.session_state["model_loaded"] = False
+    st.error(f"Failed to load model: {e}")
 
-if load_model_btn:
+# --- NEW: get_text_embedding (cached by text + model_path) -------------------
+@st.cache_data()
+def get_text_embedding(text: str, model_path_key: str):
+    """
+    Returns a normalized text embedding as a list of floats.
+
+    Assumptions:
+    - model object is stored in st.session_state['model_obj'] (loaded via torch.load).
+    - The loaded object must expose a CLIP-like API with `encode_text`.
+      If the saved object is a dict, we attempt common keys ('model','clip_model','clip').
+    - Tokenization uses clip.tokenize from the `clip` package.
+    """
+    if not text:
+        raise ValueError("text must be non-empty")
+
+    model_obj = st.session_state.get("model_obj")
+    if model_obj is None:
+        raise RuntimeError("Model not loaded into session_state['model_obj']")
+
+    # resolve underlying CLIP model that implements encode_text
+    def _resolve_model(obj):
+        if hasattr(obj, "encode_text"):
+            return obj
+        if isinstance(obj, dict):
+            for key in ("model", "clip_model", "clip"):
+                cand = obj.get(key)
+                if cand is not None and hasattr(cand, "encode_text"):
+                    return cand
+        for attr in ("model", "clip", "clip_model"):
+            cand = getattr(obj, attr, None)
+            if cand is not None and hasattr(cand, "encode_text"):
+                return cand
+        return None
+
+    model = _resolve_model(model_obj)
+    if model is None:
+        raise RuntimeError("Could not locate an object with `encode_text` in the loaded model. "
+                           "Ensure torch.load(...) returned a CLIP model or a container exposing it.")
+
+    # device selection
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     try:
-        with st.spinner("Loading model via torch.load(...)"):
-            model_obj = load_model_from_path(model_path)
-            st.session_state["model_obj"] = model_obj
-            st.session_state["model_loaded"] = True
-            st.success(f"Loaded model object from {model_path}")
-    except Exception as e:
-        st.session_state["model_loaded"] = False
-        st.error(f"Failed to load model: {e}")
+        model.to(device)
+    except Exception:
+        # ignore if model can't be moved (e.g., it's a state_dict)
+        pass
+    model.eval()
 
-# show status
-if st.session_state.get("model_loaded"):
-    st.sidebar.write("Model loaded")
-else:
-    st.sidebar.write("Model not loaded")
+    # tokenize and encode
+    tokens = clip.tokenize([text]).to(device)
+    with torch.no_grad():
+        txt_emb = model.encode_text(tokens)
+        txt_emb = txt_emb.float()
+        txt_emb = txt_emb / (txt_emb.norm(dim=-1, keepdim=True) + 1e-10)
+
+    # move to cpu and return as plain list for easy display/storage
+    emb = txt_emb[0].cpu().numpy().tolist()
+    return emb
+# --- end new ---------------------------------------------------------------
+
+# Sidebar: input controls
+st.sidebar.header("Query")
+text_query = st.sidebar.text_input("Text query")
+uploaded_file = st.sidebar.file_uploader("Upload query image", type=["jpg", "jpeg", "png"])
+top_k = st.sidebar.number_input("Top K", min_value=1, max_value=48, value=12, step=1)
+combine = st.sidebar.checkbox("Combine text + image", value=False)
+search_btn = st.sidebar.button("Search")
+
+# quick test button to get text embedding (calls the new method)
+if st.sidebar.button("Get text embedding"):
+    try:
+        emb = get_text_embedding(text_query or "test", model_path)
+        st.sidebar.success(f"Embedding length: {len(emb)}")
+        st.sidebar.write(emb[:10])  # show first 10 values
+    except Exception as e:
+        st.sidebar.error(f"Failed to get embedding: {e}")
+
+# Simple session state to hold placeholder results + feedback
+if "results" not in st.session_state:
+    st.session_state["results"] = []  # list of dict {idx, title, meta}
+if "feedback" not in st.session_state:
+    st.session_state["feedback"] = {}  # idx -> vote
+
+
+def _make_placeholder_image(text: str, size=(320, 240)):
+    img = Image.new("RGB", size, color=(200, 200, 200))
+    draw = ImageDraw.Draw(img)
+    try:
+        font = ImageFont.load_default()
+    except Exception:
+        font = None
+
+    try:
+        bbox = draw.textbbox((0, 0), text, font=font)
+        w = bbox[2] - bbox[0]
+        h = bbox[3] - bbox[1]
+    except Exception:
+        try:
+            # textlength gives width; derive height from font metrics if available
+            w = int(draw.textlength(text, font=font))
+            if font is not None and hasattr(font, "getmetrics"):
+                ascent, descent = font.getmetrics()
+                h = ascent + descent
+            else:
+                h = 11
+        except Exception:
+            # final fallback: estimate
+            w = len(text) * 6
+            h = 11
+
+    draw.text(((size[0] - w) / 2, (size[1] - h) / 2), text, fill=(60, 60, 60), font=font)
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    buf.seek(0)
+    return buf
+
+# When Search pressed, create placeholder results (backend will replace)
+if search_btn:
+    # placeholder: create top_k dummy entries
+    st.session_state["results"] = []
+    for i in range(int(top_k)):
+        st.session_state["results"].append({
+            "idx": i,
+            "title": f"Result #{i}",
+            "meta": {"dummy": True, "source": "placeholder"}
+        })
+
+# Main area: show query summary and results grid
+col_left, col_right = st.columns([3, 1])
+
+with col_left:
+    st.subheader("Query")
+    if text_query:
+        st.write("Text:", text_query)
+    if uploaded_file:
+        st.image(uploaded_file, caption="Query image", width=240)
+    if not (text_query or uploaded_file):
+        st.info("Enter a text query or upload an image, then press Search.")
+
+    st.markdown("---")
+    st.subheader("Results")
+    results = st.session_state["results"]
+    if not results:
+        st.write("No results to show (backend not connected).")
+    else:
+        cols = st.columns(4)
+        for i, item in enumerate(results):
+            c = cols[i % 4]
+            with c:
+                # image (placeholder)
+                ph = _make_placeholder_image(item["title"])
+                st.image(ph, use_container_width=True)
+                st.markdown(f"**{item['title']}**")
+                st.caption(f"idx: {item['idx']}")
+
+                # Details expander
+                with st.expander("Details"):
+                    st.json(item["meta"])
+
+                # Like / Dislike buttons store in session state
+                like_key = f"like_{item['idx']}"
+                dislike_key = f"dislike_{item['idx']}"
+                lc, rc = st.columns([1,1])
+                with lc:
+                    if st.button("Like", key=like_key):
+                        st.session_state["feedback"][str(item["idx"])] = 1
+                        st.success("Liked")
+                with rc:
+                    if st.button("Dislike", key=dislike_key):
+                        st.session_state["feedback"][str(item["idx"])] = -1
+                        st.warning("Disliked")
+
+with col_right:
+    st.subheader("Session info")
+    st.write(f"Top K selected: {top_k}")
+    st.write("Combine text+image:", combine)
+    st.markdown("**Feedback (session)**")
+    st.json(st.session_state["feedback"])
 # ...existing code...
 ```# filepath: /home/duongvct/Documents/workspace/pycharm/clip-coop-cocoop-custom/ui/main.py
 # ...existing code...
-import os
+import io
+from PIL import Image, ImageDraw, ImageFont
+import streamlit as st
 import torch
+import clip
+import os
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-CHECKPOINT_DIR = os.path.join(PROJECT_ROOT, "clip", "checkpoints")
+model_path = '/workspaces/clip-coop-cocoop-custom/clip/code/model_epoch_30.pt'
 
-@st.cache(allow_output_mutation=True)
+st.set_page_config(page_title="CLIP Demo", layout="wide")
+st.title("CLIP Image/Text Retrieval")
+
+@st.cache_resource()
 def load_model_from_path(path: str):
     """
     Load a saved PyTorch object with torch.load(path).
@@ -70,32 +242,192 @@ def load_model_from_path(path: str):
         raise FileNotFoundError(path)
     return torch.load(path, map_location="cpu")
 
-# Sidebar: model path input (no model choice UI)
-pt_candidates = []
-if os.path.isdir(CHECKPOINT_DIR):
-    pt_candidates = [os.path.join(CHECKPOINT_DIR, f) for f in os.listdir(CHECKPOINT_DIR) if f.endswith(".pt")]
-default_model_path = pt_candidates[0] if pt_candidates else ""
-
-model_path = st.sidebar.text_input("Model file path (torch.load)", value=default_model_path)
-load_model_btn = st.sidebar.button("Load model (torch.load)")
-
-if "model_loaded" not in st.session_state:
+try:
+    with st.spinner("Loading model via torch.load(...)"):
+        model_obj = load_model_from_path(model_path)
+        st.session_state["model_obj"] = model_obj
+        st.session_state["model_loaded"] = True
+        st.success(f"Loaded model object from {model_path}")
+except Exception as e:
     st.session_state["model_loaded"] = False
+    st.error(f"Failed to load model: {e}")
 
-if load_model_btn:
+# --- NEW: get_text_embedding (cached by text + model_path) -------------------
+@st.cache_data()
+def get_text_embedding(text: str, model_path_key: str):
+    """
+    Returns a normalized text embedding as a list of floats.
+
+    Assumptions:
+    - model object is stored in st.session_state['model_obj'] (loaded via torch.load).
+    - The loaded object must expose a CLIP-like API with `encode_text`.
+      If the saved object is a dict, we attempt common keys ('model','clip_model','clip').
+    - Tokenization uses clip.tokenize from the `clip` package.
+    """
+    if not text:
+        raise ValueError("text must be non-empty")
+
+    model_obj = st.session_state.get("model_obj")
+    if model_obj is None:
+        raise RuntimeError("Model not loaded into session_state['model_obj']")
+
+    # resolve underlying CLIP model that implements encode_text
+    def _resolve_model(obj):
+        if hasattr(obj, "encode_text"):
+            return obj
+        if isinstance(obj, dict):
+            for key in ("model", "clip_model", "clip"):
+                cand = obj.get(key)
+                if cand is not None and hasattr(cand, "encode_text"):
+                    return cand
+        for attr in ("model", "clip", "clip_model"):
+            cand = getattr(obj, attr, None)
+            if cand is not None and hasattr(cand, "encode_text"):
+                return cand
+        return None
+
+    model = _resolve_model(model_obj)
+    if model is None:
+        raise RuntimeError("Could not locate an object with `encode_text` in the loaded model. "
+                           "Ensure torch.load(...) returned a CLIP model or a container exposing it.")
+
+    # device selection
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     try:
-        with st.spinner("Loading model via torch.load(...)"):
-            model_obj = load_model_from_path(model_path)
-            st.session_state["model_obj"] = model_obj
-            st.session_state["model_loaded"] = True
-            st.success(f"Loaded model object from {model_path}")
-    except Exception as e:
-        st.session_state["model_loaded"] = False
-        st.error(f"Failed to load model: {e}")
+        model.to(device)
+    except Exception:
+        # ignore if model can't be moved (e.g., it's a state_dict)
+        pass
+    model.eval()
 
-# show status
-if st.session_state.get("model_loaded"):
-    st.sidebar.write("Model loaded")
-else:
-    st.sidebar.write("Model not loaded")
+    # tokenize and encode
+    tokens = clip.tokenize([text]).to(device)
+    with torch.no_grad():
+        txt_emb = model.encode_text(tokens)
+        txt_emb = txt_emb.float()
+        txt_emb = txt_emb / (txt_emb.norm(dim=-1, keepdim=True) + 1e-10)
+
+    # move to cpu and return as plain list for easy display/storage
+    emb = txt_emb[0].cpu().numpy().tolist()
+    return emb
+# --- end new ---------------------------------------------------------------
+
+# Sidebar: input controls
+st.sidebar.header("Query")
+text_query = st.sidebar.text_input("Text query")
+uploaded_file = st.sidebar.file_uploader("Upload query image", type=["jpg", "jpeg", "png"])
+top_k = st.sidebar.number_input("Top K", min_value=1, max_value=48, value=12, step=1)
+combine = st.sidebar.checkbox("Combine text + image", value=False)
+search_btn = st.sidebar.button("Search")
+
+# quick test button to get text embedding (calls the new method)
+if st.sidebar.button("Get text embedding"):
+    try:
+        emb = get_text_embedding(text_query or "test", model_path)
+        st.sidebar.success(f"Embedding length: {len(emb)}")
+        st.sidebar.write(emb[:10])  # show first 10 values
+    except Exception as e:
+        st.sidebar.error(f"Failed to get embedding: {e}")
+
+# Simple session state to hold placeholder results + feedback
+if "results" not in st.session_state:
+    st.session_state["results"] = []  # list of dict {idx, title, meta}
+if "feedback" not in st.session_state:
+    st.session_state["feedback"] = {}  # idx -> vote
+
+
+def _make_placeholder_image(text: str, size=(320, 240)):
+    img = Image.new("RGB", size, color=(200, 200, 200))
+    draw = ImageDraw.Draw(img)
+    try:
+        font = ImageFont.load_default()
+    except Exception:
+        font = None
+
+    try:
+        bbox = draw.textbbox((0, 0), text, font=font)
+        w = bbox[2] - bbox[0]
+        h = bbox[3] - bbox[1]
+    except Exception:
+        try:
+            # textlength gives width; derive height from font metrics if available
+            w = int(draw.textlength(text, font=font))
+            if font is not None and hasattr(font, "getmetrics"):
+                ascent, descent = font.getmetrics()
+                h = ascent + descent
+            else:
+                h = 11
+        except Exception:
+            # final fallback: estimate
+            w = len(text) * 6
+            h = 11
+
+    draw.text(((size[0] - w) / 2, (size[1] - h) / 2), text, fill=(60, 60, 60), font=font)
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    buf.seek(0)
+    return buf
+
+# When Search pressed, create placeholder results (backend will replace)
+if search_btn:
+    # placeholder: create top_k dummy entries
+    st.session_state["results"] = []
+    for i in range(int(top_k)):
+        st.session_state["results"].append({
+            "idx": i,
+            "title": f"Result #{i}",
+            "meta": {"dummy": True, "source": "placeholder"}
+        })
+
+# Main area: show query summary and results grid
+col_left, col_right = st.columns([3, 1])
+
+with col_left:
+    st.subheader("Query")
+    if text_query:
+        st.write("Text:", text_query)
+    if uploaded_file:
+        st.image(uploaded_file, caption="Query image", width=240)
+    if not (text_query or uploaded_file):
+        st.info("Enter a text query or upload an image, then press Search.")
+
+    st.markdown("---")
+    st.subheader("Results")
+    results = st.session_state["results"]
+    if not results:
+        st.write("No results to show (backend not connected).")
+    else:
+        cols = st.columns(4)
+        for i, item in enumerate(results):
+            c = cols[i % 4]
+            with c:
+                # image (placeholder)
+                ph = _make_placeholder_image(item["title"])
+                st.image(ph, use_container_width=True)
+                st.markdown(f"**{item['title']}**")
+                st.caption(f"idx: {item['idx']}")
+
+                # Details expander
+                with st.expander("Details"):
+                    st.json(item["meta"])
+
+                # Like / Dislike buttons store in session state
+                like_key = f"like_{item['idx']}"
+                dislike_key = f"dislike_{item['idx']}"
+                lc, rc = st.columns([1,1])
+                with lc:
+                    if st.button("Like", key=like_key):
+                        st.session_state["feedback"][str(item["idx"])] = 1
+                        st.success("Liked")
+                with rc:
+                    if st.button("Dislike", key=dislike_key):
+                        st.session_state["feedback"][str(item["idx"])] = -1
+                        st.warning("Disliked")
+
+with col_right:
+    st.subheader("Session info")
+    st.write(f"Top K selected: {top_k}")
+    st.write("Combine text+image:", combine)
+    st.markdown("**Feedback (session)**")
+    st.json(st.session_state["feedback"])
 # ...existing code...

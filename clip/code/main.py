@@ -181,44 +181,80 @@ def _make_placeholder_image(text: str, size=(320, 240)):
 # When Search pressed, create placeholder results (backend will replace)
 if search_btn:
     try:
-        similarity_scores = cal_similarity_text_with_pre_embed_image(text_query)
-        k = min(int(top_k), similarity_scores.shape[0])
-        top_k_indices = torch.topk(similarity_scores, k=k).indices.tolist()
-
-        st.session_state["results"] = []
         model_wrapper = st.session_state.get("model_obj") or model_obj
-        for rank, idx in enumerate(top_k_indices):
-            # try to resolve image path and class from the ImageFolder
-            meta: dict = {}
-            try:
-                samples = model_wrapper.train_ds.samples  # list of (path, class_idx)
-                if 0 <= idx < len(samples):
-                    img_path, cls_idx = samples[idx]
-                    cls_name = model_wrapper.train_ds.classes[cls_idx]
-                    meta["class"] = cls_name
-                    meta["img_path"] = img_path
-                    meta_path = os.path.join(DATA_DIR, cls_name, "metadata.json")
-                    if os.path.isfile(meta_path):
-                        try:
-                            with open(meta_path, "r", encoding="utf-8") as mf:
-                                class_meta = json.load(mf)
-                                meta["class_metadata"] = class_meta
-                        except Exception as e:
-                            meta["class_metadata_error"] = f"failed to load {meta_path}: {e}"
-                else:
-                    meta["note"] = "index out of range for train_ds.samples"
-            except Exception as e:
-                meta["train_ds_error"] = str(e)
+        image_embeds = model_wrapper.image_embeds  # (N, D) tensor on device
+        k = min(int(top_k), image_embeds.shape[0])
 
-            score_val = float(similarity_scores[idx].detach().cpu().item())
-            meta["similarity_score"] = score_val
-            meta["source"] = "calculated"
+        sim_text = None
+        sim_img = None
 
-            st.session_state["results"].append({
-                "idx": idx,
-                "title": f"Result #{rank + 1} (img idx {idx})",
-                "meta": meta
-            })
+        # compute text similarity (if text provided)
+        if text_query:
+            text_emb_np = get_text_embedding(text_query)  # numpy array on CPU
+            text_t = torch.tensor(text_emb_np, device=image_embeds.device, dtype=image_embeds.dtype)
+            text_t = text_t.unsqueeze(-1)  # (D,1)
+            with torch.no_grad():
+                sim_text = (image_embeds @ text_t).squeeze(-1)  # (N,)
+
+        # compute similarity between uploaded image and pre-embedded images (if image provided)
+        if uploaded_file is not None:
+            img_bytes = uploaded_file.getvalue()
+            img_emb_np = get_image_embedding(img_bytes)  # numpy array on CPU
+            img_t = torch.tensor(img_emb_np, device=image_embeds.device, dtype=image_embeds.dtype)
+            img_t = img_t.unsqueeze(-1)  # (D,1)
+            with torch.no_grad():
+                sim_img = (image_embeds @ img_t).squeeze(-1)  # (N,)
+
+        # decide final scores
+        if combine and (sim_text is not None) and (sim_img is not None):
+            # average the two similarity vectors
+            final_scores = (sim_text + sim_img) / 2.0
+        elif sim_text is not None:
+            final_scores = sim_text
+        elif sim_img is not None:
+            final_scores = sim_img
+        else:
+            st.error("Provide a text query and/or an uploaded image to search.")
+            final_scores = None
+
+        # build results from final_scores
+        if final_scores is not None:
+            top_k_indices = torch.topk(final_scores, k=k).indices.tolist()
+            st.session_state["results"] = []
+            samples = model_wrapper.train_ds.samples  # list of (path, class_idx)
+            classes = model_wrapper.train_ds.classes
+            for rank, idx in enumerate(top_k_indices):
+                meta: dict = {}
+                try:
+                    if 0 <= idx < len(samples):
+                        img_path, cls_idx = samples[idx]
+                        cls_name = classes[cls_idx]
+                        meta["class"] = cls_name
+                        meta["img_path"] = img_path
+                        meta_path = os.path.join(DATA_DIR, cls_name, "metadata.json")
+                        if os.path.isfile(meta_path):
+                            try:
+                                with open(meta_path, "r", encoding="utf-8") as mf:
+                                    class_meta = json.load(mf)
+                                    meta["class_metadata"] = class_meta
+                            except Exception as e:
+                                meta["class_metadata_error"] = f"failed to load {meta_path}: {e}"
+                    else:
+                        meta["note"] = "index out of range for train_ds.samples"
+                except Exception as e:
+                    meta["train_ds_error"] = str(e)
+
+                # detach and convert score to float
+                score_val = float(final_scores[idx].detach().cpu().item())
+                meta["similarity_score"] = score_val
+                meta["source"] = "combined" if (combine and sim_text is not None and sim_img is not None) else ("text" if sim_text is not None else "image")
+
+                st.session_state["results"].append({
+                    "idx": idx,
+                    "title": f"Result #{rank + 1} (img idx {idx})",
+                    "meta": meta
+                })
+
     except Exception as e:
         st.error(f"Failed computing similarity / building results: {e}")
 
@@ -253,14 +289,14 @@ for i, item in enumerate(results):
             try:
                 img = Image.open(img_path).convert("RGB")
                 img.thumbnail((640, 640))
-                st.image(img, caption=title, use_container_width=True)
+                st.image(img, caption=title, width = 'stretch')
                 shown = True
             except Exception as e:
                 st.warning(f"Failed to open image {img_path}: {e}")
 
         if not shown:
             ph = _make_placeholder_image(title)
-            st.image(ph, caption=title, use_container_width=True)
+            st.image(ph, caption=title, width = 'stretch')
 
         # show title and index
         st.markdown(f"**{item['title']}**")

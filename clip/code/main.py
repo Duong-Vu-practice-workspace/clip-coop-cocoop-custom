@@ -116,26 +116,6 @@ top_k = st.sidebar.number_input("Top K", min_value=1, max_value=48, value=12, st
 combine = st.sidebar.checkbox("Combine text + image", value=False)
 search_btn = st.sidebar.button("Search")
 
-# quick test button to get text embedding (calls the new method)
-if st.sidebar.button("Get text embedding"):
-    try:
-        emb = get_text_embedding(text_query or "test")
-        st.sidebar.success(f"Embedding length: {len(emb)}")
-    except Exception as e:
-        st.sidebar.error(f"Failed to get embedding: {e}")
-
-if st.sidebar.button("Get image embedding"):
-    try:
-        if uploaded_file is None:
-            st.sidebar.error("Upload an image first.")
-        else:
-            # UploadedFile: read bytes and pass to cached function
-            img_bytes = uploaded_file.getvalue()
-            img_emb = get_image_embedding(img_bytes)
-            st.sidebar.success(f"Image embedding length: {len(img_emb)}")
-    except Exception as e:
-        st.sidebar.error(f"Failed to get image embedding: {e}")
-
 # Simple session state to hold placeholder results + feedback
 if "results" not in st.session_state:
     st.session_state["results"] = []  # list of dict {idx, title, meta}

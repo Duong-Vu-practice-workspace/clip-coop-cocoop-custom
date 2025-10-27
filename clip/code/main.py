@@ -4,7 +4,7 @@ import streamlit as st
 import torch
 import clip
 import os
-
+import time
 from config import get_cfg_defaults
 
 from CustomCLIPCoOp import CustomCLIPCoOp
@@ -85,6 +85,47 @@ def get_text_embedding(text: str, model_key: str = None):
 
     return txt_emb[0].cpu().numpy().tolist()
 
+@st.cache_data()
+def get_image_embedding(image_bytes: bytes):
+    """
+    Compute normalized CLIP image embedding from raw image bytes.
+    Returns embedding as Python list (floats).
+    """
+    if not image_bytes:
+        raise ValueError("no image bytes provided")
+
+    # ensure model loaded
+    model_wrapper = st.session_state.get("model_obj")
+    if model_wrapper is None:
+        raise RuntimeError("Model not loaded (st.session_state['model_obj'] missing)")
+
+    # assume Clip wrapper: underlying CLIP model at .model and preprocess at .preprocess
+    clip_model = getattr(model_wrapper, "model", model_wrapper)
+    preprocess = getattr(model_wrapper, "preprocess", None)
+    if preprocess is None:
+        raise RuntimeError("Loaded model wrapper does not provide preprocess function")
+
+    if not hasattr(clip_model, "encode_image"):
+        raise RuntimeError("Loaded object does not expose encode_image; expected CLIP model")
+
+    # open image from bytes (PIL)
+    img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    try:
+        clip_model.to(device)
+    except Exception:
+        pass
+    clip_model.eval()
+
+    # preprocess -> tensor batch
+    img_t = preprocess(img).unsqueeze(0).to(device)
+    with torch.no_grad():
+        img_emb = clip_model.encode_image(img_t).float()
+        img_emb = img_emb / (img_emb.norm(dim=-1, keepdim=True) + 1e-10)
+
+    return img_emb[0].cpu().numpy().tolist()
+
 # Sidebar: input controls
 st.sidebar.header("Query")
 text_query = st.sidebar.text_input("Text query")
@@ -101,6 +142,23 @@ if st.sidebar.button("Get text embedding"):
     except Exception as e:
         st.sidebar.error(f"Failed to get embedding: {e}")
 
+if st.sidebar.button("Get image embedding"):
+    try:
+        if uploaded_file is None:
+            st.sidebar.error("Upload an image first.")
+        else:
+            # UploadedFile: read bytes and pass to cached function
+            img_bytes = uploaded_file.getvalue()
+            img_emb = get_image_embedding(img_bytes)
+            st.sidebar.success(f"Image embedding length: {len(img_emb)}")
+            st.sidebar.write(img_emb[:10])
+            # optional: save embedding file next to model
+            out_name = f"image_emb_{int(time.time())}.pt"
+            out_path = os.path.join(os.path.dirname(model_path), out_name)
+            torch.save(torch.tensor(img_emb), out_path)
+            st.sidebar.info(f"Saved embedding to {out_path}")
+    except Exception as e:
+        st.sidebar.error(f"Failed to get image embedding: {e}")
 
 # Simple session state to hold placeholder results + feedback
 if "results" not in st.session_state:

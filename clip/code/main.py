@@ -4,11 +4,9 @@ import streamlit as st
 import torch
 import clip
 import os
-import time
 import json
 from config import get_cfg_defaults
 from torchvision.datasets import ImageFolder
-from CustomCLIPCoOp import CustomCLIPCoOp
 
 model_path = '/workspaces/clip-coop-cocoop-custom/clip/code/model_epoch_30.pt'
 image_embed_path = '/workspaces/clip-coop-cocoop-custom/clip/code/vit_image_embs.pt'
@@ -18,7 +16,7 @@ st.title("CLIP Image/Text Retrieval")
 cfg = get_cfg_defaults()
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model_name = "ViT-B/16"
-DATA_DIR = "/workspaces/clip-coop-cocoop-custom/Dataset"  # change to your path mounted or uploaded
+DATA_DIR = "/workspaces/clip-coop-cocoop-custom/Dataset"  
 
 class Clip:
     def __init__(self):
@@ -46,15 +44,6 @@ def load_model_from_path(path: str):
     model = Clip()
     return model
     
-
-try:
-    with st.spinner("Loading model via torch.load(...)"):
-        model_obj = load_model_from_path(model_path)
-        st.session_state["model_obj"] = model_obj
-        st.session_state["model_loaded"] = True
-except Exception as e:
-    st.session_state["model_loaded"] = False
-    st.error(f"Failed to load model: {e}")
 
 @st.cache_data()
 def get_text_embedding(text: str, model_key: str = None):
@@ -103,9 +92,7 @@ def get_image_embedding(image_bytes: bytes):
     if not hasattr(clip_model, "encode_image"):
         raise RuntimeError("Loaded object does not expose encode_image; expected CLIP model")
 
-    # open image from bytes (PIL)
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-    # preprocess -> tensor batch
     img_t = preprocess(img).unsqueeze(0).to(device)
     with torch.no_grad():
         img_emb = clip_model.encode_image(img_t).float()
@@ -128,6 +115,15 @@ def cal_similarity_text_with_pre_embed_image(text: str):
     # ensure float32 on CPU for downstream use if desired
     return similarity_scores
 
+try:
+    with st.spinner("Loading model via torch.load(...)"):
+        model_obj = load_model_from_path(model_path)
+        st.session_state["model_obj"] = model_obj
+        st.session_state["model_loaded"] = True
+except Exception as e:
+    st.session_state["model_loaded"] = False
+    st.error(f"Failed to load model: {e}")
+
 # Sidebar: input controls
 st.sidebar.header("Query")
 text_query = st.sidebar.text_input("Text query")
@@ -141,44 +137,10 @@ search_btn = st.sidebar.button("Search")
 
 # Simple session state to hold placeholder results + feedback
 if "results" not in st.session_state:
-    st.session_state["results"] = []  # list of dict {idx, title, meta}
+    st.session_state["results"] = []
 if "feedback" not in st.session_state:
-    st.session_state["feedback"] = {}  # idx -> vote
-
-
-def _make_placeholder_image(text: str, size=(320, 240)):
-    img = Image.new("RGB", size, color=(200, 200, 200))
-    draw = ImageDraw.Draw(img)
-    try:
-        font = ImageFont.load_default()
-    except Exception:
-        font = None
-
-    try:
-        bbox = draw.textbbox((0, 0), text, font=font)
-        w = bbox[2] - bbox[0]
-        h = bbox[3] - bbox[1]
-    except Exception:
-        try:
-            # textlength gives width; derive height from font metrics if available
-            w = int(draw.textlength(text, font=font))
-            if font is not None and hasattr(font, "getmetrics"):
-                ascent, descent = font.getmetrics()
-                h = ascent + descent
-            else:
-                h = 11
-        except Exception:
-            # final fallback: estimate
-            w = len(text) * 6
-            h = 11
-
-    draw.text(((size[0] - w) / 2, (size[1] - h) / 2), text, fill=(60, 60, 60), font=font)
-    buf = io.BytesIO()
-    img.save(buf, format="PNG")
-    buf.seek(0)
-    return buf
-
-# When Search pressed, create placeholder results (backend will replace)
+    st.session_state["feedback"] = {}
+# When Search pressed
 if search_btn:
     try:
         model_wrapper = st.session_state.get("model_obj") or model_obj
@@ -258,7 +220,6 @@ if search_btn:
     except Exception as e:
         st.error(f"Failed computing similarity / building results: {e}")
 
-# Main area: show query summary and results grid
 col_left, col_right = st.columns([6, 1])
 
 with col_left:
@@ -280,7 +241,6 @@ with col_left:
 for i, item in enumerate(results):
     c = cols[i % 2]
     with c:
-        # Try show the real image from the ImageFolder sample path
         img_path = item["meta"].get("img_path")
         score = item["meta"].get("similarity_score")
         title = f"{item['title']} — score: {score:.3f}" if score is not None else item["title"]
@@ -294,26 +254,15 @@ for i, item in enumerate(results):
             except Exception as e:
                 st.warning(f"Failed to open image {img_path}: {e}")
 
-        if not shown:
-            ph = _make_placeholder_image(title)
-            st.image(ph, caption=title, width = 'stretch')
-
-        # show title and index
         st.markdown(f"**{item['title']}**")
         st.caption(f"idx: {item['idx']}")
 
-        # show metadata in an expander (bigger, readable)
         with st.expander("View metadata (click to expand)"):
             class_meta = item["meta"].get("class_metadata")
             if class_meta is not None:
                 st.markdown("**Class metadata**")
                 st.json(class_meta)
-            other_meta = {k: v for k, v in item["meta"].items() if k != "class_metadata"}
-            if other_meta:
-                st.markdown("**Other metadata**")
-                st.json(other_meta)
 
-        # Like / Dislike buttons store in session state
         like_key = f"like_{item['idx']}"
         dislike_key = f"dislike_{item['idx']}"
         lc, rc = st.columns([1,1])

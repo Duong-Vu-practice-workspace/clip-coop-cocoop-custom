@@ -197,7 +197,6 @@ if search_btn:
                     cls_name = model_wrapper.train_ds.classes[cls_idx]
                     meta["class"] = cls_name
                     meta["img_path"] = img_path
-                    # attempt to load per-class metadata.json from DATA_DIR/<class>/metadata.json
                     meta_path = os.path.join(DATA_DIR, cls_name, "metadata.json")
                     if os.path.isfile(meta_path):
                         try:
@@ -242,37 +241,54 @@ with col_left:
         st.write("No results to show (backend not connected).")
     else:
         cols = st.columns(2)
-        for i, item in enumerate(results):
-            c = cols[i % 2]
-            with c:
-                # show image placeholder (or real thumbnail if you want)
-                ph = _make_placeholder_image(item["title"])
-                st.image(ph, use_container_width=True)
-                st.markdown(f"**{item['title']}**")
-                st.caption(f"idx: {item['idx']}")
+for i, item in enumerate(results):
+    c = cols[i % 2]
+    with c:
+        # Try show the real image from the ImageFolder sample path
+        img_path = item["meta"].get("img_path")
+        score = item["meta"].get("similarity_score")
+        title = f"{item['title']} — score: {score:.3f}" if score is not None else item["title"]
+        shown = False
+        if img_path:
+            try:
+                img = Image.open(img_path).convert("RGB")
+                img.thumbnail((640, 640))
+                st.image(img, caption=title, use_container_width=True)
+                shown = True
+            except Exception as e:
+                st.warning(f"Failed to open image {img_path}: {e}")
 
-                # show a "View metadata" button that expands inline when clicked
-                view_key = f"view_meta_{item['idx']}"
-                if st.button("View metadata", key=view_key):
-                    st.session_state["view_meta"] = item["meta"]
+        if not shown:
+            ph = _make_placeholder_image(title)
+            st.image(ph, caption=title, use_container_width=True)
 
-                # if metadata for this item is the currently selected, show it prominently
-                if st.session_state.get("view_meta") and st.session_state["view_meta"].get("img_path", None) == item["meta"].get("img_path", None):
-                    st.markdown("**Class metadata**")
-                    st.json(st.session_state["view_meta"])
+        # show title and index
+        st.markdown(f"**{item['title']}**")
+        st.caption(f"idx: {item['idx']}")
 
-                # Like / Dislike buttons store in session state
-                like_key = f"like_{item['idx']}"
-                dislike_key = f"dislike_{item['idx']}"
-                lc, rc = st.columns([1,1])
-                with lc:
-                    if st.button("Like", key=like_key):
-                        st.session_state["feedback"][str(item["idx"])] = 1
-                        st.success("Liked")
-                with rc:
-                    if st.button("Dislike", key=dislike_key):
-                        st.session_state["feedback"][str(item["idx"])] = -1
-                        st.warning("Disliked")
+        # show metadata in an expander (bigger, readable)
+        with st.expander("View metadata (click to expand)"):
+            class_meta = item["meta"].get("class_metadata")
+            if class_meta is not None:
+                st.markdown("**Class metadata**")
+                st.json(class_meta)
+            other_meta = {k: v for k, v in item["meta"].items() if k != "class_metadata"}
+            if other_meta:
+                st.markdown("**Other metadata**")
+                st.json(other_meta)
+
+        # Like / Dislike buttons store in session state
+        like_key = f"like_{item['idx']}"
+        dislike_key = f"dislike_{item['idx']}"
+        lc, rc = st.columns([1,1])
+        with lc:
+            if st.button("Like", key=like_key):
+                st.session_state["feedback"][str(item["idx"])] = 1
+                st.success("Liked")
+        with rc:
+            if st.button("Dislike", key=dislike_key):
+                st.session_state["feedback"][str(item["idx"])] = -1
+                st.warning("Disliked")
 
 with col_right:
     st.subheader("Session info")

@@ -11,7 +11,7 @@ from my_config import INDEX_FILE, LORA_MODEL_DIR, PROMPTS_FILE, ROOT_DIR, device
 from utils import change_root_dir
 import torch.nn.functional as F
 import io
-
+from utils import format_metadata_readable
 # Load embeddings and image paths (these are the indexed images)
 embeddings = np.load(os.path.join(ROOT_DIR, 'original_embeddings.npy'))
 img_paths_aug = np.load(os.path.join(ROOT_DIR, 'original_image_paths.npy'))
@@ -189,20 +189,10 @@ if search_btn:
             text_emb = _text_embedding(model, text_query)
         if uploaded_file is not None:
             img_bytes = uploaded_file.getvalue()
-            img_loaded = None
-            if isinstance(img_bytes, (bytes, bytearray)):
-                img_loaded = Image.open(io.BytesIO(img_bytes)).convert("RGB")
-            elif isinstance(img_bytes, io.BytesIO):
-                img_loaded = Image.open(img_bytes).convert("RGB")
-            elif isinstance(query, Image.Image):
-                img_loaded = _image_embedding(model, query, preprocess)
+            img_loaded = Image.open(io.BytesIO(img_bytes)).convert("RGB")
             
         query = text_query if text_query else img_loaded
         indices, sims, paths = get_topk_results(query, model, index, img_paths_aug, embeddings, k=top_k)
-        
-        # else:
-        #     st.error("Provide a text query and/or an uploaded image to search.")
-        #     indices, sims, paths = [], [], []
 
         st.session_state["results"] = []
 
@@ -292,22 +282,7 @@ with col_left:
                 with st.expander("View metadata (click to expand)"):
                     class_meta = item["meta"].get("class_metadata")
                     if class_meta is not None:
-                        st.json(class_meta)
-
-                    image_meta = item["meta"].get("image_metadata")
-                    if image_meta is not None:
-                        st.markdown("**Image metadata (basename.json)**")
-                        st.json(image_meta)
-
-                    prompt_meta = item["meta"].get("prompt_entry")
-                    if prompt_meta is not None:
-                        st.markdown("**Prompt / annotation entry**")
-                        st.json(prompt_meta)
-
-                    label_from_prompts = item["meta"].get("label_from_prompts")
-                    if label_from_prompts is not None:
-                        st.markdown(f"**Label (from prompts):** {label_from_prompts}")
-
+                        st.markdown("\n".join(format_metadata_readable(class_meta)))
                 like_key = f"like_{item['idx']}"
                 dislike_key = f"dislike_{item['idx']}"
                 lc, rc = st.columns([1, 1])

@@ -116,9 +116,8 @@ def _image_embedding(model, pil_image, preprocess):
 
 def get_topk_results(query, model, index, image_paths, embeddings_matrix, k=6):
     model.eval()
-    if isinstance(query, str) and os.path.exists(query):
-      image_path = query
-      image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
+    if not isinstance(query, str):
+      image = preprocess(query).unsqueeze(0).to(device)
       with torch.no_grad():
         emb = model.encode_image(image)
         emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
@@ -185,13 +184,20 @@ if search_btn:
 
         # compute embeddings / similarities
         text_emb = None
-        img_emb = None
+        img_loaded = None
         if text_query:
             text_emb = _text_embedding(model, text_query)
         if uploaded_file is not None:
             img_bytes = uploaded_file.getvalue()
+            img_loaded = None
+            if isinstance(img_bytes, (bytes, bytearray)):
+                img_loaded = Image.open(io.BytesIO(img_bytes)).convert("RGB")
+            elif isinstance(img_bytes, io.BytesIO):
+                img_loaded = Image.open(img_bytes).convert("RGB")
+            elif isinstance(query, Image.Image):
+                img_loaded = _image_embedding(model, query, preprocess)
             
-        query = text_query if text_query else io.BytesIO(img_bytes)
+        query = text_query if text_query else img_loaded
         indices, sims, paths = get_topk_results(query, model, index, img_paths_aug, embeddings, k=top_k)
         
         # else:

@@ -1,0 +1,14 @@
+{
+  "model_name": "ViT-B/32",
+  "batch_size": 64,
+  "num_epochs": 1,
+  "learning_rate": 1e-05,
+  "temperature": 0.07,
+  "num_augmentations": 3,
+  "lora_r": 64,
+  "lora_alpha": 128,
+  "lora_dropout": 0.1,
+  "random_seed": 42,
+  "train_size": 18830,
+  "val_size": 4035
+}

@@ -10,11 +10,12 @@ from faiss_index import create_faiss_index, load_faiss_index
 from my_config import INDEX_FILE, LORA_MODEL_DIR, PROMPTS_FILE, ROOT_DIR, device
 from utils import change_root_dir
 import torch.nn.functional as F
+
 # Load embeddings and image paths
 embeddings = np.load(os.path.join(ROOT_DIR, 'original_embeddings.npy'))
 img_paths_aug = np.load(os.path.join(ROOT_DIR, 'original_image_paths.npy'))
 img_paths_aug = [change_root_dir(path) for path in img_paths_aug]
-# print(img_paths_aug[:5])
+
 # Create / load index
 create_faiss_index(embeddings, img_paths_aug, INDEX_FILE)
 index, image_paths_index = load_faiss_index(INDEX_FILE)
@@ -23,23 +24,62 @@ index, image_paths_index = load_faiss_index(INDEX_FILE)
 with open(PROMPTS_FILE, 'r', encoding='utf-8') as f:
     prompts = json.load(f)
 
-image_paths = [p['img_path'] for p in prompts]
-image_paths = [change_root_dir(path) for path in image_paths]
+# Normalize prompt paths and build quick lookups
+image_paths = [change_root_dir(p.get('img_path') or p.get('image') or p.get('path', '')) for p in prompts]
 labels = [p.get('binomial_name') for p in prompts]
+
+PROMPT_BY_PATH = {}
+PROMPT_BY_BASENAME = {}
+for p in prompts:
+    ip = change_root_dir(p.get('img_path') or p.get('image') or p.get('path', ''))
+    if ip:
+        PROMPT_BY_PATH[ip] = p
+        PROMPT_BY_BASENAME[os.path.basename(ip)] = p
+
+def _get_class_metadata_for_path(img_path):
+    """
+    Try to find a class-level metadata.json in the parent folder of img_path.
+    Returns dict or None.
+    """
+    try:
+        parent = os.path.dirname(img_path)
+        meta_path = os.path.join(parent, "metadata.json")
+        if os.path.isfile(meta_path):
+            with open(meta_path, "r", encoding="utf-8") as mf:
+                return json.load(mf)
+    except Exception:
+        return None
+    return None
+
+def _get_image_metadata(img_path):
+    """
+    Try to load a per-image JSON alongside the image (same basename .json).
+    """
+    try:
+        jpath = os.path.splitext(img_path)[0] + ".json"
+        if os.path.isfile(jpath):
+            with open(jpath, "r", encoding="utf-8") as jf:
+                return json.load(jf)
+    except Exception:
+        return None
+    return None
+
 def get_topk_results(query, model, index, image_paths, embeddings_matrix, k=6):
     model.eval()
     if isinstance(query, str) and os.path.exists(query):
-      image_path = query
-      image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
-      with torch.no_grad():
-        emb = model.encode_image(image)
-        emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
+        image_path = query
+        preprocess = st.session_state.get("preprocess")
+        if preprocess is None:
+            raise RuntimeError("preprocess is not available in session state")
+        image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
+        with torch.no_grad():
+            emb = model.encode_image(image)
+            emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
     else:
-      toks = clip.tokenize([query], truncate=True).to(device)
-      with torch.no_grad():
-          emb = model.encode_text(toks)
-          emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
-
+        toks = clip.tokenize([query], truncate=True).to(device)
+        with torch.no_grad():
+            emb = model.encode_text(toks)
+            emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
 
     D, I = index.search(emb, k)
     indices = [int(x) for x in I[0]]
@@ -53,6 +93,7 @@ def get_topk_results(query, model, index, image_paths, embeddings_matrix, k=6):
     paths = [image_paths[idx] for idx in indices]
 
     return indices, sims, paths
+
 st.set_page_config(page_title="CLIP Demo", layout="wide")
 st.title("CLIP Image/Text Retrieval")
 
@@ -101,6 +142,8 @@ if search_btn:
         indices, sims, paths = [], [], []
         if text_query:
             indices, sims, paths = get_topk_results(text_query, model, index, image_paths, embeddings_matrix=embeddings, k=top_k)
+            st.success(f"Text query found {len(indices)} results.")
+            st.success(f"Top text similarity scores: {[round(s, 4) for s in sims]}")
             sim_text = (indices, sims, paths)
 
         st.session_state["results"] = []
@@ -112,6 +155,7 @@ if search_btn:
                 "img_path": path,
                 "source": "combined" if (combine and sim_text is not None and sim_img is not None) else ("text" if sim_text is not None else "image")
             }
+
             # Attach label if available in prompts/labels
             try:
                 if image_paths and labels:
@@ -124,7 +168,28 @@ if search_btn:
                     meta["label"] = os.path.splitext(os.path.basename(path))[0]
             except Exception:
                 meta["label"] = os.path.splitext(os.path.basename(path))[0]
-            st.success(meta)
+
+            # Attach class-level metadata (metadata.json in parent folder)
+            class_meta = _get_class_metadata_for_path(path)
+            if class_meta is not None:
+                meta["class_metadata"] = class_meta
+
+            # Attach per-image metadata (image.json next to image)
+            image_meta = _get_image_metadata(path)
+            if image_meta is not None:
+                meta["image_metadata"] = image_meta
+
+            # Attach prompt / annotation entry if available
+            prompt_entry = PROMPT_BY_PATH.get(path)
+            if prompt_entry is None:
+                prompt_entry = PROMPT_BY_BASENAME.get(os.path.basename(path))
+            if prompt_entry is not None:
+                meta["prompt_entry"] = prompt_entry
+                if "binomial_name" in prompt_entry:
+                    meta["label_from_prompts"] = prompt_entry["binomial_name"]
+                elif "label" in prompt_entry:
+                    meta["label_from_prompts"] = prompt_entry["label"]
+
             st.session_state["results"].append({
                 "idx": int(idx),
                 "title": f"Result #{rank + 1} {meta.get('label', '')}",
@@ -176,6 +241,16 @@ with col_left:
                     if class_meta is not None:
                         st.markdown("**Class metadata**")
                         st.json(class_meta)
+
+                    image_meta = item["meta"].get("image_metadata")
+                    if image_meta is not None:
+                        st.markdown("**Image metadata**")
+                        st.json(image_meta)
+
+                    prompt_meta = item["meta"].get("prompt_entry")
+                    print(prompt_meta.get('text'))
+                    if prompt_meta is not None:
+                        st.markdown(prompt_meta.get("text"))
 
                 like_key = f"like_{item['idx']}"
                 dislike_key = f"dislike_{item['idx']}"

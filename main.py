@@ -282,7 +282,7 @@ with col_left:
                 with st.expander("View metadata (click to expand)"):
                     class_meta = item["meta"].get("class_metadata")
                     if class_meta is not None:
-                        st.markdown("\n".join(format_metadata_readable(class_meta)))
+                        st.markdown("\\\n".join(format_metadata_readable(class_meta)))
                 like_key = f"like_{item['idx']}"
                 dislike_key = f"dislike_{item['idx']}"
                 lc, rc = st.columns([1, 1])

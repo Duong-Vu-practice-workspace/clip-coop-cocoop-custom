@@ -1,4 +1,5 @@
 from PIL import Image
+from get_results import _encode_text_with_templates
 import streamlit as st
 import torch
 import clip
@@ -7,15 +8,15 @@ import json
 import numpy as np
 from peft import PeftModel
 from faiss_index import create_faiss_index, load_faiss_index
-from my_config import INDEX_FILE, LORA_MODEL_DIR, LORA_MODEL_DIR_DAI, PROMPTS_FILE, ROOT_DIR, TRINH_PATH, INDEX_FILE_DAI, device
+from my_config import DAI_MODEL, INDEX_FILE, LORA_MODEL_DIR, LORA_MODEL_DIR_DAI, PHONG_MODEL, PROMPTS_FILE, ROOT_DIR, TRINH_MODEL, TRINH_PATH, INDEX_FILE_DAI, device
 from utils import change_root_dir, _get_class_metadata_for_path
 import torch.nn.functional as F
 import io
 from utils import format_metadata_readable
 import hybrid_search_model as hsm
 # Load embeddings and image paths (these are the indexed images)
-embeddings = np.load(os.path.join(ROOT_DIR, 'original_embeddings.npy'))
-img_paths_aug = np.load(os.path.join(ROOT_DIR, 'original_image_paths.npy'))
+embeddings = np.load(os.path.join(ROOT_DIR, 'new_embeddings.npy'))
+img_paths_aug = np.load(os.path.join(ROOT_DIR, 'new_image_paths.npy'))
 img_paths_aug = [change_root_dir(path) for path in img_paths_aug]
 
 index = None
@@ -38,19 +39,18 @@ prompt_labels = [p.get('binomial_name') for p in _prompts]
 def load_resources():
     return hsm.load_all_resources()
 resources = load_resources()
+
+
 def get_topk_results(query, model, index, image_paths, embeddings_matrix, k=6):
     model.eval()
-    if not isinstance(query, str):
-      image = preprocess(query).unsqueeze(0).to(device)
+    if isinstance(query, str) and os.path.exists(query):
+      image_path = query
+      image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
       with torch.no_grad():
         emb = model.encode_image(image)
         emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
     else:
-      toks = clip.tokenize([query], truncate=True).to(device)
-      with torch.no_grad():
-          emb = model.encode_text(toks)
-          emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
-
+      emb = _encode_text_with_templates(model, query, device)
 
     D, I = index.search(emb, k)
     indices = [int(x) for x in I[0]]
@@ -76,15 +76,18 @@ def load_model_by_name(model_name: str):
     """
     base_model, preprocess = clip.load("ViT-B/32", device=device)
     model = None
-    if model_name == "CLIP + LoRA (Đ)":
+    if model_name == DAI_MODEL:
         model = PeftModel.from_pretrained(base_model, LORA_MODEL_DIR_DAI)
-    elif model_name == "CLIP + LoRA (P)":
+    elif model_name == PHONG_MODEL:
         model = PeftModel.from_pretrained(base_model, LORA_MODEL_DIR)
-    elif model_name == "CLIP + reranking":
+        model.set_adapter('default')
+        if hasattr(model, "enable_adapter_layers"):
+            model.enable_adapter_layers()
+    elif model_name == TRINH_MODEL:
         model = base_model
     else:
         raise ValueError(f"Unknown model name: {model_name}")
-
+    
     if model is not None:
         try:
             model = model.to(device)
@@ -106,7 +109,7 @@ uploaded_file = st.sidebar.file_uploader("Upload query image", type=["jpg", "jpe
 top_k = st.sidebar.number_input("Top K", min_value=1, max_value=48, value=12, step=1)
 search_btn = st.sidebar.button("Search")
 # Add combobox (selectbox) for base CLIP model selection
-model_options = ["CLIP + LoRA (Đ)", "CLIP + LoRA (P)", "CLIP + reranking"]
+model_options = [PHONG_MODEL, DAI_MODEL, TRINH_MODEL]
 selected_model = st.sidebar.selectbox("Model", model_options, index=0)
 st.session_state["selected_model"] = selected_model
 # Create / load index
@@ -188,9 +191,6 @@ if search_btn:
             preprocess = st.session_state.get("preprocess") or preprocess
             query = text_query if text_query else img_loaded
             indices, sims, paths = get_topk_results(query, model, index, image_paths_index, embeddings, k=top_k)
-
-            
-
             # Build results from indices, sims and paths returned by get_topk_results
             for rank, (idx, sim, path) in enumerate(zip(indices, sims, paths)):
                 meta = {

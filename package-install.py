@@ -13,7 +13,10 @@ packages = [
     'numpy',
     'matplotlib',
     'deep-translator',
-    'sentence_transformers'
+    'sentence_transformers',
+    'clip',
+    'streamlit',
+    'pillow'
 ]
 
 for package in packages:

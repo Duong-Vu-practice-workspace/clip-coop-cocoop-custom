@@ -7,12 +7,12 @@ import json
 import numpy as np
 from peft import PeftModel
 from faiss_index import create_faiss_index, load_faiss_index
-from my_config import INDEX_FILE, LORA_MODEL_DIR, LORA_MODEL_DIR_DAI, PROMPTS_FILE, ROOT_DIR, INDEX_FILE_DAI, device
+from my_config import INDEX_FILE, LORA_MODEL_DIR, LORA_MODEL_DIR_DAI, PROMPTS_FILE, ROOT_DIR, TRINH_PATH, INDEX_FILE_DAI, device
 from utils import change_root_dir, _get_class_metadata_for_path
 import torch.nn.functional as F
 import io
 from utils import format_metadata_readable
-
+import hybrid_search_model as hsm
 # Load embeddings and image paths (these are the indexed images)
 embeddings = np.load(os.path.join(ROOT_DIR, 'original_embeddings.npy'))
 img_paths_aug = np.load(os.path.join(ROOT_DIR, 'original_image_paths.npy'))
@@ -34,7 +34,10 @@ prompt_labels = [p.get('binomial_name') for p in _prompts]
 
 
 
-
+@st.cache_resource
+def load_resources():
+    return hsm.load_all_resources()
+resources = load_resources()
 def get_topk_results(query, model, index, image_paths, embeddings_matrix, k=6):
     model.eval()
     if not isinstance(query, str):
@@ -78,11 +81,9 @@ def load_model_by_name(model_name: str):
     elif model_name == "CLIP + LoRA (P)":
         model = PeftModel.from_pretrained(base_model, LORA_MODEL_DIR)
     elif model_name == "CLIP + reranking":
-        # use base CLIP without LoRA
         model = base_model
     else:
-        # unknown model name -> return base
-        model = base_model
+        raise ValueError(f"Unknown model name: {model_name}")
 
     if model is not None:
         try:
@@ -137,6 +138,7 @@ elif selected_model in ["CLIP + LoRA (P)"]:
     index, image_paths_index = load_faiss_index(INDEX_FILE)
 
 
+
 # ensure local references used below come from session_state
 model = st.session_state.get("model_obj")
 preprocess = st.session_state.get("preprocess")
@@ -150,43 +152,65 @@ if "feedback" not in st.session_state:
 
 # When Search pressed
 if search_btn:
-    try:
-        model = st.session_state.get("model_obj") or model_obj
-        preprocess = st.session_state.get("preprocess") or preprocess
-        img_loaded = None
-        if uploaded_file is not None:
-            img_bytes = uploaded_file.getvalue()
-            img_loaded = Image.open(io.BytesIO(img_bytes)).convert("RGB")
-            
-        query = text_query if text_query else img_loaded
-        indices, sims, paths = get_topk_results(query, model, index, image_paths_index, embeddings, k=top_k)
-
-        st.session_state["results"] = []
-
-        # Build results from indices, sims and paths returned by get_topk_results
-        for rank, (idx, sim, path) in enumerate(zip(indices, sims, paths)):
+    img_loaded = None
+    img_bytes = None
+    if uploaded_file is not None:
+        img_bytes = uploaded_file.getvalue()
+        img_loaded = Image.open(io.BytesIO(img_bytes)).convert("RGB")
+    st.session_state["results"] = []
+    if selected_model == "CLIP + reranking":
+        
+        reranking_results = None
+        if text_query:
+            reranking_results = hsm.search_by_text(text_query, resources, top_k=top_k)
+        elif img_loaded is not None:
+            print("Performing image-based search with reranking...")
+            reranking_results = hsm.search_by_image(io.BytesIO(img_bytes), resources, top_k=top_k)
+        for rank, path in enumerate(reranking_results):
             meta = {
-                "similarity_score": float(sim),
+                "similarity_score": None,
                 "img_path": path
             }
-
+            path = os.path.join(TRINH_PATH, path)
             class_meta = _get_class_metadata_for_path(path)
             if class_meta and isinstance(class_meta, dict):
                 meta["class_metadata"] = class_meta
-                for key in ("binomial_name", "scientificName", "label", "name"):
-                    if key in class_meta:
-                        meta["label"] = class_meta[key]
-                        break
-            elif class_meta and isinstance(class_meta, str):
-                meta["class_metadata_error"] = class_meta
+                key = "binomialNomenclature"
+                meta["label"] = class_meta.get(key, "")
             st.session_state["results"].append({
-                "idx": int(idx),
+                "idx": rank,
                 "title": f"Result #{rank + 1} {meta.get('label', '')}",
                 "meta": meta
             })
+    else:
+        try:
+            model = st.session_state.get("model_obj") or model_obj
+            preprocess = st.session_state.get("preprocess") or preprocess
+            query = text_query if text_query else img_loaded
+            indices, sims, paths = get_topk_results(query, model, index, image_paths_index, embeddings, k=top_k)
 
-    except Exception as e:
-        st.error(f"Failed computing similarity / building results: {e}")
+            
+
+            # Build results from indices, sims and paths returned by get_topk_results
+            for rank, (idx, sim, path) in enumerate(zip(indices, sims, paths)):
+                meta = {
+                    "similarity_score": float(sim),
+                    "img_path": path
+                }
+
+                class_meta = _get_class_metadata_for_path(path)
+                if class_meta and isinstance(class_meta, dict):
+                    meta["class_metadata"] = class_meta
+                    key = "binomialNomenclature"
+                    meta["label"] = class_meta.get(key, "")
+                st.session_state["results"].append({
+                    "idx": int(idx),
+                    "title": f"Result #{rank + 1} {meta.get('label', '')}",
+                    "meta": meta
+                })
+
+        except Exception as e:
+            st.error(f"Failed computing similarity / building results: {e}")
 
 col_left, col_right = st.columns([6, 1])
 
@@ -215,6 +239,8 @@ with col_left:
                 shown = False
                 if img_path:
                     try:
+                        if selected_model == "CLIP + reranking":
+                            img_path = os.path.join(TRINH_PATH, img_path)
                         img = Image.open(img_path).convert("RGB")
                         img.thumbnail((640, 640))
                         st.image(img, caption=title, width='stretch')

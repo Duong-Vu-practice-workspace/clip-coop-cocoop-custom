@@ -1,0 +1,46 @@
+{
+    "binomialNomenclature": "Amanita virosa",
+    "commonNames": {
+    "en": [
+        "Death Angel",
+        "Destroying Angel"
+    ],
+    "vi": [
+        "Nấm độc trắng hình nón"
+    ]
+    },
+    "habitat": "Mixed woodlands and grassy meadows near beech, chestnut, pine, spruce, fir, summer to autumn, Europe and eastern Asia, acidic soils.",
+    "shortDescription": "Deadly poisonous white mushroom with egg-shaped to bell-shaped cap, white gills, slender stem with hanging ring and volva, contains alpha-amanitin causing liver failure.",
+    "edibility": "Deadly poisonous.",
+    "isPoisonous": "True",
+    "benefitsOrToxicity": "Alpha-amanitin causes vomiting, diarrhea, liver failure 6-24 hours after ingestion, can lead to death.",
+    "identification": {
+    "cap": "2.5-12 cm, oval to convex or bell-shaped, smooth dry to sticky, white to ivory, yellow or pinkish with age.",
+    "gills": "White to cream, close, flocculose edge, short gills truncated.",
+    "stem": "5-12 cm tall, 0.8-1.5 cm diameter, cylindrical white, solid or pithy-hollow, concentric scaly rings below ring, white to yellowish ring, volva at base.",
+    "flesh": "Fragile white, unpleasant taste like radish or raw potato.",
+    "sporePrint": "White.",
+    "taste": "Unpleasant, like radish or raw potato.",
+    "odor": "None young, sickly sweet or rotting meat aged.",
+    "microscopicFeatures": "Spores spherical or subglobose 7-8 μm."
+    },
+    "lookAlikes": [
+    {
+        "binomialNomenclature": "Agaricus sylvicola"
+    },
+    {
+        "binomialNomenclature": "Amanita phalloides"
+    },
+    {
+        "binomialNomenclature": "Amanita verna"
+    },
+    {
+        "binomialNomenclature": "Amanita citrina"
+    },
+    {
+        "binomialNomenclature": "Amanita strobiliformis"
+    }
+    ],
+    "medicinalProperties": "None, highly toxic.",
+    "note": "Deadly, mistaken for edible, debate on species in North America."
+}

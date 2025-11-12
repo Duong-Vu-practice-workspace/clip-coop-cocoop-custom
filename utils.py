@@ -93,6 +93,7 @@ def _get_class_metadata_for_path(img_path):
         grandparent = os.path.dirname(parent) if parent else None
         if grandparent:
             candidates.append(os.path.join(grandparent, "metadata.json"))
+        print(candidates)
         for cand in candidates:
             obj, err = _read_json_with_fallback(cand)
             if obj is not None:

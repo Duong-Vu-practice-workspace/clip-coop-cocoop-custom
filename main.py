@@ -8,7 +8,7 @@ import numpy as np
 from peft import PeftModel
 from faiss_index import create_faiss_index, load_faiss_index
 from my_config import INDEX_FILE, LORA_MODEL_DIR, PROMPTS_FILE, ROOT_DIR, device
-from utils import change_root_dir
+from utils import change_root_dir, _get_class_metadata_for_path
 import torch.nn.functional as F
 import io
 from utils import format_metadata_readable
@@ -21,7 +21,7 @@ img_paths_aug = [change_root_dir(path) for path in img_paths_aug]
 create_faiss_index(embeddings, img_paths_aug, INDEX_FILE)
 index, image_paths_index = load_faiss_index(INDEX_FILE)
 
-# Load prompts file (optional, used only to attach prompt labels if present)
+# Load prompts file
 _prompts = []
 try:
     with open(PROMPTS_FILE, 'r', encoding='utf-8') as f:
@@ -29,90 +29,11 @@ try:
 except Exception:
     _prompts = []
 
-prompt_image_paths = [change_root_dir(p.get('img_path') or p.get('image') or p.get('path', '')) for p in _prompts]
+prompt_image_paths = [change_root_dir(p.get('img_path')) for p in _prompts]
 prompt_labels = [p.get('binomial_name') for p in _prompts]
 
-PROMPT_BY_PATH = {}
-PROMPT_BY_BASENAME = {}
-for p in _prompts:
-    ip = change_root_dir(p.get('img_path') or p.get('image') or p.get('path', ''))
-    if ip:
-        PROMPT_BY_PATH[ip] = p
-        PROMPT_BY_BASENAME[os.path.basename(ip)] = p
 
-def _read_json_with_fallback(path):
-    """Read JSON with encoding fallbacks and return (obj, error_str)."""
-    if not os.path.isfile(path):
-        return None, None
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f), None
-    except Exception as e_utf8:
-        try:
-            with open(path, "rb") as f:
-                raw = f.read()
-            for enc in ("utf-8-sig", "utf-8", "latin-1"):
-                try:
-                    s = raw.decode(enc)
-                    return json.loads(s), None
-                except Exception:
-                    continue
-            return None, f"failed to decode JSON file {path}: {e_utf8}"
-        except Exception as e:
-            return None, str(e)
 
-def _get_class_metadata_for_path(img_path):
-    """
-    Look for metadata.json in the image's parent directory or grandparent (class folder).
-    Returns dict or None. If a parse error occurs, returns dict with key '_metadata_error'.
-    """
-    try:
-        parent = os.path.dirname(img_path)
-        candidates = []
-        if parent:
-            candidates.append(os.path.join(parent, "metadata.json"))
-        grandparent = os.path.dirname(parent) if parent else None
-        if grandparent:
-            candidates.append(os.path.join(grandparent, "metadata.json"))
-        for cand in candidates:
-            obj, err = _read_json_with_fallback(cand)
-            if obj is not None:
-                return obj
-            if err:
-                return {"_metadata_error": err}
-    except Exception as e:
-        return {"_metadata_error": str(e)}
-    return None
-
-def _get_image_metadata(img_path):
-    """
-    Look for a per-image JSON file next to the image (same basename .json).
-    Returns dict or None. If a parse error occurs, returns dict with key '_metadata_error'.
-    """
-    try:
-        jpath = os.path.splitext(img_path)[0] + ".json"
-        obj, err = _read_json_with_fallback(jpath)
-        if obj is not None:
-            return obj
-        if err:
-            return {"_metadata_error": err}
-    except Exception as e:
-        return {"_metadata_error": str(e)}
-    return None
-
-def _text_embedding(model, text):
-    toks = clip.tokenize([text], truncate=True).to(device)
-    with torch.no_grad():
-        emb = model.encode_text(toks)
-        emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
-    return emb
-
-def _image_embedding(model, pil_image, preprocess):
-    img_t = preprocess(pil_image).unsqueeze(0).to(device)
-    with torch.no_grad():
-        emb = model.encode_image(img_t)
-        emb = F.normalize(emb, dim=-1).cpu().numpy().astype(np.float32)
-    return emb
 
 def get_topk_results(query, model, index, image_paths, embeddings_matrix, k=6):
     model.eval()
@@ -181,18 +102,13 @@ if search_btn:
     try:
         model = st.session_state.get("model_obj") or model_obj
         preprocess = st.session_state.get("preprocess") or preprocess
-
-        # compute embeddings / similarities
-        text_emb = None
         img_loaded = None
-        if text_query:
-            text_emb = _text_embedding(model, text_query)
         if uploaded_file is not None:
             img_bytes = uploaded_file.getvalue()
             img_loaded = Image.open(io.BytesIO(img_bytes)).convert("RGB")
             
         query = text_query if text_query else img_loaded
-        indices, sims, paths = get_topk_results(query, model, index, img_paths_aug, embeddings, k=top_k)
+        indices, sims, paths = get_topk_results(query, model, index, image_paths_index, embeddings, k=top_k)
 
         st.session_state["results"] = []
 
@@ -203,7 +119,6 @@ if search_btn:
                 "img_path": path
             }
 
-            # Prefer label from class metadata, then prompt labels, then filename
             class_meta = _get_class_metadata_for_path(path)
             if class_meta and isinstance(class_meta, dict):
                 meta["class_metadata"] = class_meta
@@ -228,11 +143,6 @@ if search_btn:
 
             if "label" not in meta:
                 meta["label"] = os.path.splitext(os.path.basename(path))[0]
-
-            # Attach per-image metadata (basename.json next to image)
-            image_meta = _get_image_metadata(path)
-            if image_meta is not None:
-                meta["image_metadata"] = image_meta
             st.session_state["results"].append({
                 "idx": int(idx),
                 "title": f"Result #{rank + 1} {meta.get('label', '')}",

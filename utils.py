@@ -56,3 +56,49 @@ def format_metadata_readable(obj, indent=0):
     else:
         lines.append(f"{space}{obj}")
     return lines
+
+
+def _read_json_with_fallback(path):
+    """Read JSON with encoding fallbacks and return (obj, error_str)."""
+    if not os.path.isfile(path):
+        return None, None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f), None
+    except Exception as e_utf8:
+        try:
+            with open(path, "rb") as f:
+                raw = f.read()
+            for enc in ("utf-8-sig", "utf-8", "latin-1"):
+                try:
+                    s = raw.decode(enc)
+                    return json.loads(s), None
+                except Exception:
+                    continue
+            return None, f"failed to decode JSON file {path}: {e_utf8}"
+        except Exception as e:
+            return None, str(e)
+
+
+def _get_class_metadata_for_path(img_path):
+    """
+    Look for metadata.json in the image's parent directory or grandparent (class folder).
+    Returns dict or None. If a parse error occurs, returns dict with key '_metadata_error'.
+    """
+    try:
+        parent = os.path.dirname(img_path)
+        candidates = []
+        if parent:
+            candidates.append(os.path.join(parent, "metadata.json"))
+        grandparent = os.path.dirname(parent) if parent else None
+        if grandparent:
+            candidates.append(os.path.join(grandparent, "metadata.json"))
+        for cand in candidates:
+            obj, err = _read_json_with_fallback(cand)
+            if obj is not None:
+                return obj
+            if err:
+                return {"_metadata_error": err}
+    except Exception as e:
+        return {"_metadata_error": str(e)}
+    return None

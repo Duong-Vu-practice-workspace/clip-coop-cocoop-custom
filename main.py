@@ -7,19 +7,19 @@ import json
 import numpy as np
 from peft import PeftModel
 from faiss_index import create_faiss_index, load_faiss_index
-from my_config import INDEX_FILE, LORA_MODEL_DIR, PROMPTS_FILE, ROOT_DIR, device
+from my_config import INDEX_FILE, LORA_MODEL_DIR, LORA_MODEL_DIR_DAI, PROMPTS_FILE, ROOT_DIR, INDEX_FILE_DAI, device
 from utils import change_root_dir, _get_class_metadata_for_path
 import torch.nn.functional as F
 import io
 from utils import format_metadata_readable
+
 # Load embeddings and image paths (these are the indexed images)
 embeddings = np.load(os.path.join(ROOT_DIR, 'original_embeddings.npy'))
 img_paths_aug = np.load(os.path.join(ROOT_DIR, 'original_image_paths.npy'))
 img_paths_aug = [change_root_dir(path) for path in img_paths_aug]
 
-# Create / load index
-create_faiss_index(embeddings, img_paths_aug, INDEX_FILE)
-index, image_paths_index = load_faiss_index(INDEX_FILE)
+index = None
+image_paths_index = None
 
 # Load prompts file
 _prompts = []
@@ -66,22 +66,37 @@ st.set_page_config(page_title="CLIP Demo", layout="wide")
 st.title("CLIP Image/Text Retrieval")
 
 @st.cache_resource()
-def load_model_from_path():
+def load_model_by_name(model_name: str):
+    """
+    Load base CLIP and optionally apply LoRA weights. Cached by model_name.
+    Returns (model_or_wrapper_or_None, preprocess).
+    """
     base_model, preprocess = clip.load("ViT-B/32", device=device)
-    model = PeftModel.from_pretrained(base_model, LORA_MODEL_DIR).to(device)
-    model = model.merge_and_unload()
-    model.eval()
-    return model, preprocess
+    model = None
+    if model_name == "CLIP + LoRA (Đ)":
+        model = PeftModel.from_pretrained(base_model, LORA_MODEL_DIR_DAI)
+    elif model_name == "CLIP + LoRA (P)":
+        model = PeftModel.from_pretrained(base_model, LORA_MODEL_DIR)
+    elif model_name == "CLIP + reranking":
+        # use base CLIP without LoRA
+        model = base_model
+    else:
+        # unknown model name -> return base
+        model = base_model
 
-try:
-    with st.spinner("Loading model via torch.load(...)"):
-        model_obj, preprocess = load_model_from_path()
-        st.session_state["model_obj"] = model_obj
-        st.session_state["preprocess"] = preprocess
-        st.session_state["model_loaded"] = True
-except Exception as e:
-    st.session_state["model_loaded"] = False
-    st.error(f"Failed to load model: {e}")
+    if model is not None:
+        try:
+            model = model.to(device)
+        except Exception:
+            pass
+        # only LoRA wrappers have merge_and_unload; guard it
+        try:
+            model = model.merge_and_unload()
+        except Exception:
+            pass
+        model.eval()
+
+    return model, preprocess
 
 # Sidebar controls
 st.sidebar.header("Query")
@@ -89,14 +104,50 @@ text_query = st.sidebar.text_input("Text query")
 uploaded_file = st.sidebar.file_uploader("Upload query image", type=["jpg", "jpeg", "png"])
 top_k = st.sidebar.number_input("Top K", min_value=1, max_value=48, value=12, step=1)
 search_btn = st.sidebar.button("Search")
+# Add combobox (selectbox) for base CLIP model selection
+model_options = ["CLIP + LoRA (Đ)", "CLIP + LoRA (P)", "CLIP + reranking"]
+selected_model = st.sidebar.selectbox("Model", model_options, index=0)
+st.session_state["selected_model"] = selected_model
+# Create / load index
+create_faiss_index(embeddings, img_paths_aug, INDEX_FILE_DAI)
+create_faiss_index(embeddings, img_paths_aug, INDEX_FILE)
+index, image_paths_index = load_faiss_index(INDEX_FILE)
+prev_selected = st.session_state.get("_selected_model_cached")
+if prev_selected != selected_model:
+    # clear previous model keys to avoid stale references
+    st.session_state.pop("model_obj", None)
+    st.session_state.pop("preprocess", None)
+    st.session_state["model_loaded"] = False
 
+    try:
+        with st.spinner(f"Loading model {selected_model} ..."):
+            model_obj, preprocess = load_model_by_name(selected_model)
+            st.session_state["model_obj"] = model_obj
+            st.session_state["preprocess"] = preprocess
+            st.session_state["model_loaded"] = model_obj is not None
+            st.session_state["_selected_model_cached"] = selected_model
+    except Exception as e:
+        st.session_state["model_loaded"] = False
+        st.error(f"Failed to load model {selected_model}: {e}")
+
+# load appropriate FAISS index for the selected model (choose once)
+if selected_model == "CLIP + LoRA (Đ)":
+    index, image_paths_index = load_faiss_index(INDEX_FILE_DAI)
+elif selected_model in ["CLIP + LoRA (P)"]:
+    index, image_paths_index = load_faiss_index(INDEX_FILE)
+
+
+# ensure local references used below come from session_state
+model = st.session_state.get("model_obj")
+preprocess = st.session_state.get("preprocess")
 # Session state defaults
 if "results" not in st.session_state:
     st.session_state["results"] = []
 if "feedback" not in st.session_state:
     st.session_state["feedback"] = {}
-model = st.session_state.get("model_obj") or model_obj
-preprocess = st.session_state.get("preprocess") or preprocess
+
+
+
 # When Search pressed
 if search_btn:
     try:
@@ -128,21 +179,6 @@ if search_btn:
                         break
             elif class_meta and isinstance(class_meta, str):
                 meta["class_metadata_error"] = class_meta
-
-            if "label" not in meta:
-                try:
-                    if prompt_image_paths and prompt_labels:
-                        try:
-                            pos = prompt_image_paths.index(path)
-                            if prompt_labels[pos]:
-                                meta["label"] = prompt_labels[pos]
-                        except ValueError:
-                            pass
-                except Exception:
-                    pass
-
-            if "label" not in meta:
-                meta["label"] = os.path.splitext(os.path.basename(path))[0]
             st.session_state["results"].append({
                 "idx": int(idx),
                 "title": f"Result #{rank + 1} {meta.get('label', '')}",

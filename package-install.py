@@ -12,7 +12,8 @@ packages = [
     'tqdm',
     'numpy',
     'matplotlib',
-    'deep-translator'
+    'deep-translator',
+    'sentence_transformers'
 ]
 
 for package in packages:

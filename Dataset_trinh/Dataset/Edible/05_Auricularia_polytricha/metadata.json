@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Auricularia polytricha",
+  "commonNames": {
+    "en": [
+      "Cloud ear fungus",
+      "Hairy wood ear"
+    ],
+    "vi": [
+      "Mao mộc nhĩ",
+      "Vân nhĩ"
+    ]
+  },
+  "habitat": "Wood, moist forests",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, antimicrobial",
+  "identification": {
+    "cap": "dark yellowish-brown, hairy",
+    "gills": "absent",
+    "stem": "absent or very short",
+    "sporePrint": ""
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "binomialNomenclature": "Amanita muscaria",
+  "commonNames": {
+    "en": [
+      "Fly Agaric",
+      "Fly Amanita"
+    ],
+    "vi": [
+      "Nấm tán đỏ",
+      "Nấm tán giết ruồi",
+      "Nấm mặt trời"
+    ]
+  },
+  "habitat": "Coniferous, deciduous, mixed forests, birch forests, peaty soils, plains, hilly areas, acid oak forests, sandy soils, July to November.",
+  "shortDescription": "Famous poisonous mushroom with bright red cap and white spots, contains alkaloids causing hallucinations, vomiting, nausea, can be fatal.",
+  "edibility": "Poisonous, but some eat it for hallucinogenic effects after special preparation.",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Contains ibotenic acid, muscimol, muscarine, causes vomiting, nausea, headache, dizziness, hallucinations, salivation, weakness, low blood pressure, coma, death in large quantities.",
+  "identification": {
+    "cap": "7-20 cm, hemispherical to flat, red to orange, covered with white flakes, striate margin.",
+    "gills": "White, free, crowded, turn pale yellow with age.",
+    "stem": "7-20 cm, 1-4 cm diameter, cylindrical, bulbous base, white, wide ring, volva with concentric zones.",
+    "flesh": "Soft, white, yellowish under cap skin, no pronounced smell.",
+    "sporePrint": "White.",
+    "taste": "Pleasantly sweet.",
+    "odor": "Inconspicuous.",
+    "microscopicFeatures": "Spores 9.5-10.5 x 7-8 µm, broadly oval, smooth."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Russula nobilis"
+    },
+    {
+      "binomialNomenclature": "Amanita caesarea"
+    },
+    {
+      "binomialNomenclature": "Amanita rubescens"
+    },
+    {
+      "binomialNomenclature": "Amanita regalis"
+    },
+    {
+      "binomialNomenclature": "Amanita gemmata"
+    }
+  ],
+  "medicinalProperties": "None, but used in some cultures for psychoactive effects.",
+  "note": "Famous, associated with Santa Claus, Jesus theories, used as insecticide, varieties."
+}

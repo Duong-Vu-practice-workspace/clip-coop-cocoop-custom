@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Coprinopsis atramentaria",
+  "commonNames": {
+    "en": [
+      "Ink cap"
+    ],
+    "vi": [
+      "Nấm mực mỡ"
+    ]
+  },
+  "habitat": "Wood, urban areas, spring to autumn",
+  "isPoisonous": "True",
+  "toxins": "coprine",
+  "effects": "nausea, vomiting",
+  "identification": {
+    "cap": "3-10cm gray to gray-brown oval",
+    "gills": "white to black gills, melting",
+    "stem": "white, hollow",
+    "sporePrint": "Black"
+  }
+}

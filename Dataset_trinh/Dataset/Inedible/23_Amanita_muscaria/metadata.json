@@ -1,0 +1,24 @@
+{
+  "binomialNomenclature": "Amanita muscaria",
+  "commonNames": {
+    "en": [
+      "Fly Agaric",
+      "Fly Amanita"
+    ],
+    "vi": [
+      "Nấm tán đỏ",
+      "Nấm tán giết ruồi",
+      "Nấm mặt trời"
+    ]
+  },
+  "habitat": "Forests, July to November",
+  "isPoisonous": "True",
+  "toxins": "ibotenic acid, muscimol, muscarine",
+  "effects": "hallucination, vomiting, nausea, death",
+  "identification": {
+    "cap": "7-20cm red to orange hemispherical with white flakes",
+    "gills": "white free gills",
+    "stem": "white, volva, ring, bulbous",
+    "sporePrint": "White"
+  }
+}

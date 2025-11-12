@@ -1,0 +1,28 @@
+{
+  "binomialNomenclature": "Galerina marginata",
+  "commonNames": {
+    "en": ["funeral bell", "deadly skullcap", "autumn skullcap"],
+    "vi": ["Nấm đầu lâu mùa thu"]
+  },
+  "habitat": "Grows on rotting wood (hardwoods and conifers) in clusters or alone. Found year-round in North America, Europe, Asia, and Australia.",
+  "shortDescription": "Highly toxic small brown mushroom containing deadly amatoxins that cause irreversible liver and kidney damage.",
+  "edibility": "Deadly poisonous",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Extremely dangerous. Contains amatoxins that halt cell function, leading to liver and kidney failure. Symptoms (abdominal pain, vomiting) appear late (up to 10 hours), and death can occur within days without a liver transplant.",
+  "identification": {
+    "cap": "1.5-5 cm, convex to flat, sticky, honey-yellow to cinnamon-brown, may fade and appear two-toned.",
+    "gills": "Broadly attached to stem, close, yellowish turning rusty brown.",
+    "stem": "2-7 cm long, 3-8 mm thick, even, dry, whitish to brownish with a thin ring.",
+    "flesh": "Thin, yellowish to brownish, does not change color when sliced.",
+    "sporePrint": "Telltale rusty brown",
+    "taste": "",
+    "odor": "Mild or slightly mealy when crushed",
+    "microscopicFeatures": "Spores 7-11 x 4-6 µm, amygdaliform to subellipsoid, verrucose. Clamp connections present."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Kuehneromyces mutabilis" },
+    { "binomialNomenclature": "Flammulina velutipes" }
+  ],
+  "medicinalProperties": "",
+  "note": "Often confused with edible species, but distinguished by its rusty brown spore print. Deadly to humans and pets, but plays a key ecological role in wood decomposition. Has many synonyms, including Galerina autumnalis."
+}

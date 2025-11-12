@@ -1,0 +1,26 @@
+{
+  "binomialNomenclature": "Tremella fuciformis",
+  "commonNames": {
+    "en": [
+      "snow fungus",
+      "snow ear",
+      "silver ear fungus",
+      "white jelly mushroom",
+      "white cloud ears"
+    ],
+    "vi": [
+      "Nấm tuyết",
+      "Mộc nhĩ trắng",
+      "Ngân nhĩ"
+    ]
+  },
+  "habitat": "Hardwood, after heavy rains",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, immune support, heart health",
+  "identification": {
+    "cap": "up to 7.5cm whitish frond-like",
+    "gills": "absent",
+    "stem": "absent",
+    "sporePrint": ""
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "binomialNomenclature": "Scleroderma citrinum",
+  "commonNames": {
+    "en": ["Common Earth Ball", "Pigskin Poison Puffball"],
+    "vi": ["Nấm vỏ chanh"]
+  },
+  "habitat": "Common in woods, heathland, and short grass from autumn to winter. Widely distributed across Europe and Asia.",
+  "shortDescription": "Resembles an edible puffball but has firmer flesh and a dark interior early in development. Releases spores by breaking up, not through a single opening.",
+  "edibility": "Poisonous",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "",
+  "identification": {
+    "cap": "4–12 cm across, 3–6 cm tall. Tough, dirty-yellow to ochre-brown skin with coarse, warty scales.",
+    "gills": "No gills - this is a puffball-type mushroom",
+    "stem": "No stem, attached to soil by mycelial threads.",
+    "flesh": "Whitish when young, becoming purple-brown to black with white 'veins' as it ages.",
+    "sporePrint": "",
+    "taste": "",
+    "odor": "",
+    "microscopicFeatures": "Spores are spherical and spiked. Spore mass is grayish, becoming purply-black and powdery. Outer skin ruptures to release spores."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Scleroderma areolatum" },
+    { "binomialNomenclature": "Calvatia spp." }
+  ],
+  "medicinalProperties": "",
+  "note": "First described by Persoon in 1801. Scleroderma means 'hard skin', and citrinum refers to its 'lemon-yellow' color. Close relatives of boletes."
+}

@@ -1,0 +1,28 @@
+{
+  "binomialNomenclature": "Pholiotina rugosa",
+  "commonNames": {
+    "en": ["Common Conecap Mushroom"],
+    "vi": ["Nấm cỏ"]
+  },
+  "habitat": "Grows alone or scattered in woods or urban landscaping areas in spring and summer. Found in North America, Europe, and Oceania.",
+  "shortDescription": "Small brown lawn mushroom with a fragile, ringed stem. Contains deadly amatoxins causing fatal liver poisoning.",
+  "edibility": "Deadly poisonous",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Contains amatoxins that are highly toxic to the liver, causing mushroom-related deaths.",
+  "identification": {
+    "cap": "1–2 cm, conic to bell-shaped, becoming convex. Smooth or finely wrinkled, dark orangish-brown centrally.",
+    "gills": "Narrowly attached, close, whitish becoming brownish.",
+    "stem": "20–35 mm long, 2–3 mm thick, fragile, brownish with a persistent whitish ring.",
+    "flesh": "Insubstantial, watery brownish, unchanging.",
+    "sporePrint": "Yellow-brown",
+    "taste": "Not recorded",
+    "odor": "Not distinctive",
+    "microscopicFeatures": "Spores 8–9 x 5–6 µm, ellipsoid, smooth, with a pore. Pleurocystidia not found."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Galerina marginata" },
+    { "binomialNomenclature": "Conocybe tenera" }
+  ],
+  "medicinalProperties": "",
+  "note": "Often mistaken for Psilocybe. First described by Peck in 1898 as Pholiota rugosa, transferred to Conocybe by Watling in 1981. Synonyms include Conocybe rugosa."
+}

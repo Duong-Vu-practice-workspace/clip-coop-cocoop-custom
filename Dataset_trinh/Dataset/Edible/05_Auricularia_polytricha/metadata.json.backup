@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Auricularia polytricha",
+  "commonNames": {
+    "en": ["Cloud ear fungus", "Hairy wood ear"],
+    "vi": ["Mao mộc nhĩ", "Vân nhĩ"]
+  },
+  "habitat": "Grows on trees in mountainous regions; usually a weak parasite to saprophyte. Occurs in clusters on tree trunks and dead branches. General habitat: moist-deciduous to wet evergreen forests (Western Ghats).",
+  "shortDescription": "An edible jelly fungus, gray-brown and often hairy, commonly used in Asian (especially Chinese) cuisine for its texture; grows in clusters on trees.",
+  "edibility": "Edible; commonly used in Asian cooking, especially Chinese cuisine; valued for texture in soups and stir-fries.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Exhibits anticoagulant effects (should be avoided before surgery or by patients with poor blood clotting). Shows antioxidant and antimicrobial properties; extracts may adsorb glucose and suppress α-amylase, potentially aiding postprandial glycemic control.",
+  "identification": {
+    "cap": "Fruit body resupinate or pileate, loosely attached laterally, sometimes with a very short stalk. Sterile surface dark yellowish-brown to dark brown with grayish-brown bands; hairy, silky. Hairs thick-walled up to 0.6 mm long.",
+    "gills": "Hymenium smooth or wrinkled; pale brown to dark brown to blackish-brown with a whitish bloom.",
+    "stem": "Usually absent or very short when present.",
+    "flesh": "Elastic and gelatinous when fresh.",
+    "sporePrint": "",
+    "taste": "Mild; primarily valued for texture rather than flavor.",
+    "odor": "",
+    "microscopicFeatures": "Basidia cylindrical, hyaline, three-septate, 46–60 × 4–5.5 μm with 1–3 lateral sterigmata (sterigmata 9–15 × 1.5–12 μm). Spores hyaline, reniform to allantoid, 13–16 × 4–5.5 μm, guttulate. Hairs thick-walled up to 0.6 mm long."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Auricularia auricula-judae"
+    }
+  ],
+  "medicinalProperties": "Extracts exhibit glucose adsorption and α-amylase suppression; antioxidant and antimicrobial activity (reported against Candida albicans, Escherichia coli, Enterococcus faecalis, Pseudomonas aeruginosa, and Staphylococcus aureus). Traditionally used in Chinese folk medicine for hemorrhoids and as a stomach tonic. Has anticoagulant properties.",
+  "note": "Synonym: Hirneola polytricha. Known in Chinese as 云耳 (yún'ěr) and 毛木耳 (máomù'ěr)."
+}

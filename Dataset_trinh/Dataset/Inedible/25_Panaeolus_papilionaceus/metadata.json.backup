@@ -1,0 +1,25 @@
+{
+  "binomialNomenclature": "Panaeolus papilionaceus",
+  "commonNames": {
+    "en": ["bell-capped mottlegill", "Petticoat mottlegill"],
+    "vi": ["Nấm mũ chuông"]
+  },
+  "habitat": "Grows on dung in pastures; widespread in North America.",
+  "shortDescription": "Dung-loving mushroom with a black spore print, mottled gills, and veil fragments on the cap edge.",
+  "edibility": "Not recommended",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Probably not toxic, but related species may be mildly hallucinogenic",
+  "identification": {
+    "cap": "1.5-4.0 cm, conic to bell-shaped, smooth, olive-brown to gray-brown with white veil fragments on margin.",
+    "gills": "Adnate, close, pale grey, becoming blackish and mottled.",
+    "stem": "6-12 cm long, slender, hollow, gray-brown. Partial veil remnants on cap margin.",
+    "flesh": "Grayish to buff-brown, thin",
+    "sporePrint": "Black",
+    "taste": "",
+    "odor": "Mild",
+    "microscopicFeatures": "Spores 12-17 x 7-10 µm, elliptical, smooth, with an apical pore"
+  },
+  "lookAlikes": [],
+  "medicinalProperties": "",
+  "note": "Formerly considered a confusing group with P. campanulatus and others, now recognized as one species."
+}

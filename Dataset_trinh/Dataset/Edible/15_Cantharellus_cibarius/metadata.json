@@ -1,0 +1,23 @@
+{
+  "binomialNomenclature": "Cantharellus cibarius",
+  "commonNames": {
+    "en": [
+      "golden chanterelle",
+      "girolle",
+      "girole"
+    ],
+    "vi": [
+      "Nấm mồng gà",
+      "Nấm mỡ gà"
+    ]
+  },
+  "habitat": "Soil, summer and autumn",
+  "isPoisonous": "False",
+  "benefits": "",
+  "identification": {
+    "cap": "up to 10cm yellow funnel-shaped",
+    "gills": "yellow decurrent ridges",
+    "stem": "thick, decurrent",
+    "sporePrint": "Pale yellow to creamy white"
+  }
+}

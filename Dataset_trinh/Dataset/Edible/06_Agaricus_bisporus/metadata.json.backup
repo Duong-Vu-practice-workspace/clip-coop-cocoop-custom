@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Agaricus bisporus",
+  "commonNames": {
+    "en": ["Button mushroom", "White mushroom"],
+    "vi": ["Nấm mỡ"]
+  },
+  "habitat": "Grasslands of North America and Europe; grows in grassy fields, especially after rain, often in areas with manure. Cultivated worldwide in over 70 countries.",
+  "shortDescription": "The most popular edible mushroom globally, consumed in its button, crimini, and portobello forms. White to brown caps, pink to brown gills, meaty texture, widely used in cooking.",
+  "edibility": "Edible and widely cultivated; safe when cooked. Consumed in many forms such as button, crimini, and portobello mushrooms.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Rich in vitamins (A, B, C, D) and minerals (phosphorus, potassium, calcium, iron). Contains antioxidants, supports immune system, digestive health, hormone regulation, and may have anti-inflammatory and anticancer properties. Raw mushrooms contain small amounts of agaritine and gyromitrin, reduced by cooking. Potential allergy risk. Excessive raw consumption may be harmful.",
+  "identification": {
+    "cap": "White or brown; 2.5–14 cm wide; convex to flat with growth; smooth or slightly scaly; bruises pinkish to reddish.",
+    "gills": "Free from stem; close together; pinkish when young, darkening to nearly black with age.",
+    "stem": "White, smooth or slightly scaly; 2–7 cm long, 1–2.5 cm thick; may bruise reddish-brown; thin ring often disappears with age.",
+    "flesh": "Firm and white; bruises pinkish-red, then brown.",
+    "sporePrint": "Dark brown.",
+    "taste": "Earthy, nutty, slightly woodsy.",
+    "odor": "",
+    "microscopicFeatures": "Spores ellipsoid, 6–8 × 5–6 µm; smooth, thick-walled, brown in KOH. Cheilocystidia 20–30 µm long, clavate, thin-walled. No pleurocystidia."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Amanita virosa"
+    }
+  ],
+  "medicinalProperties": "Potential antioxidant, anti-inflammatory, antibacterial, antifungal, anticancer, and genoprotective effects. May regulate hormones, support blood sugar control, promote digestive health, boost immunity, and aid skin regeneration.",
+  "note": "Also known as crimini (brown variety) and portobello (mature form). Historically classified under Agaricus campestris and Psalliota species before being named Agaricus bisporus."
+}

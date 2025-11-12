@@ -1,0 +1,20 @@
+{
+  "binomialNomenclature": "Schizophyllum commune",
+  "commonNames": {
+    "en": [
+      "Common Porecrust"
+    ],
+    "vi": [
+      "Nấm chân chim"
+    ]
+  },
+  "habitat": "Hardwood, year-round",
+  "isPoisonous": "False",
+  "benefits": "anti-cancer, antitumor, antioxidant",
+  "identification": {
+    "cap": "1-5cm whitish fan-shaped",
+    "gills": "whitish split gills",
+    "stem": "absent",
+    "sporePrint": "White"
+  }
+}

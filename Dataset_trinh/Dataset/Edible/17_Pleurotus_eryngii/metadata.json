@@ -1,0 +1,27 @@
+{
+  "binomialNomenclature": "Pleurotus eryngii",
+  "commonNames": {
+    "en": [
+      "King Trumpet Mushroom",
+      "French Horn Mushroom",
+      "King Oyster Mushroom",
+      "King Brown Mushroom",
+      "Boletus Of The Steppes",
+      "Trumpet Royale",
+      "Ali'i Oyster"
+    ],
+    "vi": [
+      "Nấm đùi gà",
+      "Nấm bào ngư"
+    ]
+  },
+  "habitat": "Hardwood, late summer to early fall",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, immune support, heart health",
+  "identification": {
+    "cap": "1-8cm tan to brown convex",
+    "gills": "white to light brown decurrent gills",
+    "stem": "white to light brown",
+    "sporePrint": "White"
+  }
+}

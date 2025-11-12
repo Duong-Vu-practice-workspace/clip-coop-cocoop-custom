@@ -1,0 +1,23 @@
+{
+  "binomialNomenclature": "Hypsizygus tessellatus",
+  "commonNames": {
+    "en": [
+      "White beech mushroom",
+      "Brown beech mushroom"
+    ],
+    "vi": [
+      "Nấm ngọc châm",
+      "Nấm sồi trắng",
+      "Nấm sồi nâu"
+    ]
+  },
+  "habitat": "Wood, fall",
+  "isPoisonous": "False",
+  "benefits": "",
+  "identification": {
+    "cap": "4-8cm whitish convex",
+    "gills": "whitish attached gills",
+    "stem": "whitish",
+    "sporePrint": "White to buff"
+  }
+}

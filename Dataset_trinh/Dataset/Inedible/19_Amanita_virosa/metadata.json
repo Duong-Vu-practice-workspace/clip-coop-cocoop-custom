@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Amanita virosa",
+  "commonNames": {
+    "en": [
+      "Death Angel",
+      "Destroying Angel"
+    ],
+    "vi": [
+      "Nấm độc trắng hình nón"
+    ]
+  },
+  "habitat": "Woodlands, summer to autumn",
+  "isPoisonous": "True",
+  "toxins": "alpha-amanitin",
+  "effects": "liver failure, vomiting, diarrhea, death",
+  "identification": {
+    "cap": "2.5-12cm white bell-shaped",
+    "gills": "white free gills",
+    "stem": "white, volva, ring",
+    "sporePrint": "White"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Entoloma sinuatum",
+  "commonNames": {
+    "en": ["Livid Pinkgill", "Lead Poisoner", "Leaden entoloma", "Livid entoloma", "Livid agaric"],
+    "vi": ["Nấm Entoloma sinuatum"]
+  },
+  "habitat": "Deciduous woodlands on clay or chalky soils, parklands, fairy rings, late summer to autumn, Europe, North America.",
+  "shortDescription": "Poisonous mushroom with ivory to light gray-brown cap, sinuate gills turning pink, thick whitish stem, causes gastrointestinal problems.",
+  "edibility": "Poisonous.",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Causes gastrointestinal problems like diarrhea, vomiting, headache 30 min to 2 hours, lasts up to 48 hours, rarely delirium, depression, possibly fatal.",
+  "identification": {
+    "cap": "Ivory white darkening with age, conical to convex to plane with blunt umbo, slightly sticky, margin rolled inward, 6-20 cm.",
+    "gills": "Yellowish white initially, sinuate, crowded, turn pinkish with spores.",
+    "stem": "Ivory white, smooth, cylindrical sometimes bulbous base, 3-10 cm long, 0.6-1.5 cm diameter, no ring.",
+    "flesh": "",
+    "sporePrint": "Pink.",
+    "taste": "Not distinctive.",
+    "odor": "Vague but unpleasant.",
+    "microscopicFeatures": "Spores subglobose, angular, 7-10 x 7-9 µm, prominent germ pore."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Calocybe gambosa" },
+    { "binomialNomenclature": "Clitopilus prunulus" },
+    { "binomialNomenclature": "Clitocybe nebularis" }
+  ],
+  "medicinalProperties": "",
+  "note": "Responsible for many poisonings in Europe, type species of Entoloma, accumulates heavy metals."
+}

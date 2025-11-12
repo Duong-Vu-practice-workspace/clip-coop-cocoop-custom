@@ -1,0 +1,23 @@
+{
+  "binomialNomenclature": "Psilocybe semilanceata",
+  "commonNames": {
+    "en": [
+      "liberty cap"
+    ],
+    "vi": [
+      "Nấm thức thần",
+      "Nấm ma thuật",
+      "Nấm ảo giác"
+    ]
+  },
+  "habitat": "Meadows and pastures",
+  "isPoisonous": "True",
+  "toxins": "psilocybin, psilocin",
+  "effects": "hallucination",
+  "identification": {
+    "cap": "0.5-2cm cream-colored, pimple on top",
+    "gills": "olive-gray to purple-black gills",
+    "stem": "cream-colored, slender, fibrous",
+    "sporePrint": "Very dark purple-brown"
+  }
+}

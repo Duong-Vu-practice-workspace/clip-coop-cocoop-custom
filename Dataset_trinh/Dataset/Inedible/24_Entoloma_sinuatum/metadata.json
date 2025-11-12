@@ -1,0 +1,25 @@
+{
+  "binomialNomenclature": "Entoloma sinuatum",
+  "commonNames": {
+    "en": [
+      "Livid Pinkgill",
+      "Lead Poisoner",
+      "Leaden entoloma",
+      "Livid entoloma",
+      "Livid agaric"
+    ],
+    "vi": [
+      "Nấm Entoloma sinuatum"
+    ]
+  },
+  "habitat": "Woodlands, late summer to autumn",
+  "isPoisonous": "True",
+  "toxins": "",
+  "effects": "gastrointestinal, diarrhea, vomiting, death",
+  "identification": {
+    "cap": "6-20cm ivory white convex",
+    "gills": "yellowish white to pinkish sinuate gills",
+    "stem": "ivory white, bulbous",
+    "sporePrint": "Pink"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "binomialNomenclature": "Ganoderma lucidum",
+  "commonNames": {
+    "en": [
+      "Reishi",
+      "Varnished conk",
+      "Lacquered bracket",
+      "Ling chih"
+    ],
+    "vi": [
+      "Nấm linh chi"
+    ]
+  },
+  "habitat": "Hardwood, late summer to early autumn",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, anti-inflammatory, immune support",
+  "identification": {
+    "cap": "3-20cm red-brown fan-shaped, glossy",
+    "pores": "white pores",
+    "stem": "chestnut or dark brown, lateral",
+    "sporePrint": "Brown"
+  }
+}

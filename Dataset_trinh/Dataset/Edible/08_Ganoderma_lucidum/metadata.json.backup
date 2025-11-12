@@ -1,0 +1,41 @@
+{
+  "binomialNomenclature": "Ganoderma lucidum",
+  "commonNames": {
+    "en": ["Reishi", "Varnished conk", "Lacquered bracket", "Ling chih"],
+    "vi": ["Nấm linh chi"]
+  },
+  "habitat": "Grows on stumps or trunks of hardwoods like oak, maple, and hemlock; thrives in moist, shady spots across Asia, North America, and Europe; fruits late summer to early autumn.",
+  "shortDescription": "A medicinal mushroom with a large, dark, glossy, woody fruiting body, revered in traditional Chinese medicine. Known for bioactive compounds with potential health benefits.",
+  "edibility": "Not typically consumed fresh due to bitter, woody texture; used in teas, powders, extracts, and supplements for medicinal purposes.",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Contains triterpenoids, polysaccharides, and peptidoglycans with antioxidant, anti-inflammatory, immunomodulatory, stress-reducing, potential anti-cancer, liver-supporting, sleep-promoting, and cardiovascular benefits. May interact with blood thinners, chemotherapy, immunosuppressants, and liver-processed drugs. Limited safety data in pregnancy and breastfeeding. Rare reports of liver toxicity and chronic diarrhea.",
+  "identification": {
+    "cap": "3–20 cm; rounded, fan-shaped, or kidney-shaped; red-brown or dark brown with a varnished, glossy surface and radial grooves; edges sharp, sometimes wavy with whitish, yellow, or reddish tones.",
+    "poreSurface": "Tubular hymenophore; whitish/cream turning brown; pores 0.15–0.25 mm, 4–5 per mm; darkens when dry or touched.",
+    "stem": "3–15 cm long, 1–3 cm thick; often lateral, occasionally central; chestnut or dark brown with a purple-brown shine; uneven surface.",
+    "flesh": "Spongy when young, becomes dense and hard with age; whitish to brown or wood-colored.",
+    "sporePrint": "Brown.",
+    "spores": "7.5–13 × 5.5–7.5 μm, ovoid, warty, yellow-brown.",
+    "odor": "Mushroom-like.",
+    "taste": "Bitter and woody."
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Ganoderma tsugae"
+    },
+    {
+      "binomialNomenclature": "Ganoderma applanatum"
+    },
+    {
+      "binomialNomenclature": "Ganoderma curtisii"
+    },
+    {
+      "binomialNomenclature": "Ganoderma sessile"
+    },
+    {
+      "binomialNomenclature": "Ganoderma oregonense"
+    }
+  ],
+  "medicinalProperties": "Reishi supports liver function, immune health, stress reduction, improved sleep, antioxidant protection, anti-inflammatory effects, cardiovascular support, potential anti-cancer effects, and skin health. Used in teas, tinctures, powders, capsules, infused wine, coffee, and skincare products.",
+  "note": "Cultivation requires warm temperatures, high humidity, indirect light, and hardwood substrates (logs or sawdust). Dried mushrooms are used for medicinal preparations."
+}

@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Tylopilus felleus",
+  "commonNames": {
+    "en": [
+      "bitter bolete",
+      "bitter tylopilus"
+    ],
+    "vi": [
+      "Nấm tràm"
+    ]
+  },
+  "habitat": "Conifer",
+  "isPoisonous": "False",
+  "benefits": "",
+  "identification": {
+    "cap": "5-13cm brown convex",
+    "pores": "pink pores",
+    "stem": "whitish to pale brownish, reticulate",
+    "sporePrint": "Brownish pink"
+  }
+}

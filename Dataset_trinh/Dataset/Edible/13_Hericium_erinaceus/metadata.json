@@ -1,0 +1,24 @@
+{
+  "binomialNomenclature": "Hericium erinaceus",
+  "commonNames": {
+    "en": [
+      "lion's mane",
+      "yamabushitake",
+      "bearded tooth fungus",
+      "bearded hedgehog"
+    ],
+    "vi": [
+      "Nấm hầu thủ",
+      "Nấm đầu khỉ"
+    ]
+  },
+  "habitat": "Wood, late summer/fall",
+  "isPoisonous": "False",
+  "benefits": "immune support, antibacterial, anti-inflammatory",
+  "identification": {
+    "cap": "8-25cm white clump of soft spines",
+    "gills": "absent",
+    "stem": "absent",
+    "sporePrint": "White"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "binomialNomenclature": "Pleurotus ostreatus",
+  "commonNames": {
+    "en": [
+      "oyster mushroom",
+      "grey oyster mushroom",
+      "oyster fungus",
+      "hiratake",
+      "pearl oyster mushroom"
+    ],
+    "vi": [
+      "Nấm bào ngư xám",
+      "Nấm sò ngọc trai"
+    ]
+  },
+  "habitat": "Hardwood",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, heart health, immune support",
+  "identification": {
+    "cap": "5-18cm white to blue-gray convex",
+    "gills": "white decurrent gills",
+    "stem": "white, short or absent",
+    "sporePrint": "White to faintly yellowish or lilac"
+  }
+}

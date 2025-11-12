@@ -1,0 +1,26 @@
+{
+  "binomialNomenclature": "Amanita phalloides",
+  "commonNames": {
+    "en": [
+      "Death Cap",
+      "Stinking Amanita",
+      "Deadly Amanita"
+    ],
+    "vi": [
+      "Nấm tử thần",
+      "Nấm độc xanh đen",
+      "Nấm đen",
+      "Nấm lục"
+    ]
+  },
+  "habitat": "Hardwood, summer to mid-winter",
+  "isPoisonous": "True",
+  "toxins": "amatoxins",
+  "effects": "liver failure, vomiting, diarrhea, death",
+  "identification": {
+    "cap": "4-16cm greenish-yellow round",
+    "gills": "white free gills",
+    "stem": "white, volva, ring",
+    "sporePrint": "White"
+  }
+}

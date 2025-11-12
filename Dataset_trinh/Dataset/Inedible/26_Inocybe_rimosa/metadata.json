@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Inocybe rimosa",
+  "commonNames": {
+    "en": [
+      "straw-colored fiber head"
+    ],
+    "vi": [
+      "Nấm mũ khía nâu xám"
+    ]
+  },
+  "habitat": "Hardwoods or conifers, summer and fall",
+  "isPoisonous": "True",
+  "toxins": "muscarine",
+  "effects": "poisoning",
+  "identification": {
+    "cap": "2-8cm straw yellow conical",
+    "gills": "whitish to brownish attached gills",
+    "stem": "whitish or pale yellowish",
+    "sporePrint": "Brown"
+  }
+}

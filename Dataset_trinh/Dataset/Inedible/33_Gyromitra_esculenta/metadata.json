@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Gyromitra esculenta",
+  "commonNames": {
+    "en": [
+      "Brain mushroom"
+    ],
+    "vi": [
+      "Nấm não"
+    ]
+  },
+  "habitat": "Conifers, spring",
+  "isPoisonous": "True",
+  "toxins": "gyromitrin",
+  "effects": "liver damage, nausea, death",
+  "identification": {
+    "cap": "3-12cm reddish-brown brain-like",
+    "gills": "absent",
+    "stem": "pale yellowish-tan",
+    "sporePrint": "Yellowish buff"
+  }
+}

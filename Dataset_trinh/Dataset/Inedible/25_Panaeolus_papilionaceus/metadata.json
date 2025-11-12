@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Panaeolus papilionaceus",
+  "commonNames": {
+    "en": [
+      "bell-capped mottlegill",
+      "Petticoat mottlegill"
+    ],
+    "vi": [
+      "Nấm mũ chuông"
+    ]
+  },
+  "habitat": "Dung",
+  "isPoisonous": "True",
+  "toxins": "",
+  "effects": "hallucination",
+  "identification": {
+    "cap": "1.5-4.0cm gray-brown bell-shaped",
+    "gills": "pale grey to blackish adnate gills",
+    "stem": "gray-brown, slender, hollow",
+    "sporePrint": "Black"
+  }
+}

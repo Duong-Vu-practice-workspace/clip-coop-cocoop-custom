@@ -1,0 +1,23 @@
+{
+  "binomialNomenclature": "Galerina marginata",
+  "commonNames": {
+    "en": [
+      "funeral bell",
+      "deadly skullcap",
+      "autumn skullcap"
+    ],
+    "vi": [
+      "Nấm đầu lâu mùa thu"
+    ]
+  },
+  "habitat": "Wood, year-round",
+  "isPoisonous": "True",
+  "toxins": "amatoxins",
+  "effects": "liver failure, kidney failure, death, vomiting",
+  "identification": {
+    "cap": "1.5-5cm honey-yellow to cinnamon-brown convex",
+    "gills": "yellowish to rusty brown attached gills",
+    "stem": "whitish to brownish, ring",
+    "sporePrint": "Telltale rusty brown"
+  }
+}

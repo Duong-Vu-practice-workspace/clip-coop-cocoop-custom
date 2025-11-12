@@ -1,0 +1,24 @@
+{
+  "binomialNomenclature": "Chlorophyllum molybdites",
+  "commonNames": {
+    "en": [
+      "False Parasol",
+      "Green Gill",
+      "Green-Spored Parasol",
+      "Green Spored Lepiota"
+    ],
+    "vi": [
+      "Nấm ô tán trắng phiến xanh"
+    ]
+  },
+  "habitat": "Lawns, summer to fall",
+  "isPoisonous": "True",
+  "toxins": "",
+  "effects": "gastrointestinal, nausea, vomiting, diarrhea",
+  "identification": {
+    "cap": "10-35cm white to brownish convex",
+    "gills": "white to grayish-green free gills",
+    "stem": "white to brown, ring",
+    "sporePrint": "Dull grayish-green"
+  }
+}

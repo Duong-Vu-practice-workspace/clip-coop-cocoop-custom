@@ -1,0 +1,20 @@
+{
+  "binomialNomenclature": "Volvariella bombycina",
+  "commonNames": {
+    "en": [
+      "Straw mushroom"
+    ],
+    "vi": [
+      "Nấm rơm"
+    ]
+  },
+  "habitat": "Hardwood, late spring to fall",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, anti-cancer",
+  "identification": {
+    "cap": "5-20cm white bell-shaped",
+    "gills": "white free gills",
+    "stem": "white, volva",
+    "sporePrint": "Brownish pink"
+  }
+}

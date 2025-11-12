@@ -1,0 +1,28 @@
+{
+  "binomialNomenclature": "Inocybe rimosa",
+  "commonNames": {
+    "en": ["straw-colored fiber head"],
+    "vi": ["Nấm mũ khía nâu xám"]
+  },
+  "habitat": "Mycorrhizal with hardwoods or conifers, growing alone or scattered in summer and fall. Widely distributed in North America.",
+  "shortDescription": "Poisonous European native with a brownish fibrous cap, no ring, and contains muscarine.",
+  "edibility": "Poisonous",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Contains muscarine. Serious poisoning can result from consuming any quantity of the mushroom.",
+  "identification": {
+    "cap": "2-8 cm, conical to bell-shaped with a sharp bump. Dry, silky, straw yellow. Margin splits with age.",
+    "gills": "Attached, crowded, whitish becoming brownish.",
+    "stem": "3-9 cm long, up to 1 cm thick, equal. Dry, smooth, whitish or pale yellowish.",
+    "flesh": "Whitish; insubstantial",
+    "sporePrint": "Brown",
+    "taste": "",
+    "odor": "Spermatic, mealy, or lacking",
+    "microscopicFeatures": "Spores 9.5-14.5 x 6-8.5 µ, elliptical, smooth. Pleurocystidia absent. Cheilocystidia 30-65 x 10-22 µ."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Inocybe geophylla" },
+    { "binomialNomenclature": "Inocybe erubescens" }
+  ],
+  "medicinalProperties": "",
+  "note": "Formerly Inocybe fastigiata. Contains muscarine. First described by Bulliard in 1789. The name means 'fibrous head' and 'full of cracks'."
+}

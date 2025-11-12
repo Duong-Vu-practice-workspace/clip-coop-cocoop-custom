@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Pholiotina rugosa",
+  "commonNames": {
+    "en": [
+      "Common Conecap Mushroom"
+    ],
+    "vi": [
+      "Nấm cỏ"
+    ]
+  },
+  "habitat": "Woods, urban landscaping, spring and summer",
+  "isPoisonous": "True",
+  "toxins": "amatoxins",
+  "effects": "liver failure, death",
+  "identification": {
+    "cap": "1-2cm orangish-brown conic",
+    "gills": "whitish to brownish attached gills",
+    "stem": "brownish, ring",
+    "sporePrint": "Yellow-brown"
+  }
+}

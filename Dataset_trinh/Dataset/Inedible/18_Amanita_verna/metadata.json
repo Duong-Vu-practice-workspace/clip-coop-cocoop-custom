@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Amanita verna",
+  "commonNames": {
+    "en": [
+      "Fool's Mushroom"
+    ],
+    "vi": [
+      "Nấm độc tán trắng"
+    ]
+  },
+  "habitat": "Woodlands, springtime",
+  "isPoisonous": "True",
+  "toxins": "alpha-amanitin, phallotoxins",
+  "effects": "liver failure, kidney failure, diarrhea",
+  "identification": {
+    "cap": "5-10cm white egg-shaped",
+    "gills": "white free gills",
+    "stem": "white, volva, ring",
+    "sporePrint": "White"
+  }
+}

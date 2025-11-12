@@ -1,0 +1,20 @@
+{
+  "binomialNomenclature": "Lentinula edodes",
+  "commonNames": {
+    "en": [
+      "Shiitake mushroom"
+    ],
+    "vi": [
+      "Nấm hương"
+    ]
+  },
+  "habitat": "Hardwood, warm and moist forests",
+  "isPoisonous": "False",
+  "benefits": "immune support, anti-cancer, antiviral",
+  "identification": {
+    "cap": "5-15cm tan to brown umbrella-shaped",
+    "gills": "whitish adnexed gills",
+    "stem": "whitish to cream",
+    "sporePrint": "White"
+  }
+}

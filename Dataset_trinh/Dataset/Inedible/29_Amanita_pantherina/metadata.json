@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Amanita pantherina",
+  "commonNames": {
+    "en": [
+      "Panther cap"
+    ],
+    "vi": [
+      "Nấm mụn trắng",
+      "nấm tán da báo"
+    ]
+  },
+  "habitat": "Forests, late summer and autumn",
+  "isPoisonous": "True",
+  "toxins": "muscimol, ibotenic acid",
+  "effects": "hallucination, confusion, death",
+  "identification": {
+    "cap": "3-18cm brown to tan convex with white warts",
+    "gills": "white free gills",
+    "stem": "white, ring, swollen base",
+    "sporePrint": "White"
+  }
+}

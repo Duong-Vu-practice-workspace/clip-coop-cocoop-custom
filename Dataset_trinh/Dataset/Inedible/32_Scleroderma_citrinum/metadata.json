@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Scleroderma citrinum",
+  "commonNames": {
+    "en": [
+      "Common Earth Ball",
+      "Pigskin Poison Puffball"
+    ],
+    "vi": [
+      "Nấm vỏ chanh"
+    ]
+  },
+  "habitat": "Woods, heathland, autumn to winter",
+  "isPoisonous": "True",
+  "toxins": "",
+  "effects": "",
+  "identification": {
+    "cap": "4-12cm dirty-yellow to ochre-brown, warty scales",
+    "gills": "absent",
+    "stem": "absent",
+    "sporePrint": ""
+  }
+}

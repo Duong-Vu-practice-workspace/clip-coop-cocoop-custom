@@ -1,0 +1,28 @@
+{
+  "binomialNomenclature": "Amanita phalloides",
+  "commonNames": {
+    "en": ["Death Cap", "Stinking Amanita", "Deadly Amanita"],
+    "vi": ["Nấm tử thần", "Nấm độc xanh đen", "Nấm đen", "Nấm lục"]
+  },
+  "habitat": "Under coast liveoak, oaks, ornamental hardwoods, summer to mid-winter, Europe, North America, Asia.",
+  "shortDescription": "Poisonous mushroom with greenish-yellow cap, white gills, white stem with ring and volva, contains amatoxins causing liver failure.",
+  "edibility": "Poisonous.",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Amatoxins cause abdominal pain, vomiting, diarrhea, then liver failure, death if untreated.",
+  "identification": {
+    "cap": "4-16 cm, round to flat, sticky when wet, dull green to olive to yellowish to brownish, streaked.",
+    "gills": "Free, white, close.",
+    "stem": "5-18 cm, 1-2.5 cm thick, white, ring like skirt, volva at base.",
+    "flesh": "White, unchanging.",
+    "sporePrint": "White.",
+    "taste": "",
+    "odor": "Repugnant in age, sickeningly sweet, rotten honey, carrion.",
+    "microscopicFeatures": "Spores 7.5-13.5 × 5.5-10.5 µm, subglobose to ellipsoid, amyloid, no clamps."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Agaricus campestris" },
+    { "binomialNomenclature": "Amanita citrina" }
+  ],
+  "medicinalProperties": "None, highly toxic.",
+  "note": "One of the most poisonous, produces fairy rings, historical naming by Vaillant and Fries."
+}

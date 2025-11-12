@@ -1,0 +1,23 @@
+{
+  "binomialNomenclature": "Pleurotus pulmonarius",
+  "commonNames": {
+    "en": [
+      "Indian Oyster",
+      "Italian Oyster",
+      "Phoenix Mushroom"
+    ],
+    "vi": [
+      "Nấm bào ngư trắng",
+      "Nấm sò"
+    ]
+  },
+  "habitat": "Hardwood, late spring through September",
+  "isPoisonous": "False",
+  "benefits": "anti-inflammatory, antitumor, antioxidant",
+  "identification": {
+    "cap": "3-10cm whitish fan-shaped",
+    "gills": "whitish decurrent gills",
+    "stem": "whitish, eccentric or lateral",
+    "sporePrint": "White to gray or lilac"
+  }
+}

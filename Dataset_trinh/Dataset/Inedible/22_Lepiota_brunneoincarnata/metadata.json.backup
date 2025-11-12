@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Lepiota brunneoincarnata",
+  "commonNames": {
+    "en": ["Deadly Dapperling"],
+    "vi": ["Nấm Deadly Dapperling"]
+  },
+  "habitat": "Grassy areas, fields, parks, gardens, Europe, Asia, July to November.",
+  "shortDescription": "Toxic mushroom with brown scaled cap, pinkish-brown stem, white gills, contains alpha-amanitin causing liver damage.",
+  "edibility": "Deadly poisonous.",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Contains alpha-amanitin, causes nausea, vomiting, liver damage, fatal in some cases.",
+  "identification": {
+    "cap": "2.5-6 cm, hemispherical to convex, pinkish-brown woolly scales in concentric rings.",
+    "gills": "Free, crowded, creamy white, cheilocystidia cylindrical or narrowly clavate.",
+    "stem": "2.5-5 cm, 5-9 mm diameter, creamy white with pink flush, smooth upper, scaly lower, indistinct woolly ring.",
+    "flesh": "White, turns slightly pink when broken.",
+    "sporePrint": "White.",
+    "taste": "",
+    "odor": "",
+    "microscopicFeatures": "Spores ellipsoidal, smooth, 8.9-10.2 x 4.8-5.5 µm, dextrinoid."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Lepiota subincarnata" },
+    { "binomialNomenclature": "Lepiota ignivolvata" },
+    { "binomialNomenclature": "Lepiota cristata" }
+  ],
+  "medicinalProperties": "",
+  "note": "Caused fatal poisonings in Spain, Iran, Tunisia, mistaken for edible, detected in urine 36-48 hours."
+}

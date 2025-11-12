@@ -1,0 +1,30 @@
+{
+  "binomialNomenclature": "Boletus edulis",
+  "commonNames": {
+    "en": ["cep", "penny bun", "porcino"],
+    "vi": ["Nấm thông"]
+  },
+  "habitat": "Grows in mycorrhizal association with trees, particularly hemlock, oak, spruce, and other conifers; can also be found in lawns and grassy areas under conifers; most abundant from June to October.",
+  "shortDescription": "A large, edible mushroom with pores instead of gills, highly valued for its taste and texture, found worldwide under various trees.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Good source of protein, fiber, copper, potassium, and vitamin B12; generally safe to eat.",
+  "identification": {
+    "cap": "1.97 to 7.87 inches (5 to 20 cm) in diameter; initially hemispherical, later convex to flat-spread; pubescent then smooth; yellowish-brown to chestnut-brown or grayish-brown.",
+    "gills": "",
+    "stem": "1.97 to 7.87 inches (5 to 20 cm) high, 0.79 to 2.76 inches (2 to 7 cm) thick; initially bulbous, later club-shaped, longitudinally wrinkled; white, grayish, ocher, or light brown; solid and fleshy.",
+    "flesh": "White, slightly yellowing with age.",
+    "sporePrint": "Olive-brown",
+    "taste": "Very mushroomy",
+    "odor": "Very mushroomy",
+    "microscopicFeatures": "Spores 12-19 × 4-6 µm, spindle-shaped, rarely elongated."
+  },
+  "lookAlikes": [
+    {"binomialNomenclature": "Boletus reticulatus"},
+    {"binomialNomenclature": "Tylopilus felleus"},
+    {"binomialNomenclature": "Boletus pinophilus"},
+    {"binomialNomenclature": "Boletus aereus"}
+  ],
+  "medicinalProperties": "",
+  "note": "Difficult to cultivate due to mycorrhizal nature; can be eaten raw in small amounts when fresh but usually cooked or dried."
+}

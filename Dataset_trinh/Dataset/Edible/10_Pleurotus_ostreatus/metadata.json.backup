@@ -1,0 +1,32 @@
+{
+  "binomialNomenclature": "Pleurotus ostreatus",
+  "commonNames": {
+    "en": ["oyster mushroom", "grey oyster mushroom", "oyster fungus", "hiratake", "pearl oyster mushroom"],
+    "vi": ["Nấm bào ngư xám", "Nấm sò ngọc trai"]
+  },
+  "habitat": "Saprobic; grows on dying or dead deciduous broadleaf trees such as beech and oak, sometimes on fallen trunks and large branches.",
+  "shortDescription": "An edible mushroom with fan-shaped caps and decurrent gills, commonly cultivated worldwide and valued for both culinary and medicinal uses.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Rich in antioxidants, beta-D-glucans, and natural statins that support heart and immune health; may cause allergies in sensitive individuals.",
+  "identification": {
+    "cap": "White, cream, brown, or blue-gray; convex becoming depressed with wavy margin; 5–18 cm wide.",
+    "gills": "White turning pale ochre with age; crowded; decurrent.",
+    "stem": "White or cream; 1–3 cm long, 1–2 cm thick; woolly base; often short or absent; no ring.",
+    "flesh": "",
+    "sporePrint": "White to faintly yellowish or lilac.",
+    "taste": "Pleasant but not distinctive",
+    "odor": "Pleasant but not distinctive.",
+    "microscopicFeatures": "Spores 7–11 x 2–4 µm, cylindric-ellipsoid, smooth, hyaline; basidia 4-sterigmate; hymenial cystidia absent; pileipellis a tangled cutis."
+  },
+  "lookAlikes": [
+    {"binomialNomenclature": "Lentinellus ursinus"},
+    {"binomialNomenclature": "Pleurotus dryinus"},
+    {"binomialNomenclature": "Pleurotus pulmonarius"},
+    {"binomialNomenclature": "Pleurotus populinus"},
+    {"binomialNomenclature": "Pleurotus cornucopiae"},
+    {"binomialNomenclature": "Panellus serotinus"}
+  ],
+  "medicinalProperties": "Contains ergothioneine, beta-glucans, and pleuran with antioxidant, cholesterol-lowering, immune-modulating, antimicrobial, and potential anti-tumor properties.",
+  "note": "Can occasionally trigger allergic reactions due to compounds like arabitol or trehalose phosphorylase."
+}

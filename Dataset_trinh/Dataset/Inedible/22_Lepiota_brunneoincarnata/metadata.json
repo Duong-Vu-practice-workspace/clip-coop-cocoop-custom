@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Lepiota brunneoincarnata",
+  "commonNames": {
+    "en": [
+      "Deadly Dapperling"
+    ],
+    "vi": [
+      "Nấm Deadly Dapperling"
+    ]
+  },
+  "habitat": "Grassy areas, July to November",
+  "isPoisonous": "True",
+  "toxins": "alpha-amanitin",
+  "effects": "liver damage, nausea, vomiting, death",
+  "identification": {
+    "cap": "2.5-6cm pinkish-brown convex",
+    "gills": "creamy white free gills",
+    "stem": "creamy white with pink flush, ring",
+    "sporePrint": "White"
+  }
+}

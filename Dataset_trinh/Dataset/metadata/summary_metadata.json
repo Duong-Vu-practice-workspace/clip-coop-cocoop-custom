@@ -1,0 +1,714 @@
+{
+  "01_Volvariella_volvacea": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\01_Volvariella_volvacea\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Volvariella bombycina",
+      "commonNames": {
+        "en": ["Straw mushroom"],
+        "vi": ["Nấm rơm"]
+      },
+      "habitat": "Hardwood, late spring to fall",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, anti-cancer",
+      "identification": {
+        "cap": "5-20cm mushrooms that mushrooms that grow on dung on dung bell-shaped",
+        "gills": "white free gills",
+        "stem": "white, volva",
+        "sporePrint": "Brownish pink"
+      }
+    }
+  },
+  "02_Schizophyllum_commune": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\02_Schizophyllum_commune\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Schizophyllum commune",
+      "commonNames": {
+        "en": ["Common Porecrust"],
+        "vi": ["Nấm chân chim"]
+      },
+      "habitat": "Hardwood, year-round",
+      "isPoisonous": "False",
+      "benefits": "anti-cancer, antitumor, antioxidant",
+      "identification": {
+        "cap": "1-5cm whitish fan-shaped",
+        "gills": "whitish split gills",
+        "stem": "absent",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "03_Lentinula_edodes": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\03_Lentinula_edodes\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Lentinula edodes",
+      "commonNames": {
+        "en": ["Shiitake mushroom"],
+        "vi": ["Nấm hương"]
+      },
+      "habitat": "Hardwood, warm and moist forests",
+      "isPoisonous": "False",
+      "benefits": "immune support, anti-cancer, antiviral",
+      "identification": {
+        "cap": "5-15cm tan to brown umbrella-shaped",
+        "gills": "whitish adnexed gills",
+        "stem": "whitish to cream",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "04_Auricularia_auricula-judae": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\04_Auricularia_auricula-judae\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Auricularia auricula-judae",
+      "commonNames": {
+        "en": ["Black wood ear", "Wood ear mushroom", "Jelly ear mushroom"],
+        "vi": ["Nấm mộc nhĩ"]
+      },
+      "habitat": "Hardwood, year-round",
+      "isPoisonous": "False",
+      "benefits": "antibacterial, antitumor, antioxidant",
+      "identification": {
+        "cap": "up to 9cm purplish-brown ear-shaped",
+        "gills": "absent",
+        "stem": "absent",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "05_Auricularia_polytricha": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\05_Auricularia_polytricha\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Auricularia polytricha",
+      "commonNames": {
+        "en": ["Cloud ear fungus", "Hairy wood ear"],
+        "vi": ["Mao mộc nhĩ", "Vân nhĩ"]
+      },
+      "habitat": "Wood, moist forests",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, antimicrobial",
+      "identification": {
+        "cap": "dark yellowish-brown, hairy",
+        "gills": "absent",
+        "stem": "absent or very short",
+        "sporePrint": ""
+      }
+    }
+  },
+  "06_Agaricus_bisporus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\06_Agaricus_bisporus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Agaricus bisporus",
+      "commonNames": {
+        "en": ["Button mushroom", "White mushroom"],
+        "vi": ["Nấm mỡ"]
+      },
+      "habitat": "Grasslands, after rain",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, immune support, anti-inflammatory",
+      "identification": {
+        "cap": "2.5-14cm white or brown convex",
+        "gills": "pink to black free gills",
+        "stem": "white, ring",
+        "sporePrint": "Dark brown"
+      }
+    }
+  },
+  "07_Pleurotus_pulmonarius": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\07_Pleurotus_pulmonarius\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pleurotus pulmonarius",
+      "commonNames": {
+        "en": ["Indian Oyster", "Italian Oyster", "Phoenix Mushroom"],
+        "vi": ["Nấm bào ngư trắng", "Nấm sò"]
+      },
+      "habitat": "Hardwood, late spring through September",
+      "isPoisonous": "False",
+      "benefits": "anti-inflammatory, antitumor, antioxidant",
+      "identification": {
+        "cap": "3-10cm whitish fan-shaped",
+        "gills": "whitish decurrent gills",
+        "stem": "whitish, eccentric or lateral",
+        "sporePrint": "White to gray or lilac"
+      }
+    }
+  },
+  "08_Ganoderma_lucidum": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\08_Ganoderma_lucidum\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Ganoderma lucidum",
+      "commonNames": {
+        "en": ["Reishi", "Varnished conk", "Lacquered bracket", "Ling chih"],
+        "vi": ["Nấm linh chi"]
+      },
+      "habitat": "Hardwood, late summer to early autumn",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, anti-inflammatory, immune support",
+      "identification": {
+        "cap": "3-20cm red-brown fan-shaped, glossy",
+        "pores": "white pores",
+        "stem": "chestnut or dark brown, lateral",
+        "sporePrint": "Brown"
+      }
+    }
+  },
+  "09_Tylopilus_felleus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\09_Tylopilus_felleus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Tylopilus felleus",
+      "commonNames": {
+        "en": ["bitter bolete", "bitter tylopilus"],
+        "vi": ["Nấm tràm"]
+      },
+      "habitat": "Conifer",
+      "isPoisonous": "False",
+      "benefits": "",
+      "identification": {
+        "cap": "5-13cm brown convex",
+        "pores": "pink pores",
+        "stem": "whitish to pale brownish, reticulate",
+        "sporePrint": "Brownish pink"
+      }
+    }
+  },
+  "10_Pleurotus_ostreatus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\10_Pleurotus_ostreatus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pleurotus ostreatus",
+      "commonNames": {
+        "en": [
+          "oyster mushroom",
+          "grey oyster mushroom",
+          "oyster fungus",
+          "hiratake",
+          "pearl oyster mushroom"
+        ],
+        "vi": ["Nấm bào ngư xám", "Nấm sò ngọc trai"]
+      },
+      "habitat": "Hardwood",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, heart health, immune support",
+      "identification": {
+        "cap": "5-18cm white to blue-gray convex",
+        "gills": "white decurrent gills",
+        "stem": "white, short or absent",
+        "sporePrint": "White to faintly yellowish or lilac"
+      }
+    }
+  },
+  "11_Boletus_edulis": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\11_Boletus_edulis\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Boletus edulis",
+      "commonNames": {
+        "en": ["cep", "penny bun", "porcino"],
+        "vi": ["Nấm thông"]
+      },
+      "habitat": "Conifer, oak, June to October",
+      "isPoisonous": "False",
+      "benefits": "",
+      "identification": {
+        "cap": "5-20cm yellowish-brown convex",
+        "pores": "absent",
+        "stem": "white to light brown, bulbous",
+        "sporePrint": "Olive-brown"
+      }
+    }
+  },
+  "12_Tremella_fuciformis": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\12_Tremella_fuciformis\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Tremella fuciformis",
+      "commonNames": {
+        "en": [
+          "snow fungus",
+          "snow ear",
+          "silver ear fungus",
+          "white jelly mushroom",
+          "white cloud ears"
+        ],
+        "vi": ["Nấm tuyết", "Mộc nhĩ trắng", "Ngân nhĩ"]
+      },
+      "habitat": "Hardwood, after heavy rains",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, immune support, heart health",
+      "identification": {
+        "cap": "up to 7.5cm whitish frond-like",
+        "gills": "absent",
+        "stem": "absent",
+        "sporePrint": ""
+      }
+    }
+  },
+  "13_Hericium_erinaceus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\13_Hericium_erinaceus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Hericium erinaceus",
+      "commonNames": {
+        "en": [
+          "lion's mane",
+          "yamabushitake",
+          "bearded tooth fungus",
+          "bearded hedgehog"
+        ],
+        "vi": ["Nấm hầu thủ", "Nấm đầu khỉ"]
+      },
+      "habitat": "Wood, late summer/fall",
+      "isPoisonous": "False",
+      "benefits": "immune support, antibacterial, anti-inflammatory",
+      "identification": {
+        "cap": "8-25cm white clump of soft spines",
+        "gills": "absent",
+        "stem": "absent",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "14_Macrolepiota_albuminosa": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\14_Macrolepiota_albuminosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Macrolepiota Albuminosa",
+      "commonNames": {
+        "en": ["Termite Mushroom"],
+        "vi": ["Nấm mối"]
+      },
+      "habitat": "Termite nests, May-October",
+      "isPoisonous": "False",
+      "benefits": "immune support, heart health, anti-inflammatory",
+      "identification": {
+        "cap": "3-7cm white to light yellow",
+        "gills": "absent",
+        "stem": "ivory white, thick",
+        "sporePrint": ""
+      }
+    }
+  },
+  "15_Cantharellus_cibarius": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\15_Cantharellus_cibarius\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Cantharellus cibarius",
+      "commonNames": {
+        "en": ["golden chanterelle", "girolle", "girole"],
+        "vi": ["Nấm mồng gà", "Nấm mỡ gà"]
+      },
+      "habitat": "Soil, summer and autumn",
+      "isPoisonous": "False",
+      "benefits": "",
+      "identification": {
+        "cap": "up to 10cm yellow funnel-shaped",
+        "gills": "yellow decurrent ridges",
+        "stem": "thick, decurrent",
+        "sporePrint": "Pale yellow to creamy white"
+      }
+    }
+  },
+  "16_Hypsizygus_tessellatus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\16_Hypsizygus_tessellatus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Hypsizygus tessellatus",
+      "commonNames": {
+        "en": ["White beech mushroom", "Brown beech mushroom"],
+        "vi": ["Nấm ngọc châm", "Nấm sồi trắng", "Nấm sồi nâu"]
+      },
+      "habitat": "Wood, fall",
+      "isPoisonous": "False",
+      "benefits": "",
+      "identification": {
+        "cap": "4-8cm whitish convex",
+        "gills": "whitish attached gills",
+        "stem": "whitish",
+        "sporePrint": "White to buff"
+      }
+    }
+  },
+  "17_Pleurotus_eryngii": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\17_Pleurotus_eryngii\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pleurotus eryngii",
+      "commonNames": {
+        "en": [
+          "King Trumpet Mushroom",
+          "French Horn Mushroom",
+          "King Oyster Mushroom",
+          "King Brown Mushroom",
+          "Boletus Of The Steppes",
+          "Trumpet Royale",
+          "Ali'i Oyster"
+        ],
+        "vi": ["Nấm đùi gà", "Nấm bào ngư"]
+      },
+      "habitat": "Hardwood, late summer to early fall",
+      "isPoisonous": "False",
+      "benefits": "antioxidant, immune support, heart health",
+      "identification": {
+        "cap": "1-8cm tan to brown convex",
+        "gills": "white to light brown decurrent gills",
+        "stem": "white to light brown",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "18_Amanita_verna": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\18_Amanita_verna\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita verna",
+      "commonNames": {
+        "en": ["Fool's Mushroom"],
+        "vi": ["Nấm độc tán trắng"]
+      },
+      "habitat": "Woodlands, springtime",
+      "isPoisonous": "True",
+      "toxins": "alpha-amanitin, phallotoxins",
+      "effects": "liver failure, kidney failure, diarrhea",
+      "identification": {
+        "cap": "5-10cm white egg-shaped",
+        "gills": "white free gills",
+        "stem": "white, volva, ring",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "19_Amanita_virosa": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\19_Amanita_virosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita virosa",
+      "commonNames": {
+        "en": ["Death Angel", "Destroying Angel"],
+        "vi": ["Nấm độc trắng hình nón"]
+      },
+      "habitat": "Woodlands, summer to autumn",
+      "isPoisonous": "True",
+      "toxins": "alpha-amanitin",
+      "effects": "liver failure, vomiting, diarrhea, death",
+      "identification": {
+        "cap": "2.5-12cm white bell-shaped",
+        "gills": "white free gills",
+        "stem": "white, volva, ring",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "20_Amanita_phalloides": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\20_Amanita_phalloides\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita phalloides",
+      "commonNames": {
+        "en": ["Death Cap", "Stinking Amanita", "Deadly Amanita"],
+        "vi": ["Nấm tử thần", "Nấm độc xanh đen", "Nấm đen", "Nấm lục"]
+      },
+      "habitat": "Hardwood, summer to mid-winter",
+      "isPoisonous": "True",
+      "toxins": "amatoxins",
+      "effects": "liver failure, vomiting, diarrhea, death",
+      "identification": {
+        "cap": "4-16cm greenish-yellow round",
+        "gills": "white free gills",
+        "stem": "white, volva, ring",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "21_Chlorophyllum_molybdites": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\21_Chlorophyllum_molybdites\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Chlorophyllum molybdites",
+      "commonNames": {
+        "en": [
+          "False Parasol",
+          "Green Gill",
+          "Green-Spored Parasol",
+          "Green Spored Lepiota"
+        ],
+        "vi": ["Nấm ô tán trắng phiến xanh"]
+      },
+      "habitat": "Lawns, summer to fall",
+      "isPoisonous": "True",
+      "toxins": "",
+      "effects": "gastrointestinal, nausea, vomiting, diarrhea",
+      "identification": {
+        "cap": "10-35cm white to brownish convex",
+        "gills": "white to grayish-green free gills",
+        "stem": "white to brown, ring",
+        "sporePrint": "Dull grayish-green"
+      }
+    }
+  },
+  "22_Lepiota_brunneoincarnata": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\22_Lepiota_brunneoincarnata\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Lepiota brunneoincarnata",
+      "commonNames": {
+        "en": ["Deadly Dapperling"],
+        "vi": ["Nấm Deadly Dapperling"]
+      },
+      "habitat": "Grassy areas, July to November",
+      "isPoisonous": "True",
+      "toxins": "alpha-amanitin",
+      "effects": "liver damage, nausea, vomiting, death",
+      "identification": {
+        "cap": "2.5-6cm pinkish-brown convex",
+        "gills": "creamy white free gills",
+        "stem": "creamy white with pink flush, ring",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "23_Amanita_muscaria": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\23_Amanita_muscaria\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita muscaria",
+      "commonNames": {
+        "en": ["Fly Agaric", "Fly Amanita"],
+        "vi": ["Nấm tán đỏ", "Nấm tán giết ruồi", "Nấm mặt trời"]
+      },
+      "habitat": "Forests, July to November",
+      "isPoisonous": "True",
+      "toxins": "ibotenic acid, muscimol, muscarine",
+      "effects": "hallucination, vomiting, nausea, death",
+      "identification": {
+        "cap": "7-20cm red to orange hemispherical with white flakes",
+        "gills": "white free gills",
+        "stem": "white, volva, ring, bulbous",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "24_Entoloma_sinuatum": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\24_Entoloma_sinuatum\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Entoloma sinuatum",
+      "commonNames": {
+        "en": [
+          "Livid Pinkgill",
+          "Lead Poisoner",
+          "Leaden entoloma",
+          "Livid entoloma",
+          "Livid agaric"
+        ],
+        "vi": ["Nấm Entoloma sinuatum"]
+      },
+      "habitat": "Woodlands, late summer to autumn",
+      "isPoisonous": "True",
+      "toxins": "",
+      "effects": "gastrointestinal, diarrhea, vomiting, death",
+      "identification": {
+        "cap": "6-20cm ivory white convex",
+        "gills": "yellowish white to pinkish sinuate gills",
+        "stem": "ivory white, bulbous",
+        "sporePrint": "Pink"
+      }
+    }
+  },
+  "25_Panaeolus_papilionaceus": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\25_Panaeolus_papilionaceus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Panaeolus papilionaceus",
+      "commonNames": {
+        "en": ["bell-capped mottlegill", "Petticoat mottlegill"],
+        "vi": ["Nấm mũ chuông"]
+      },
+      "habitat": "Dung",
+      "isPoisonous": "True",
+      "toxins": "",
+      "effects": "hallucination",
+      "identification": {
+        "cap": "1.5-4.0cm gray-brown bell-shaped",
+        "gills": "pale grey to blackish adnate gills",
+        "stem": "gray-brown, slender, hollow",
+        "sporePrint": "Black"
+      }
+    }
+  },
+  "26_Inocybe_rimosa": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\26_Inocybe_rimosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Inocybe rimosa",
+      "commonNames": {
+        "en": ["straw-colored fiber head"],
+        "vi": ["Nấm mũ khía nâu xám"]
+      },
+      "habitat": "Hardwoods or conifers, summer and fall",
+      "isPoisonous": "True",
+      "toxins": "muscarine",
+      "effects": "poisoning",
+      "identification": {
+        "cap": "2-8cm straw yellow conical",
+        "gills": "whitish to brownish attached gills",
+        "stem": "whitish or pale yellowish",
+        "sporePrint": "Brown"
+      }
+    }
+  },
+  "27_Coprinus_atramentarius": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\27_Coprinus_atramentarius\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Coprinopsis atramentaria",
+      "commonNames": {
+        "en": ["Ink cap"],
+        "vi": ["Nấm mực mỡ"]
+      },
+      "habitat": "Wood, urban areas, spring to autumn",
+      "isPoisonous": "True",
+      "toxins": "coprine",
+      "effects": "nausea, vomiting",
+      "identification": {
+        "cap": "3-10cm gray to gray-brown oval",
+        "gills": "white to black gills, melting",
+        "stem": "white, hollow",
+        "sporePrint": "Black"
+      }
+    }
+  },
+  "28_Psilocybe_semilanceata": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\28_Psilocybe_semilanceata\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Psilocybe semilanceata",
+      "commonNames": {
+        "en": ["liberty cap"],
+        "vi": ["Nấm thức thần", "Nấm ma thuật", "Nấm ảo giác"]
+      },
+      "habitat": "Meadows and pastures",
+      "isPoisonous": "True",
+      "toxins": "psilocybin, psilocin",
+      "effects": "hallucination",
+      "identification": {
+        "cap": "0.5-2cm cream-colored, pimple on top",
+        "gills": "olive-gray to purple-black gills",
+        "stem": "cream-colored, slender, fibrous",
+        "sporePrint": "Very dark purple-brown"
+      }
+    }
+  },
+  "29_Amanita_pantherina": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\29_Amanita_pantherina\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita pantherina",
+      "commonNames": {
+        "en": ["Panther cap"],
+        "vi": ["Nấm mụn trắng", "nấm tán da báo"]
+      },
+      "habitat": "Forests, late summer and autumn",
+      "isPoisonous": "True",
+      "toxins": "muscimol, ibotenic acid",
+      "effects": "hallucination, confusion, death",
+      "identification": {
+        "cap": "3-18cm brown to tan convex with white warts",
+        "gills": "white free gills",
+        "stem": "white, ring, swollen base",
+        "sporePrint": "White"
+      }
+    }
+  },
+  "30_Galerina_marginata": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\30_Galerina_marginata\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Galerina marginata",
+      "commonNames": {
+        "en": ["funeral bell", "deadly skullcap", "autumn skullcap"],
+        "vi": ["Nấm đầu lâu mùa thu"]
+      },
+      "habitat": "Wood, year-round",
+      "isPoisonous": "True",
+      "toxins": "amatoxins",
+      "effects": "liver failure, kidney failure, death, vomiting",
+      "identification": {
+        "cap": "1.5-5cm honey-yellow to cinnamon-brown convex",
+        "gills": "yellowish to rusty brown attached gills",
+        "stem": "whitish to brownish, ring",
+        "sporePrint": "Telltale rusty brown"
+      }
+    }
+  },
+  "31_Pholiotina_rugosa": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\31_Pholiotina_rugosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pholiotina rugosa",
+      "commonNames": {
+        "en": ["Common Conecap Mushroom"],
+        "vi": ["Nấm cỏ"]
+      },
+      "habitat": "Woods, urban landscaping, spring and summer",
+      "isPoisonous": "True",
+      "toxins": "amatoxins",
+      "effects": "liver failure, death",
+      "identification": {
+        "cap": "1-2cm orangish-brown conic",
+        "gills": "whitish to brownish attached gills",
+        "stem": "brownish, ring",
+        "sporePrint": "Yellow-brown"
+      }
+    }
+  },
+  "32_Scleroderma_citrinum": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\32_Scleroderma_citrinum\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Scleroderma citrinum",
+      "commonNames": {
+        "en": ["Common Earth Ball", "Pigskin Poison Puffball"],
+        "vi": ["Nấm vỏ chanh"]
+      },
+      "habitat": "Woods, heathland, autumn to winter",
+      "isPoisonous": "True",
+      "toxins": "",
+      "effects": "",
+      "identification": {
+        "cap": "4-12cm dirty-yellow to ochre-brown, warty scales",
+        "gills": "absent",
+        "stem": "absent",
+        "sporePrint": ""
+      }
+    }
+  },
+  "33_Gyromitra_esculenta": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\33_Gyromitra_esculenta\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Gyromitra esculenta",
+      "commonNames": {
+        "en": ["Brain mushroom"],
+        "vi": ["Nấm não"]
+      },
+      "habitat": "Conifers, spring",
+      "isPoisonous": "True",
+      "toxins": "gyromitrin",
+      "effects": "liver damage, nausea, death",
+      "identification": {
+        "cap": "3-12cm reddish-brown brain-like",
+        "gills": "absent",
+        "stem": "pale yellowish-tan",
+        "sporePrint": "Yellowish buff"
+      }
+    }
+  }
+}

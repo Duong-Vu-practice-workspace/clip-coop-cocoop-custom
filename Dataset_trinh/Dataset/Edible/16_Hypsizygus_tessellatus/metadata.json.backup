@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Hypsizygus tessellatus",
+  "commonNames": {
+    "en": ["White beech mushroom", "Brown beech mushroom"],
+    "vi": ["Nấm ngọc châm","Nấm sồi trắng", "Nấm sồi nâu"]
+  },
+  "habitat": "Saprobic; usually growing in clusters of two or three on wood, especially beech trees; widely distributed in eastern and northern North America, sometimes Rocky Mountains and West Coast; fall season",
+  "shortDescription": "Edible mushroom native to East Asia; small and thin; high in protein and B vitamins",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "High in protein, B vitamins (niacin, riboflavin, pantothenic acid), vitamin D, and minerals",
+  "identification": {
+    "cap": "4–8 cm; convex, becoming broadly convex with slightly inrolled margin; dry; bald; whitish to buff or very pale tan; sometimes tessellated with watery spots when fresh and young",
+    "gills": "Attached to stem; close; short-gills frequent; whitish; not bruising",
+    "stem": "3–8 cm long, 1–2 cm thick; equal or slightly club-shaped; dry; bald or very finely silky; whitish to very pale tan",
+    "flesh": "Firm; white; unchanging when sliced",
+    "sporePrint": "White to buff",
+    "taste": "Slightly bitter when raw, nutty when cooked",
+    "odor": "Odor not distinctive or slightly mealy",
+    "microscopicFeatures": "Spores 4–5 µm; subglobose; smooth; hyaline in KOH; inamyloid; lamellar trama parallel; basidia 4-sterigmate; hymenial cystidia not found; pileipellis a cutis; elements 2–4 µm wide, often clamped, smooth, hyaline in KOH"
+  },
+  "lookAlikes": [
+    {
+      "binomialNomenclature": "Hypsizygus Ulmarius"
+    }
+  ],
+  "medicinalProperties": "",
+  "note": "Being tough when raw, it should be cooked; bitter taste disappears after cooking; used in soups, stews, stir-fried dishes, and Japanese cuisine such as nabe and takikomi gohan."
+}

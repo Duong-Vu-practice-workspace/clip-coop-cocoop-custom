@@ -1,0 +1,25 @@
+{
+  "binomialNomenclature": "Macrolepiota Albuminosa",
+  "commonNames": {
+    "en": ["Termite Mushroom"],
+    "vi": ["Nấm mối"]
+  },
+  "habitat": "Grows on termite nests in tropical and subtropical forests, mainly during the rainy months (May–October). Forms a symbiotic relationship with termites.",
+  "shortDescription": "A highly valued mushroom with sweet, nutty flavor and medicinal benefits; relies on termite nests for growth.",
+  "edibility": "Edible",
+  "isPoisonous": "False",
+  "benefitsOrToxicity": "Safe for human consumption, rich vitamins",
+  "identification": {
+    "cap": "White to light yellow, 3–7 cm in diameter; meaty and chewy with mild aroma that intensifies when cooked.",
+    "gills": "",
+    "stem": "Ivory white, thick, 5–10 cm long.",
+    "flesh": "Meaty, chewy",
+    "sporePrint": "",
+    "taste": "Sweet, nutty",
+    "odor": "Unique aroma, intensifies when cooked",
+    "microscopicFeatures": ""
+  },
+  "lookAlikes": [],
+  "medicinalProperties": "Immune booster, digestive support, heart health, anti-inflammatory, antidiabetic, hepatoprotective, neuritogenic, antioxidant activity.",
+  "note": "Not cultivated artificially due to termite dependence; wild harvesting should follow sustainable practices; cook before consumption."
+}

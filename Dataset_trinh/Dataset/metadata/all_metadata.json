@@ -1,0 +1,1455 @@
+{
+  "01_Volvariella_volvacea": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\01_Volvariella_volvacea\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Volvariella bombycina",
+      "commonNames": {
+        "en": [
+          "Straw mushroom"
+        ],
+        "vi": [
+          "Nấm rơm"
+        ]
+      },
+      "habitat": "Saprobic on decaying or wounded hardwoods (elm, beech, oak, maple, sycamore, poplar). Grows singly or in small clusters in hollows or cracks from late spring to fall. Widely distributed across Europe, North America, Central America, the Caribbean, Asia, Australia, and Oceania.",
+      "shortDescription": "A rare and majestic wood-inhabiting mushroom with a silky, snow-white cap, known for its striking beauty but of low culinary value due to its thin flesh.",
+      "edibility": "Edible, but not recommended due to rarity and low culinary value.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Non-poisonous. Has a faint radish-like taste and odor. Shows antioxidant and anticancer potential in pharmacological studies.",
+      "identification": {
+        "cap": "5–20 cm, ovoid to bell-shaped when young, later flattening; snow-white, becoming yellowish or brownish with age; surface covered with silky fibrils; inrolled margin when young.",
+        "gills": "Free from stem, crowded, fragile; white when young, turning flesh-pink with age; lightly scalloped edges.",
+        "stem": "7–15 cm tall, 1–2.5 cm thick; cylindrical, tapering toward the apex, sometimes curved; white to creamy; bald or finely powdery near the apex; ring absent; volva thick and bag-like, white aging to ochre or brown, often cracked.",
+        "flesh": "White, soft, unchanging when cut; faint radish-like odor; mild taste.",
+        "sporePrint": "Brownish pink; spores ellipsoid, smooth, 8–10 × 5–6 µm, thick-walled.",
+        "taste": "Mild, radish-like.",
+        "odor": "Faint horseradish- or radish-like.",
+        "microscopicFeatures": "Spores inamyloid, ellipsoid (6–9 × 3.5–5 µm); large lageniform pleurocystidia up to 70 µm; pileipellis composed of long aseptate non-gelatinous hyphae."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Amanita virosa"
+        },
+        {
+          "binomialNomenclature": "Volvopluteus gloiocephalus"
+        },
+        {
+          "binomialNomenclature": "Pluteus cervinus"
+        }
+      ],
+      "medicinalProperties": "Mycelial extracts and culture liquids show antioxidant activity and inhibition of lipid peroxidation, suggesting neuroprotective potential. Polysaccharides demonstrated 100% inhibition of mouse sarcoma and Ehrlich tumors at 300 mg/kg. Related Volvariella species are studied for anticancer effects.",
+      "note": "First described as Agaricus bombycinus by Schaeffer in 1762, later transferred to Volvariella by Rolf Singer in 1949. The epithet 'bombycina' means 'silky'. Includes var. flaviceps with a yellow cap (Florida). Considered rare and red-listed in parts of Russia."
+    }
+  },
+  "02_Schizophyllum_commune": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\02_Schizophyllum_commune\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Schizophyllum commune",
+      "commonNames": {
+        "en": [
+          "Common Porecrust"
+        ],
+        "vi": [
+          "Nấm chân chim"
+        ]
+      },
+      "habitat": "Saprobic on dead hardwoods or weakly parasitic on living trees. Found on logs, sticks, planks, and boards. Grows alone, gregariously, or in dense clusters. Occurs worldwide (all continents except Antarctica) and can survive cycles of dehydration and rehydration. Year-round fruiting.",
+      "shortDescription": "A tough, fan-shaped fungus with distinctive split gills that close in dry weather and reopen with moisture. Common worldwide and known for its remarkable resilience and medicinal properties.",
+      "edibility": "Edible, but with tough texture. Considered inedible in many Western guides due to poor culinary value. Widely consumed in Mexico, India (Manipur, Mizoram), and other tropical regions.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Non-toxic. Valued medicinally for immunomodulating, anticancer, antitumor, and antioxidant properties. Contains sizofilan (SPG), a glucan with clinical use in cancer therapy.",
+      "identification": {
+        "cap": "1–5 cm; fan-shaped, irregular, or shell-shaped depending on attachment; surface finely hairy to velvety; whitish, grayish, or brownish; dry; sometimes zoned.",
+        "gills": "Whitish to grayish, appearing split down the middle; distant and folded; capable of closing in dry conditions and reopening when moistened.",
+        "stem": "Absent.",
+        "flesh": "Whitish, tough, does not change when cut.",
+        "sporePrint": "White.",
+        "taste": "Aromatic but tough; little culinary value.",
+        "odor": "Aromatic.",
+        "microscopicFeatures": "Spores 4–6.5 × 1.5–2 µm, subcylindric to subellipsoid, smooth, hyaline in KOH, inamyloid. Hymenial cystidia absent. Pileipellis a cutis of 2.5–5 µm wide elements, sometimes forming bundles. Clamp connections present."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Plicaturopsis crispa"
+        }
+      ],
+      "medicinalProperties": "Produces sizofilan (SPG), a glucan used as an adjuvant immunotherapy for cancer, particularly head and neck cancers. Stimulates production of IFN-γ and IL-2, contributing to antitumor activity. Hot water and alkaline extracts show significant antioxidant effects, correlated with polysaccharide and polyphenol content.",
+      "note": "Described from Sweden; globally widespread. Known for its unique split gill mechanism that protects fertile surfaces during drought. Consumed traditionally in tropical regions but usually ignored in Western cuisine due to toughness."
+    }
+  },
+  "03_Lentinula_edodes": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\03_Lentinula_edodes\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Lentinula edodes",
+      "commonNames": {
+        "en": [
+          "Shiitake mushroom"
+        ],
+        "vi": [
+          "Nấm hương"
+        ]
+      },
+      "habitat": "Saprobic on decaying hardwoods, especially chinquapin, chestnut, oak, maple, beech, sweetgum, poplar, hornbeam, ironwood, and mulberry. Grows naturally in warm and moist deciduous forests of Southeast Asia.",
+      "shortDescription": "An edible mushroom native to Asia, famous for both culinary and medicinal uses. It has a meaty texture, tan to brown umbrella-shaped cap, and is one of the most widely cultivated mushrooms in the world.",
+      "edibility": "Edible. The second most widely cultivated mushroom globally, rich in protein, fiber, B vitamins, vitamin C, vitamin D, copper, selenium, zinc, and iron. Popular in Asian cuisine for thousands of years.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Non-toxic. Contains lentinan, a polysaccharide complex known for immune-stimulating, anticancer, antimicrobial, antioxidant, antihypertensive, antidiabetic, liver-protective, bone-inducing, and antiviral properties.",
+      "identification": {
+        "cap": "5–15 cm; umbrella-shaped; tan to brown; edges rolled down and inward; underside with whitish to cream gills.",
+        "gills": "Adnexed; whitish to cream.",
+        "stem": "5–8 cm tall; whitish to cream, sometimes browning with age.",
+        "flesh": "",
+        "sporePrint": "White.",
+        "taste": "Meaty.",
+        "odor": "",
+        "microscopicFeatures": ""
+      },
+      "lookAlikes": [],
+      "medicinalProperties": "Lentinan boosts immune response, increases white blood cells, reduces inflammation. Exhibits antibacterial, antifungal, and anti-MRSA properties. Shown to have anticancer effects in colon, gastric, pancreatic, breast, liver cancers and leukemia. Provides liver protection, reduces blood pressure, improves bone health, lowers blood sugar, cholesterol, and triglycerides. Demonstrates antiviral activity against influenza, hepatitis, HIV, and herpes. Enhances survival and quality of life in some clinical cases.",
+      "note": "First described as Agaricus edodes by Miles Joseph Berkeley in 1877; transferred to genus Lentinula by David Pegler in 1976. Name 'shiitake' comes from Japanese: 'shii' (oak) + 'take' (mushroom)."
+    }
+  },
+  "04_Auricularia_auricula-judae": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\04_Auricularia_auricula-judae\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Auricularia auricula-judae",
+      "commonNames": {
+        "en": [
+          "Black wood ear",
+          "Wood ear mushroom",
+          "Jelly ear mushroom"
+        ],
+        "vi": [
+          "Nấm mộc nhĩ"
+        ]
+      },
+      "habitat": "Saprobic or weakly parasitic on decaying wood of old deciduous trees and shrubs, especially elder, beech, ash, spindle, Acer pseudoplatanus. Found worldwide in temperate and subtropical zones, growing year-round in clusters, often after rain.",
+      "shortDescription": "An edible jelly fungus with ear-like, purplish-brown fruiting bodies. Tough, gelatinous, and elastic when fresh; hard and brittle when dry. Widely used in Asian soups and cuisine.",
+      "edibility": "Edible when cooked, but must not be eaten raw. Mild flavor, jelly-like crunchy texture. Commonly consumed in Asia and Eastern Europe. Dried specimens can be rehydrated, swelling 3–4 times in size.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Generally safe, with medicinal and nutritional benefits. Contains antibacterial, antitumor, antidiabetic, anticoagulant, antioxidant, antiviral, and cholesterol-lowering compounds. May negatively impact fertility; caution for pregnant or lactating women. Rehydrated mushrooms should be consumed within one day to avoid toxicity. Potential allergen for sensitive individuals.",
+      "identification": {
+        "cap": "Fruiting body up to 9 cm across, ~3 mm thick. Ear-shaped or cup-shaped, attached laterally, sometimes with a short stem. Upper surface reddish-tan to purplish brown, finely pilose, wrinkled with age. Undersurface lighter grey-brown, smooth to folded, sometimes veined.",
+        "gills": "",
+        "stem": "Usually absent; sometimes with a very short lateral attachment.",
+        "flesh": "Thin, dense, cartilaginous, gelatinous, translucent, no strong odor.",
+        "sporePrint": "White.",
+        "taste": "Mild, sometimes considered bland.",
+        "odor": "Not distinctive.",
+        "microscopicFeatures": "Spores 12–14 × 4–5.5 μm, allantoid, hyaline; basidia 65–75 × 4–5 μm, cylindric, 3-septate; flesh with gelatinized hyphae 2–3 μm; abhymenial surface with projecting hyaline hairs 40–125 × 7.5–12.5 μm."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Auricularia cerrina"
+        },
+        {
+          "binomialNomenclature": "Auricularia heimuer"
+        },
+        {
+          "binomialNomenclature": "Auricularia angiospermarum"
+        }
+      ],
+      "medicinalProperties": "Traditionally used for throat and eye ailments. Demonstrated antibacterial, antitumor (diazane), anticoagulant, antioxidant, radioprotective (melanin pigments), antidiabetic, anti-inflammatory, anti-obesity, antiviral (sulfated polysaccharides), and cholesterol-lowering effects. Shows immunomodulatory properties and potential as an oral drug delivery system. Used historically in Europe as gargle for sore throats and in poultices.",
+      "note": "First described as Tremella auricula by Linnaeus, later as Tremella auricula-judae by Bulliard. Renamed Exidia auricula-judae by Fries (1822) and finally placed in Auricularia by Schröter (1888). The epithet 'auricula-judae' means 'ear of Judas', linked to the legend of Judas Iscariot hanging from an elder tree."
+    }
+  },
+  "05_Auricularia_polytricha": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\05_Auricularia_polytricha\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Auricularia polytricha",
+      "commonNames": {
+        "en": [
+          "Cloud ear fungus",
+          "Hairy wood ear"
+        ],
+        "vi": [
+          "Mao mộc nhĩ",
+          "Vân nhĩ"
+        ]
+      },
+      "habitat": "Grows on trees in mountainous regions; usually a weak parasite to saprophyte. Occurs in clusters on tree trunks and dead branches. General habitat: moist-deciduous to wet evergreen forests (Western Ghats).",
+      "shortDescription": "An edible jelly fungus, gray-brown and often hairy, commonly used in Asian (especially Chinese) cuisine for its texture; grows in clusters on trees.",
+      "edibility": "Edible; commonly used in Asian cooking, especially Chinese cuisine; valued for texture in soups and stir-fries.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Exhibits anticoagulant effects (should be avoided before surgery or by patients with poor blood clotting). Shows antioxidant and antimicrobial properties; extracts may adsorb glucose and suppress α-amylase, potentially aiding postprandial glycemic control.",
+      "identification": {
+        "cap": "Fruit body resupinate or pileate, loosely attached laterally, sometimes with a very short stalk. Sterile surface dark yellowish-brown to dark brown with grayish-brown bands; hairy, silky. Hairs thick-walled up to 0.6 mm long.",
+        "gills": "Hymenium smooth or wrinkled; pale brown to dark brown to blackish-brown with a whitish bloom.",
+        "stem": "Usually absent or very short when present.",
+        "flesh": "Elastic and gelatinous when fresh.",
+        "sporePrint": "",
+        "taste": "Mild; primarily valued for texture rather than flavor.",
+        "odor": "",
+        "microscopicFeatures": "Basidia cylindrical, hyaline, three-septate, 46–60 × 4–5.5 μm with 1–3 lateral sterigmata (sterigmata 9–15 × 1.5–12 μm). Spores hyaline, reniform to allantoid, 13–16 × 4–5.5 μm, guttulate. Hairs thick-walled up to 0.6 mm long."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Auricularia auricula-judae"
+        }
+      ],
+      "medicinalProperties": "Extracts exhibit glucose adsorption and α-amylase suppression; antioxidant and antimicrobial activity (reported against Candida albicans, Escherichia coli, Enterococcus faecalis, Pseudomonas aeruginosa, and Staphylococcus aureus). Traditionally used in Chinese folk medicine for hemorrhoids and as a stomach tonic. Has anticoagulant properties.",
+      "note": "Synonym: Hirneola polytricha. Known in Chinese as 云耳 (yún'ěr) and 毛木耳 (máomù'ěr)."
+    }
+  },
+  "06_Agaricus_bisporus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\06_Agaricus_bisporus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Agaricus bisporus",
+      "commonNames": {
+        "en": [
+          "Button mushroom",
+          "White mushroom"
+        ],
+        "vi": [
+          "Nấm mỡ"
+        ]
+      },
+      "habitat": "Grasslands of North America and Europe; grows in grassy fields, especially after rain, often in areas with manure. Cultivated worldwide in over 70 countries.",
+      "shortDescription": "The most popular edible mushroom globally, consumed in its button, crimini, and portobello forms. White to brown caps, pink to brown gills, meaty texture, widely used in cooking.",
+      "edibility": "Edible and widely cultivated; safe when cooked. Consumed in many forms such as button, crimini, and portobello mushrooms.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Rich in vitamins (A, B, C, D) and minerals (phosphorus, potassium, calcium, iron). Contains antioxidants, supports immune system, digestive health, hormone regulation, and may have anti-inflammatory and anticancer properties. Raw mushrooms contain small amounts of agaritine and gyromitrin, reduced by cooking. Potential allergy risk. Excessive raw consumption may be harmful.",
+      "identification": {
+        "cap": "White or brown; 2.5–14 cm wide; convex to flat with growth; smooth or slightly scaly; bruises pinkish to reddish.",
+        "gills": "Free from stem; close together; pinkish when young, darkening to nearly black with age.",
+        "stem": "White, smooth or slightly scaly; 2–7 cm long, 1–2.5 cm thick; may bruise reddish-brown; thin ring often disappears with age.",
+        "flesh": "Firm and white; bruises pinkish-red, then brown.",
+        "sporePrint": "Dark brown.",
+        "taste": "Earthy, nutty, slightly woodsy.",
+        "odor": "",
+        "microscopicFeatures": "Spores ellipsoid, 6–8 × 5–6 µm; smooth, thick-walled, brown in KOH. Cheilocystidia 20–30 µm long, clavate, thin-walled. No pleurocystidia."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Amanita virosa"
+        }
+      ],
+      "medicinalProperties": "Potential antioxidant, anti-inflammatory, antibacterial, antifungal, anticancer, and genoprotective effects. May regulate hormones, support blood sugar control, promote digestive health, boost immunity, and aid skin regeneration.",
+      "note": "Also known as crimini (brown variety) and portobello (mature form). Historically classified under Agaricus campestris and Psalliota species before being named Agaricus bisporus."
+    }
+  },
+  "07_Pleurotus_pulmonarius": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\07_Pleurotus_pulmonarius\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pleurotus pulmonarius",
+      "commonNames": {
+        "en": [
+          "Indian Oyster",
+          "Italian Oyster",
+          "Phoenix Mushroom"
+        ],
+        "vi": [
+          "Nấm bào ngư trắng",
+          "Nấm sò"
+        ]
+      },
+      "habitat": "Grows in shelf-like clusters on both dead and living hardwood; widely distributed in forests of North America and worldwide. Fruits from late spring through September.",
+      "shortDescription": "An edible oyster mushroom closely related to Pleurotus ostreatus. It has smaller, paler caps, more developed stems, and prefers warmer conditions. Cultivated in Europe and North America.",
+      "edibility": "Edible and widely cultivated. Considered a healthy food, low in calories, fat, and sodium.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Contains β-D-Glucan with analgesic properties. Extracts show anti-inflammatory, antitumor, antihyperglycemic, antihypertensive, antioxidant, antiviral, and antiallergic activities. Potential use in cancer therapy, diabetes management, and cardiovascular support. May cause gastrointestinal distress due to arabitol in sensitive individuals.",
+      "identification": {
+        "cap": "3–10 cm; convex to flat or slightly depressed; fan-shaped to semicircular; whitish to beige or pale tan; smooth, bald, sometimes greasy when fresh; margin inrolled when young, later wavy.",
+        "gills": "Decurrent; close to nearly distant; whitish, turning yellowish with age.",
+        "stem": "0.5–1 cm thick, 1–4 cm long; eccentric, lateral, or central; whitish, smooth; may be rudimentary or absent.",
+        "flesh": "Thick, white, unchanging when cut.",
+        "sporePrint": "White to gray or lilac.",
+        "taste": "Mild mushroom flavor, slight anise note.",
+        "odor": "Mushroom-like.",
+        "microscopicFeatures": "Spores 7–11 × 2–3 µm, cylindric-ellipsoid, smooth, hyaline in KOH, inamyloid. Hymenial cystidia absent. Pileipellis a cutis with 5–10 µm wide hyaline elements."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Pleurotus populinus"
+        },
+        {
+          "binomialNomenclature": "Pleurocybella porrigens"
+        }
+      ],
+      "medicinalProperties": "Research indicates anticancer, antihypertensive (ACE inhibition), antioxidant, anti-inflammatory, antidiabetic, antirhinitis, and antiviral (including HIV-1 RT inhibition) effects. Polysaccharide-protein complexes and metabolites show immunomodulatory activity and potential therapeutic applications.",
+      "note": "Also cultivated for environmental uses such as biodegradable packaging, oil spill cleanup, and even disposable diaper degradation. Naturally contains lovastatin, associated with cholesterol reduction."
+    }
+  },
+  "08_Ganoderma_lucidum": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\08_Ganoderma_lucidum\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Ganoderma lucidum",
+      "commonNames": {
+        "en": [
+          "Reishi",
+          "Varnished conk",
+          "Lacquered bracket",
+          "Ling chih"
+        ],
+        "vi": [
+          "Nấm linh chi"
+        ]
+      },
+      "habitat": "Grows on stumps or trunks of hardwoods like oak, maple, and hemlock; thrives in moist, shady spots across Asia, North America, and Europe; fruits late summer to early autumn.",
+      "shortDescription": "A medicinal mushroom with a large, dark, glossy, woody fruiting body, revered in traditional Chinese medicine. Known for bioactive compounds with potential health benefits.",
+      "edibility": "Not typically consumed fresh due to bitter, woody texture; used in teas, powders, extracts, and supplements for medicinal purposes.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Contains triterpenoids, polysaccharides, and peptidoglycans with antioxidant, anti-inflammatory, immunomodulatory, stress-reducing, potential anti-cancer, liver-supporting, sleep-promoting, and cardiovascular benefits. May interact with blood thinners, chemotherapy, immunosuppressants, and liver-processed drugs. Limited safety data in pregnancy and breastfeeding. Rare reports of liver toxicity and chronic diarrhea.",
+      "identification": {
+        "cap": "3–20 cm; rounded, fan-shaped, or kidney-shaped; red-brown or dark brown with a varnished, glossy surface and radial grooves; edges sharp, sometimes wavy with whitish, yellow, or reddish tones.",
+        "poreSurface": "Tubular hymenophore; whitish/cream turning brown; pores 0.15–0.25 mm, 4–5 per mm; darkens when dry or touched.",
+        "stem": "3–15 cm long, 1–3 cm thick; often lateral, occasionally central; chestnut or dark brown with a purple-brown shine; uneven surface.",
+        "flesh": "Spongy when young, becomes dense and hard with age; whitish to brown or wood-colored.",
+        "sporePrint": "Brown.",
+        "spores": "7.5–13 × 5.5–7.5 μm, ovoid, warty, yellow-brown.",
+        "odor": "Mushroom-like.",
+        "taste": "Bitter and woody."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Ganoderma tsugae"
+        },
+        {
+          "binomialNomenclature": "Ganoderma applanatum"
+        },
+        {
+          "binomialNomenclature": "Ganoderma curtisii"
+        },
+        {
+          "binomialNomenclature": "Ganoderma sessile"
+        },
+        {
+          "binomialNomenclature": "Ganoderma oregonense"
+        }
+      ],
+      "medicinalProperties": "Reishi supports liver function, immune health, stress reduction, improved sleep, antioxidant protection, anti-inflammatory effects, cardiovascular support, potential anti-cancer effects, and skin health. Used in teas, tinctures, powders, capsules, infused wine, coffee, and skincare products.",
+      "note": "Cultivation requires warm temperatures, high humidity, indirect light, and hardwood substrates (logs or sawdust). Dried mushrooms are used for medicinal preparations."
+    }
+  },
+  "09_Tylopilus_felleus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\09_Tylopilus_felleus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Tylopilus felleus",
+      "commonNames": {
+        "en": [
+          "bitter bolete",
+          "bitter tylopilus"
+        ],
+        "vi": [
+          "Nấm tràm"
+        ]
+      },
+      "habitat": "Widely distributed and common east of the Rocky Mountains wherever conifers occur naturally.",
+      "shortDescription": "An inedible bolete (but not poisonous) with slightly to distinctly pink pores on the underside of the bun-shaped brown cap, a dark net on the thick stem, and a very bitter taste.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "In some countries, used as a substitute for pepper.",
+      "identification": {
+        "cap": "5–13 cm; convex, becoming broadly convex or nearly flat; dry; bald and softly leathery; unpolished; sometimes cracked; brown, fading to tan.",
+        "gills": "",
+        "stem": "4–10 cm long; 1.5–4 cm thick; club-shaped; whitish to pale brownish above; pale brown to tan elsewhere; strongly reticulate with wide-meshed brown net at least on upper third; basal mycelium white.",
+        "flesh": "Thick; soft; white; unchanging when sliced.",
+        "sporePrint": "Brownish pink.",
+        "taste": "Very bitter.",
+        "odor": "Not distinctive.",
+        "microscopicFeatures": "Spores 10–16 × 3–4 µm; narrowly fusiform to subfusiform; smooth; hyaline to yellowish in KOH. Hymenial cystidia 30–40 × 8–10 µm; fusiform; smooth; thin-walled; hyaline in KOH; sometimes with golden inclusion. Pileipellis a tangled cutis of cylindric elements 5–7.5 µm wide; golden yellow in KOH; terminal cells erect, rounded to subacute."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Boletus edulis"
+        },
+        {
+          "binomialNomenclature": "Boletus subtomentosus"
+        },
+        {
+          "binomialNomenclature": "Tylopilus rubrobrunneus"
+        },
+        {
+          "binomialNomenclature": "Tylopilus variobrunneus"
+        },
+        {
+          "binomialNomenclature": "Tylopilus rhoadsiae"
+        },
+        {
+          "binomialNomenclature": "Tylopilus indecisus"
+        },
+        {
+          "binomialNomenclature": "Tylopilus ferrugineus"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Type species of Tylopilus; first described as Boletus felleus by Bulliard in 1788; transferred to Tylopilus by Karsten in 1881."
+    }
+  },
+  "10_Pleurotus_ostreatus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\10_Pleurotus_ostreatus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pleurotus ostreatus",
+      "commonNames": {
+        "en": [
+          "oyster mushroom",
+          "grey oyster mushroom",
+          "oyster fungus",
+          "hiratake",
+          "pearl oyster mushroom"
+        ],
+        "vi": [
+          "Nấm bào ngư xám",
+          "Nấm sò ngọc trai"
+        ]
+      },
+      "habitat": "Saprobic; grows on dying or dead deciduous broadleaf trees such as beech and oak, sometimes on fallen trunks and large branches.",
+      "shortDescription": "An edible mushroom with fan-shaped caps and decurrent gills, commonly cultivated worldwide and valued for both culinary and medicinal uses.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Rich in antioxidants, beta-D-glucans, and natural statins that support heart and immune health; may cause allergies in sensitive individuals.",
+      "identification": {
+        "cap": "White, cream, brown, or blue-gray; convex becoming depressed with wavy margin; 5–18 cm wide.",
+        "gills": "White turning pale ochre with age; crowded; decurrent.",
+        "stem": "White or cream; 1–3 cm long, 1–2 cm thick; woolly base; often short or absent; no ring.",
+        "flesh": "",
+        "sporePrint": "White to faintly yellowish or lilac.",
+        "taste": "Pleasant but not distinctive",
+        "odor": "Pleasant but not distinctive.",
+        "microscopicFeatures": "Spores 7–11 x 2–4 µm, cylindric-ellipsoid, smooth, hyaline; basidia 4-sterigmate; hymenial cystidia absent; pileipellis a tangled cutis."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Lentinellus ursinus"
+        },
+        {
+          "binomialNomenclature": "Pleurotus dryinus"
+        },
+        {
+          "binomialNomenclature": "Pleurotus pulmonarius"
+        },
+        {
+          "binomialNomenclature": "Pleurotus populinus"
+        },
+        {
+          "binomialNomenclature": "Pleurotus cornucopiae"
+        },
+        {
+          "binomialNomenclature": "Panellus serotinus"
+        }
+      ],
+      "medicinalProperties": "Contains ergothioneine, beta-glucans, and pleuran with antioxidant, cholesterol-lowering, immune-modulating, antimicrobial, and potential anti-tumor properties.",
+      "note": "Can occasionally trigger allergic reactions due to compounds like arabitol or trehalose phosphorylase."
+    }
+  },
+  "11_Boletus_edulis": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\11_Boletus_edulis\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Boletus edulis",
+      "commonNames": {
+        "en": [
+          "cep",
+          "penny bun",
+          "porcino"
+        ],
+        "vi": [
+          "Nấm thông"
+        ]
+      },
+      "habitat": "Grows in mycorrhizal association with trees, particularly hemlock, oak, spruce, and other conifers; can also be found in lawns and grassy areas under conifers; most abundant from June to October.",
+      "shortDescription": "A large, edible mushroom with pores instead of gills, highly valued for its taste and texture, found worldwide under various trees.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Good source of protein, fiber, copper, potassium, and vitamin B12; generally safe to eat.",
+      "identification": {
+        "cap": "1.97 to 7.87 inches (5 to 20 cm) in diameter; initially hemispherical, later convex to flat-spread; pubescent then smooth; yellowish-brown to chestnut-brown or grayish-brown.",
+        "gills": "",
+        "stem": "1.97 to 7.87 inches (5 to 20 cm) high, 0.79 to 2.76 inches (2 to 7 cm) thick; initially bulbous, later club-shaped, longitudinally wrinkled; white, grayish, ocher, or light brown; solid and fleshy.",
+        "flesh": "White, slightly yellowing with age.",
+        "sporePrint": "Olive-brown",
+        "taste": "Very mushroomy",
+        "odor": "Very mushroomy",
+        "microscopicFeatures": "Spores 12-19 × 4-6 µm, spindle-shaped, rarely elongated."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Boletus reticulatus"
+        },
+        {
+          "binomialNomenclature": "Tylopilus felleus"
+        },
+        {
+          "binomialNomenclature": "Boletus pinophilus"
+        },
+        {
+          "binomialNomenclature": "Boletus aereus"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Difficult to cultivate due to mycorrhizal nature; can be eaten raw in small amounts when fresh but usually cooked or dried."
+    }
+  },
+  "12_Tremella_fuciformis": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\12_Tremella_fuciformis\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Tremella fuciformis",
+      "commonNames": {
+        "en": [
+          "snow fungus",
+          "snow ear",
+          "silver ear fungus",
+          "white jelly mushroom",
+          "white cloud ears"
+        ],
+        "vi": [
+          "Nấm tuyết",
+          "Mộc nhĩ trắng",
+          "Ngân nhĩ"
+        ]
+      },
+      "habitat": "Found in tropical and subtropical regions; grows on dead hardwood logs after heavy rains.",
+      "shortDescription": "A gelatinous, frond-like mushroom prized for culinary, medicinal, and beauty-enhancing uses.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Rich in antioxidants, beta-glucans, and polysaccharides; boosts immune system, promotes skin health, cardiovascular and brain health, and bone density.",
+      "identification": {
+        "cap": "Fruiting bodies are whitish, nearly transparent, gelatinous, frond-like, up to 7.5 cm across.",
+        "gills": "",
+        "stem": "",
+        "flesh": "Gelatinous, soft texture",
+        "sporePrint": "",
+        "taste": "Little flavor",
+        "odor": "",
+        "microscopicFeatures": ""
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Ductifera pululahuana"
+        },
+        {
+          "binomialNomenclature": "Tremella reticulata"
+        }
+      ],
+      "medicinalProperties": "Supports skin hydration, anti-aging, immune system, brain health, cardiovascular health, and bone health.",
+      "note": "Historically, this mushroom was a rare delicacy, available only to nobles due to its difficulty to cultivate."
+    }
+  },
+  "13_Hericium_erinaceus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\13_Hericium_erinaceus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Hericium erinaceus",
+      "commonNames": {
+        "en": [
+          "lion's mane",
+          "yamabushitake",
+          "bearded tooth fungus",
+          "bearded hedgehog"
+        ],
+        "vi": [
+          "Nấm hầu thủ",
+          "Nấm đầu khỉ"
+        ]
+      },
+      "habitat": "Grows on dead wood, alone or in pairs; found in Europe, North America, Canada, Mexico, Central America, and Asia; fruits in late summer/fall or winter/spring in warm areas.",
+      "shortDescription": "A white fungus with long icicle-like spines, prized for culinary and medicinal uses.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Supports brain and nerve health, cognitive function, immune system, digestive health, antibacterial, anti-inflammatory, anti-cancer properties; may lower blood sugar; may cause itchy skin or affect blood clotting.",
+      "identification": {
+        "cap": "Fruiting body 8–25 cm wide, unbranched clump of soft spines 1–4 cm long; white, may turn brownish or yellowish with age; attached to tough base on tree.",
+        "gills": "",
+        "stem": "",
+        "flesh": "White, soft, spongy; does not change color when sliced.",
+        "sporePrint": "White",
+        "taste": "Mild, similar to lobster",
+        "odor": "Not distinctive",
+        "microscopicFeatures": "Spores 5–6 x 5.5–6 µm, globose to subglobose or subellipsoid, smooth or minutely roughened; hyaline; amyloid; gloeoplerous hyphae present, sometimes forming cystidia up to 50 x 6 µm."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Hericium americanum"
+        },
+        {
+          "binomialNomenclature": "Hericium cirrhatum"
+        },
+        {
+          "binomialNomenclature": "Hericium coralloides"
+        }
+      ],
+      "medicinalProperties": "Supports brain and nerve health, cognitive function, neuroprotection, immune system, digestive health, antibacterial, anti-inflammatory, anti-cancer, antioxidant activity.",
+      "note": "Lion's Mane can be consumed as powder, extract, tea, coffee, tincture, gummies, or vitamins; caution advised for pregnancy, breastfeeding, blood clotting disorders, or surgery. Also safe for pets under guidance."
+    }
+  },
+  "14_Macrolepiota_albuminosa": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\14_Macrolepiota_albuminosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Macrolepiota Albuminosa",
+      "commonNames": {
+        "en": [
+          "Termite Mushroom"
+        ],
+        "vi": [
+          "Nấm mối"
+        ]
+      },
+      "habitat": "Grows on termite nests in tropical and subtropical forests, mainly during the rainy months (May–October). Forms a symbiotic relationship with termites.",
+      "shortDescription": "A highly valued mushroom with sweet, nutty flavor and medicinal benefits; relies on termite nests for growth.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Safe for human consumption, rich vitamins",
+      "identification": {
+        "cap": "White to light yellow, 3–7 cm in diameter; meaty and chewy with mild aroma that intensifies when cooked.",
+        "gills": "",
+        "stem": "Ivory white, thick, 5–10 cm long.",
+        "flesh": "Meaty, chewy",
+        "sporePrint": "",
+        "taste": "Sweet, nutty",
+        "odor": "Unique aroma, intensifies when cooked",
+        "microscopicFeatures": ""
+      },
+      "lookAlikes": [],
+      "medicinalProperties": "Immune booster, digestive support, heart health, anti-inflammatory, antidiabetic, hepatoprotective, neuritogenic, antioxidant activity.",
+      "note": "Not cultivated artificially due to termite dependence; wild harvesting should follow sustainable practices; cook before consumption."
+    }
+  },
+  "15_Cantharellus_cibarius": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\15_Cantharellus_cibarius\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Cantharellus cibarius",
+      "commonNames": {
+        "en": [
+          "golden chanterelle",
+          "girolle",
+          "girole"
+        ],
+        "vi": [
+          "Nấm mồng gà",
+          "Nấm mỡ gà"
+        ]
+      },
+      "habitat": "Deciduous forest soils near oak and beech trees; found across Canada, the U.S., Europe, Mediterranean, parts of eastern and southern Australia, and parts of Asia.",
+      "shortDescription": "A highly prized, fragrant, edible mushroom, bright yellow, found on forest floors in summer and autumn.",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "",
+      "identification": {
+        "cap": "Funnel-shaped, up to 10 cm diameter, wavy irregular margin, color light yellow to deep egg-yolk yellow, Often curved, occasionally joined at",
+        "gills": "Ridges that are forked, blunt-edged, same color as mushroom, wavy, decurrent",
+        "stem": "Veins thick and decurrbaseent",
+        "flesh": "Thick, firm, apricot-like scent",
+        "sporePrint": "Pale yellow to creamy white, sometimes with slight pinkish tinge",
+        "taste": "",
+        "odor": "Somewhat apricot-like",
+        "microscopicFeatures": ""
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Clitocybe illudens"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Important to distinguish from poisonous jack-o-lantern (Clitocybe illudens) which glows in the dark."
+    }
+  },
+  "16_Hypsizygus_tessellatus": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\16_Hypsizygus_tessellatus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Hypsizygus tessellatus",
+      "commonNames": {
+        "en": [
+          "White beech mushroom",
+          "Brown beech mushroom"
+        ],
+        "vi": [
+          "Nấm ngọc châm",
+          "Nấm sồi trắng",
+          "Nấm sồi nâu"
+        ]
+      },
+      "habitat": "Saprobic; usually growing in clusters of two or three on wood, especially beech trees; widely distributed in eastern and northern North America, sometimes Rocky Mountains and West Coast; fall season",
+      "shortDescription": "Edible mushroom native to East Asia; small and thin; high in protein and B vitamins",
+      "edibility": "Edible",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "High in protein, B vitamins (niacin, riboflavin, pantothenic acid), vitamin D, and minerals",
+      "identification": {
+        "cap": "4–8 cm; convex, becoming broadly convex with slightly inrolled margin; dry; bald; whitish to buff or very pale tan; sometimes tessellated with watery spots when fresh and young",
+        "gills": "Attached to stem; close; short-gills frequent; whitish; not bruising",
+        "stem": "3–8 cm long, 1–2 cm thick; equal or slightly club-shaped; dry; bald or very finely silky; whitish to very pale tan",
+        "flesh": "Firm; white; unchanging when sliced",
+        "sporePrint": "White to buff",
+        "taste": "Slightly bitter when raw, nutty when cooked",
+        "odor": "Odor not distinctive or slightly mealy",
+        "microscopicFeatures": "Spores 4–5 µm; subglobose; smooth; hyaline in KOH; inamyloid; lamellar trama parallel; basidia 4-sterigmate; hymenial cystidia not found; pileipellis a cutis; elements 2–4 µm wide, often clamped, smooth, hyaline in KOH"
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Hypsizygus Ulmarius"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Being tough when raw, it should be cooked; bitter taste disappears after cooking; used in soups, stews, stir-fried dishes, and Japanese cuisine such as nabe and takikomi gohan."
+    }
+  },
+  "17_Pleurotus_eryngii": {
+    "category": "edible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Edible\\17_Pleurotus_eryngii\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pleurotus eryngii",
+      "commonNames": {
+        "en": [
+          "King Trumpet Mushroom",
+          "French Horn Mushroom",
+          "King Oyster Mushroom",
+          "King Brown Mushroom",
+          "Boletus Of The Steppes",
+          "Trumpet Royale",
+          "Ali'i Oyster"
+        ],
+        "vi": [
+          "Nấm đùi gà",
+          "Nấm bào ngư"
+        ]
+      },
+      "habitat": "Grows on dead or dying hardwood trees and in cultivation on sawdust and straw substrates. It typically fruits in the late summer to early fall. In the wild, they typically grow with a small stem and a large, dark cap.",
+      "shortDescription": "A thick, meaty mushroom with a small tan to brown cap and white to light brown gills that run down the stem. Known for its nutty flavor and versatility in cooking, it's highly prized in Italian cuisine and has the longest shelf-life among mushrooms.",
+      "edibility": "Edible, highly prized in many cuisines, particularly Italian, where it is often used in risottos, pastas, and other dishes.",
+      "isPoisonous": "False",
+      "benefitsOrToxicity": "Rich in nutrients, antioxidants, supports immune system, heart health, blood sugar regulation, anti-inflammatory, cancer and anti-inflammatory properties, potential in diabetes and cholesterol management, fights food contamination. Possible side effects include tummy trouble, rashes, headaches, dizziness, respiratory issues.",
+      "identification": {
+        "cap": "Convex to bell-shaped, 1-8 cm diameter, tan to brown.",
+        "gills": "White to light brown, run down the stem.",
+        "stem": "2-10 cm long, 2-3 cm wide, white to light brown.",
+        "flesh": "Meaty texture, nutty flavor.",
+        "sporePrint": "White.",
+        "taste": "Meaty, nutty.",
+        "odor": "Not distinctive.",
+        "microscopicFeatures": ""
+      },
+      "lookAlikes": [],
+      "medicinalProperties": "Rich in fiber, vitamins, and minerals, with low carbs, antioxidants like gallic acid and ergothioneine, beta-glucans for immune and heart health, anti-inflammatory, potential anti-cancer effects.",
+      "note": "The longest shelf-life and it is the third most popular mushroom in the world in terms of production."
+    }
+  },
+  "18_Amanita_verna": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\18_Amanita_verna\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita verna",
+      "commonNames": {
+        "en": [
+          "Fool's Mushroom"
+        ],
+        "vi": [
+          "Nấm độc tán trắng"
+        ]
+      },
+      "habitat": "Grows in European woodlands and hardwood forests in springtime.",
+      "shortDescription": "A deadly poisonous white mushroom with a silky, shiny cap, stocky stem, and volva, very similar to Amanita phalloides but completely white or light-colored.",
+      "edibility": "Deadly poisonous, contains alpha-amanitin causing liver failure.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Fatal dose of alpha-amanitin causes liver failure, phallotoxins. Symptoms appear 6-24 hours later: unease, cramps, diarrhea, then kidney and liver failure.",
+      "identification": {
+        "cap": "5-10 cm diameter, pure white, egg-shaped to bell-shaped or flat with broad umbo, silky shiny, yellowish with age.",
+        "gills": "White, free, crowded.",
+        "stem": "9-15 cm tall, 0.6-2 cm diameter, white, fibrous, fragile ring high up, large sack-like volva buried in soil.",
+        "flesh": "White.",
+        "sporePrint": "White.",
+        "taste": "Not distinctive.",
+        "odor": "None, unpleasant when aged.",
+        "microscopicFeatures": "Spores spherical or subglobose, 7-8 μm."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Amanita citrina"
+        },
+        {
+          "binomialNomenclature": "Amanita virosa"
+        },
+        {
+          "binomialNomenclature": "Amanita phalloides"
+        }
+      ],
+      "medicinalProperties": "None, highly toxic.",
+      "note": "One of the most deadly mushrooms, implicated in several serious or fatal poisonings."
+    }
+  },
+  "19_Amanita_virosa": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\19_Amanita_virosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita virosa",
+      "commonNames": {
+        "en": [
+          "Death Angel",
+          "Destroying Angel"
+        ],
+        "vi": [
+          "Nấm độc trắng hình nón"
+        ]
+      },
+      "habitat": "Mixed woodlands and grassy meadows near beech, chestnut, pine, spruce, fir, summer to autumn, Europe and eastern Asia, acidic soils.",
+      "shortDescription": "Deadly poisonous white mushroom with egg-shaped to bell-shaped cap, white gills, slender stem with hanging ring and volva, contains alpha-amanitin causing liver failure.",
+      "edibility": "Deadly poisonous.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Alpha-amanitin causes vomiting, diarrhea, liver failure 6-24 hours after ingestion, can lead to death.",
+      "identification": {
+        "cap": "2.5-12 cm, oval to convex or bell-shaped, smooth dry to sticky, white to ivory, yellow or pinkish with age.",
+        "gills": "White to cream, close, flocculose edge, short gills truncated.",
+        "stem": "5-12 cm tall, 0.8-1.5 cm diameter, cylindrical white, solid or pithy-hollow, concentric scaly rings below ring, white to yellowish ring, volva at base.",
+        "flesh": "Fragile white, unpleasant taste like radish or raw potato.",
+        "sporePrint": "White.",
+        "taste": "Unpleasant, like radish or raw potato.",
+        "odor": "None young, sickly sweet or rotting meat aged.",
+        "microscopicFeatures": "Spores spherical or subglobose 7-8 μm."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Agaricus sylvicola"
+        },
+        {
+          "binomialNomenclature": "Amanita phalloides"
+        },
+        {
+          "binomialNomenclature": "Amanita verna"
+        },
+        {
+          "binomialNomenclature": "Amanita citrina"
+        },
+        {
+          "binomialNomenclature": "Amanita strobiliformis"
+        }
+      ],
+      "medicinalProperties": "None, highly toxic.",
+      "note": "Deadly, mistaken for edible, debate on species in North America."
+    }
+  },
+  "20_Amanita_phalloides": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\20_Amanita_phalloides\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita phalloides",
+      "commonNames": {
+        "en": [
+          "Death Cap",
+          "Stinking Amanita",
+          "Deadly Amanita"
+        ],
+        "vi": [
+          "Nấm tử thần",
+          "Nấm độc xanh đen",
+          "Nấm đen",
+          "Nấm lục"
+        ]
+      },
+      "habitat": "Under coast liveoak, oaks, ornamental hardwoods, summer to mid-winter, Europe, North America, Asia.",
+      "shortDescription": "Poisonous mushroom with greenish-yellow cap, white gills, white stem with ring and volva, contains amatoxins causing liver failure.",
+      "edibility": "Poisonous.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Amatoxins cause abdominal pain, vomiting, diarrhea, then liver failure, death if untreated.",
+      "identification": {
+        "cap": "4-16 cm, round to flat, sticky when wet, dull green to olive to yellowish to brownish, streaked.",
+        "gills": "Free, white, close.",
+        "stem": "5-18 cm, 1-2.5 cm thick, white, ring like skirt, volva at base.",
+        "flesh": "White, unchanging.",
+        "sporePrint": "White.",
+        "taste": "",
+        "odor": "Repugnant in age, sickeningly sweet, rotten honey, carrion.",
+        "microscopicFeatures": "Spores 7.5-13.5 × 5.5-10.5 µm, subglobose to ellipsoid, amyloid, no clamps."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Agaricus campestris"
+        },
+        {
+          "binomialNomenclature": "Amanita citrina"
+        }
+      ],
+      "medicinalProperties": "None, highly toxic.",
+      "note": "One of the most poisonous, produces fairy rings, historical naming by Vaillant and Fries."
+    }
+  },
+  "21_Chlorophyllum_molybdites": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\21_Chlorophyllum_molybdites\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Chlorophyllum molybdites",
+      "commonNames": {
+        "en": [
+          "False Parasol",
+          "Green Gill",
+          "Green-Spored Parasol",
+          "Green Spored Lepiota"
+        ],
+        "vi": [
+          "Nấm ô tán trắng phiến xanh"
+        ]
+      },
+      "habitat": "Lawns, meadows, grassy areas, fairy rings, summer to fall, North America, South America, Europe, Asia, Africa, Australia.",
+      "shortDescription": "Poisonous mushroom with white cap turning scaly, green spores, causes gastrointestinal distress.",
+      "edibility": "Poisonous.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Causes nausea, vomiting, diarrhea 1-3 hours after ingestion, non-lethal but may require hospital treatment.",
+      "identification": {
+        "cap": "10-35 cm, convex to flat, smooth then brown to pinkish-brown scales.",
+        "gills": "Free or attached, white to grayish-green or brownish-green.",
+        "stem": "8-20 cm, 1.5-3 cm thick, tapering top, white to brown, persistent white ring with greenish lower edge.",
+        "flesh": "White, thick, may stain reddish-brown.",
+        "sporePrint": "Dull grayish-green.",
+        "taste": "",
+        "odor": "",
+        "microscopicFeatures": "Spores 9-13 x 6-9 µm, amygdaliform to ellipsoid, smooth, small pore; cheilocystidia 40-55 x 10-15 µm, cylindric to subclavate; pileipellis trichoderm or cutis."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Chlorophyllum rhacodes"
+        },
+        {
+          "binomialNomenclature": "Macrolepiota procera"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Common in lawns, fairy rings, poisonous to pets too."
+    }
+  },
+  "22_Lepiota_brunneoincarnata": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\22_Lepiota_brunneoincarnata\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Lepiota brunneoincarnata",
+      "commonNames": {
+        "en": [
+          "Deadly Dapperling"
+        ],
+        "vi": [
+          "Nấm Deadly Dapperling"
+        ]
+      },
+      "habitat": "Grassy areas, fields, parks, gardens, Europe, Asia, July to November.",
+      "shortDescription": "Toxic mushroom with brown scaled cap, pinkish-brown stem, white gills, contains alpha-amanitin causing liver damage.",
+      "edibility": "Deadly poisonous.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Contains alpha-amanitin, causes nausea, vomiting, liver damage, fatal in some cases.",
+      "identification": {
+        "cap": "2.5-6 cm, hemispherical to convex, pinkish-brown woolly scales in concentric rings.",
+        "gills": "Free, crowded, creamy white, cheilocystidia cylindrical or narrowly clavate.",
+        "stem": "2.5-5 cm, 5-9 mm diameter, creamy white with pink flush, smooth upper, scaly lower, indistinct woolly ring.",
+        "flesh": "White, turns slightly pink when broken.",
+        "sporePrint": "White.",
+        "taste": "",
+        "odor": "",
+        "microscopicFeatures": "Spores ellipsoidal, smooth, 8.9-10.2 x 4.8-5.5 µm, dextrinoid."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Lepiota subincarnata"
+        },
+        {
+          "binomialNomenclature": "Lepiota ignivolvata"
+        },
+        {
+          "binomialNomenclature": "Lepiota cristata"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Caused fatal poisonings in Spain, Iran, Tunisia, mistaken for edible, detected in urine 36-48 hours."
+    }
+  },
+  "23_Amanita_muscaria": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\23_Amanita_muscaria\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita muscaria",
+      "commonNames": {
+        "en": [
+          "Fly Agaric",
+          "Fly Amanita"
+        ],
+        "vi": [
+          "Nấm tán đỏ",
+          "Nấm tán giết ruồi",
+          "Nấm mặt trời"
+        ]
+      },
+      "habitat": "Coniferous, deciduous, mixed forests, birch forests, peaty soils, plains, hilly areas, acid oak forests, sandy soils, July to November.",
+      "shortDescription": "Famous poisonous mushroom with bright red cap and white spots, contains alkaloids causing hallucinations, vomiting, nausea, can be fatal.",
+      "edibility": "Poisonous, but some eat it for hallucinogenic effects after special preparation.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Contains ibotenic acid, muscimol, muscarine, causes vomiting, nausea, headache, dizziness, hallucinations, salivation, weakness, low blood pressure, coma, death in large quantities.",
+      "identification": {
+        "cap": "7-20 cm, hemispherical to flat, red to orange, covered with white flakes, striate margin.",
+        "gills": "White, free, crowded, turn pale yellow with age.",
+        "stem": "7-20 cm, 1-4 cm diameter, cylindrical, bulbous base, white, wide ring, volva with concentric zones.",
+        "flesh": "Soft, white, yellowish under cap skin, no pronounced smell.",
+        "sporePrint": "White.",
+        "taste": "Pleasantly sweet.",
+        "odor": "Inconspicuous.",
+        "microscopicFeatures": "Spores 9.5-10.5 x 7-8 µm, broadly oval, smooth."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Russula nobilis"
+        },
+        {
+          "binomialNomenclature": "Amanita caesarea"
+        },
+        {
+          "binomialNomenclature": "Amanita rubescens"
+        },
+        {
+          "binomialNomenclature": "Amanita regalis"
+        },
+        {
+          "binomialNomenclature": "Amanita gemmata"
+        }
+      ],
+      "medicinalProperties": "None, but used in some cultures for psychoactive effects.",
+      "note": "Famous, associated with Santa Claus, Jesus theories, used as insecticide, varieties."
+    }
+  },
+  "24_Entoloma_sinuatum": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\24_Entoloma_sinuatum\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Entoloma sinuatum",
+      "commonNames": {
+        "en": [
+          "Livid Pinkgill",
+          "Lead Poisoner",
+          "Leaden entoloma",
+          "Livid entoloma",
+          "Livid agaric"
+        ],
+        "vi": [
+          "Nấm Entoloma sinuatum"
+        ]
+      },
+      "habitat": "Deciduous woodlands on clay or chalky soils, parklands, fairy rings, late summer to autumn, Europe, North America.",
+      "shortDescription": "Poisonous mushroom with ivory to light gray-brown cap, sinuate gills turning pink, thick whitish stem, causes gastrointestinal problems.",
+      "edibility": "Poisonous.",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Causes gastrointestinal problems like diarrhea, vomiting, headache 30 min to 2 hours, lasts up to 48 hours, rarely delirium, depression, possibly fatal.",
+      "identification": {
+        "cap": "Ivory white darkening with age, conical to convex to plane with blunt umbo, slightly sticky, margin rolled inward, 6-20 cm.",
+        "gills": "Yellowish white initially, sinuate, crowded, turn pinkish with spores.",
+        "stem": "Ivory white, smooth, cylindrical sometimes bulbous base, 3-10 cm long, 0.6-1.5 cm diameter, no ring.",
+        "flesh": "",
+        "sporePrint": "Pink.",
+        "taste": "Not distinctive.",
+        "odor": "Vague but unpleasant.",
+        "microscopicFeatures": "Spores subglobose, angular, 7-10 x 7-9 µm, prominent germ pore."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Calocybe gambosa"
+        },
+        {
+          "binomialNomenclature": "Clitopilus prunulus"
+        },
+        {
+          "binomialNomenclature": "Clitocybe nebularis"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Responsible for many poisonings in Europe, type species of Entoloma, accumulates heavy metals."
+    }
+  },
+  "25_Panaeolus_papilionaceus": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\25_Panaeolus_papilionaceus\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Panaeolus papilionaceus",
+      "commonNames": {
+        "en": [
+          "bell-capped mottlegill",
+          "Petticoat mottlegill"
+        ],
+        "vi": [
+          "Nấm mũ chuông"
+        ]
+      },
+      "habitat": "Grows on dung in pastures; widespread in North America.",
+      "shortDescription": "Dung-loving mushroom with a black spore print, mottled gills, and veil fragments on the cap edge.",
+      "edibility": "Not recommended",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Probably not toxic, but related species may be mildly hallucinogenic",
+      "identification": {
+        "cap": "1.5-4.0 cm, conic to bell-shaped, smooth, olive-brown to gray-brown with white veil fragments on margin.",
+        "gills": "Adnate, close, pale grey, becoming blackish and mottled.",
+        "stem": "6-12 cm long, slender, hollow, gray-brown. Partial veil remnants on cap margin.",
+        "flesh": "Grayish to buff-brown, thin",
+        "sporePrint": "Black",
+        "taste": "",
+        "odor": "Mild",
+        "microscopicFeatures": "Spores 12-17 x 7-10 µm, elliptical, smooth, with an apical pore"
+      },
+      "lookAlikes": [],
+      "medicinalProperties": "",
+      "note": "Formerly considered a confusing group with P. campanulatus and others, now recognized as one species."
+    }
+  },
+  "26_Inocybe_rimosa": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\26_Inocybe_rimosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Inocybe rimosa",
+      "commonNames": {
+        "en": [
+          "straw-colored fiber head"
+        ],
+        "vi": [
+          "Nấm mũ khía nâu xám"
+        ]
+      },
+      "habitat": "Mycorrhizal with hardwoods or conifers, growing alone or scattered in summer and fall. Widely distributed in North America.",
+      "shortDescription": "Poisonous European native with a brownish fibrous cap, no ring, and contains muscarine.",
+      "edibility": "Poisonous",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Contains muscarine. Serious poisoning can result from consuming any quantity of the mushroom.",
+      "identification": {
+        "cap": "2-8 cm, conical to bell-shaped with a sharp bump. Dry, silky, straw yellow. Margin splits with age.",
+        "gills": "Attached, crowded, whitish becoming brownish.",
+        "stem": "3-9 cm long, up to 1 cm thick, equal. Dry, smooth, whitish or pale yellowish.",
+        "flesh": "Whitish; insubstantial",
+        "sporePrint": "Brown",
+        "taste": "",
+        "odor": "Spermatic, mealy, or lacking",
+        "microscopicFeatures": "Spores 9.5-14.5 x 6-8.5 µ, elliptical, smooth. Pleurocystidia absent. Cheilocystidia 30-65 x 10-22 µ."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Inocybe geophylla"
+        },
+        {
+          "binomialNomenclature": "Inocybe erubescens"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Formerly Inocybe fastigiata. Contains muscarine. First described by Bulliard in 1789. The name means 'fibrous head' and 'full of cracks'."
+    }
+  },
+  "27_Coprinus_atramentarius": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\27_Coprinus_atramentarius\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Coprinopsis atramentaria",
+      "commonNames": {
+        "en": [
+          "Ink cap"
+        ],
+        "vi": [
+          "Nấm mực mỡ"
+        ]
+      },
+      "habitat": "Grows in clusters on dead tree roots in urban areas, lawns, and grasslands from spring to autumn. Widely distributed in Europe and North America.",
+      "shortDescription": "Widespread inky cap mushroom. Edible, but causes 'disulfiram syndrome' if consumed with alcohol.",
+      "edibility": "Edible if gills are white, but causes severe reaction with alcohol",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Causes 'disulfiram syndrome' when consumed with alcohol due to coprine. Symptoms include facial flushing, nausea, vomiting, and heart palpitations, but are generally not dangerous.",
+      "identification": {
+        "cap": "3-10 cm tall, oval becoming conical-convex, gray to gray-brown, smooth with fine scales.",
+        "gills": "White, crowded, turning black and melting into ink.",
+        "stem": "8-15 cm long, white, smooth or finely hairy, hollow.",
+        "flesh": "White to pale gray, thin, soft.",
+        "sporePrint": "Black",
+        "taste": "",
+        "odor": "",
+        "microscopicFeatures": "Spores 6.5-10.5 x 4-6.5 µ, elliptical, smooth. Clamp connections present."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Coprinellus micaceus"
+        },
+        {
+          "binomialNomenclature": "Coprinus comatus"
+        },
+        {
+          "binomialNomenclature": "Coprinopsis romagnesiana"
+        },
+        {
+          "binomialNomenclature": "Coprinopsis acuminata"
+        }
+      ],
+      "medicinalProperties": "Has been used to cure alcoholism due to its effects when consumed with alcohol.",
+      "note": "Can be used to make ink. First described by Bulliard in 1786 as Agaricus atramentarius. Transferred to Coprinus by Fries in 1838. DNA analysis in 2001 placed it in Coprinopsis. The name 'atramentaria' refers to its black, inky substance."
+    }
+  },
+  "28_Psilocybe_semilanceata": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\28_Psilocybe_semilanceata\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Psilocybe semilanceata",
+      "commonNames": {
+        "en": [
+          "liberty cap"
+        ],
+        "vi": [
+          "Nấm thức thần",
+          "Nấm ma thuật",
+          "Nấm ảo giác"
+        ]
+      },
+      "habitat": "Grows in meadows and pastures (often sheep-grazed), but not on dung. Common in North America and Europe.",
+      "shortDescription": "Potent psilocybin mushroom known as 'Liberty Cap', with a distinct pimple on its cream-colored cap.",
+      "edibility": "Poisonous/Psychoactive",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Contains psilocybin and psilocin, causing potent hallucinogenic effects like distorted reality.",
+      "identification": {
+        "cap": "0.5-2 cm, cream-colored with a distinct pimple on top and striations that pronounce with age.",
+        "gills": "Olive-gray, turning purple-black as spores mature.",
+        "stem": "4-10 cm tall, slender, cream-colored, fibrous, and often wavy.",
+        "flesh": "",
+        "sporePrint": "Very dark purple-brown",
+        "taste": "",
+        "odor": "Musty odor",
+        "microscopicFeatures": "Spores ellipsoidal, smooth, 11.5-14.5 x 7-9μm"
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Panaeolus semiovatus"
+        },
+        {
+          "binomialNomenclature": "Panaeolina foenisecii"
+        },
+        {
+          "binomialNomenclature": "Psilocybe strictipes"
+        },
+        {
+          "binomialNomenclature": "Psilocybe mexicana"
+        },
+        {
+          "binomialNomenclature": "Psilocybe samuiensis"
+        },
+        {
+          "binomialNomenclature": "Psilocybe pelliculosa"
+        },
+        {
+          "binomialNomenclature": "Inocybe geophylla"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "First described by Fries in 1838 as Agaricus semilanceatus, transferred to Psilocybe by Kummer in 1871. The name Psilocybe was conserved for this group in 2009. Cultivation is very difficult."
+    }
+  },
+  "29_Amanita_pantherina": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\29_Amanita_pantherina\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Amanita pantherina",
+      "commonNames": {
+        "en": [
+          "Panther cap"
+        ],
+        "vi": [
+          "Nấm mụn trắng",
+          "nấm tán da báo"
+        ]
+      },
+      "habitat": "Mycorrhizal with trees (especially deciduous) in forests and meadows across Europe and western Asia in late summer and autumn.",
+      "shortDescription": "Highly poisonous, psychoactive mushroom with a brown-tan cap covered in white warts. Contains muscimol and ibotenic acid.",
+      "edibility": "Poisonous",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Highly poisonous, containing muscimol and ibotenic acid. Causes hallucinations, confusion, seizures, and can be fatal. Some research suggests potential therapeutic benefits of muscimol.",
+      "identification": {
+        "cap": "3-18 cm wide, convex to flat, sticky, brown to tan with small white warts.",
+        "gills": "Mostly free from the stem, white, crowded.",
+        "stem": "4-20 cm long, up to 2.5 cm thick, tapering upward with a swollen base. White, with a skirt-like ring.",
+        "flesh": "White, does not change color when cut.",
+        "sporePrint": "White",
+        "taste": "",
+        "odor": "Unpleasant, like raw potatoes.",
+        "microscopicFeatures": "Spores smooth, ellipsoid, 8-14 x 6-10 µm."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Amanita rubescens"
+        },
+        {
+          "binomialNomenclature": "Amanita excelsa"
+        },
+        {
+          "binomialNomenclature": "Amanita regalis"
+        }
+      ],
+      "medicinalProperties": "Research suggests muscimol may reduce stress, relieve pain, support sleep, and have anti-tumor properties.",
+      "note": "First described by De Candolle in 1815 as Agaricus pantherinus, renamed by Kummer in 1871. The name 'pantherina' refers to its spotted cap. Used in various psychoactive products."
+    }
+  },
+  "30_Galerina_marginata": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\30_Galerina_marginata\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Galerina marginata",
+      "commonNames": {
+        "en": [
+          "funeral bell",
+          "deadly skullcap",
+          "autumn skullcap"
+        ],
+        "vi": [
+          "Nấm đầu lâu mùa thu"
+        ]
+      },
+      "habitat": "Grows on rotting wood (hardwoods and conifers) in clusters or alone. Found year-round in North America, Europe, Asia, and Australia.",
+      "shortDescription": "Highly toxic small brown mushroom containing deadly amatoxins that cause irreversible liver and kidney damage.",
+      "edibility": "Deadly poisonous",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Extremely dangerous. Contains amatoxins that halt cell function, leading to liver and kidney failure. Symptoms (abdominal pain, vomiting) appear late (up to 10 hours), and death can occur within days without a liver transplant.",
+      "identification": {
+        "cap": "1.5-5 cm, convex to flat, sticky, honey-yellow to cinnamon-brown, may fade and appear two-toned.",
+        "gills": "Broadly attached to stem, close, yellowish turning rusty brown.",
+        "stem": "2-7 cm long, 3-8 mm thick, even, dry, whitish to brownish with a thin ring.",
+        "flesh": "Thin, yellowish to brownish, does not change color when sliced.",
+        "sporePrint": "Telltale rusty brown",
+        "taste": "",
+        "odor": "Mild or slightly mealy when crushed",
+        "microscopicFeatures": "Spores 7-11 x 4-6 µm, amygdaliform to subellipsoid, verrucose. Clamp connections present."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Kuehneromyces mutabilis"
+        },
+        {
+          "binomialNomenclature": "Flammulina velutipes"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Often confused with edible species, but distinguished by its rusty brown spore print. Deadly to humans and pets, but plays a key ecological role in wood decomposition. Has many synonyms, including Galerina autumnalis."
+    }
+  },
+  "31_Pholiotina_rugosa": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\31_Pholiotina_rugosa\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Pholiotina rugosa",
+      "commonNames": {
+        "en": [
+          "Common Conecap Mushroom"
+        ],
+        "vi": [
+          "Nấm cỏ"
+        ]
+      },
+      "habitat": "Grows alone or scattered in woods or urban landscaping areas in spring and summer. Found in North America, Europe, and Oceania.",
+      "shortDescription": "Small brown lawn mushroom with a fragile, ringed stem. Contains deadly amatoxins causing fatal liver poisoning.",
+      "edibility": "Deadly poisonous",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Contains amatoxins that are highly toxic to the liver, causing mushroom-related deaths.",
+      "identification": {
+        "cap": "1–2 cm, conic to bell-shaped, becoming convex. Smooth or finely wrinkled, dark orangish-brown centrally.",
+        "gills": "Narrowly attached, close, whitish becoming brownish.",
+        "stem": "20–35 mm long, 2–3 mm thick, fragile, brownish with a persistent whitish ring.",
+        "flesh": "Insubstantial, watery brownish, unchanging.",
+        "sporePrint": "Yellow-brown",
+        "taste": "Not recorded",
+        "odor": "Not distinctive",
+        "microscopicFeatures": "Spores 8–9 x 5–6 µm, ellipsoid, smooth, with a pore. Pleurocystidia not found."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Galerina marginata"
+        },
+        {
+          "binomialNomenclature": "Conocybe tenera"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "Often mistaken for Psilocybe. First described by Peck in 1898 as Pholiota rugosa, transferred to Conocybe by Watling in 1981. Synonyms include Conocybe rugosa."
+    }
+  },
+  "32_Scleroderma_citrinum": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\32_Scleroderma_citrinum\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Scleroderma citrinum",
+      "commonNames": {
+        "en": [
+          "Common Earth Ball",
+          "Pigskin Poison Puffball"
+        ],
+        "vi": [
+          "Nấm vỏ chanh"
+        ]
+      },
+      "habitat": "Common in woods, heathland, and short grass from autumn to winter. Widely distributed across Europe and Asia.",
+      "shortDescription": "Resembles an edible puffball but has firmer flesh and a dark interior early in development. Releases spores by breaking up, not through a single opening.",
+      "edibility": "Poisonous",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "",
+      "identification": {
+        "cap": "4–12 cm across, 3–6 cm tall. Tough, dirty-yellow to ochre-brown skin with coarse, warty scales.",
+        "gills": "No gills - this is a puffball-type mushroom",
+        "stem": "No stem, attached to soil by mycelial threads.",
+        "flesh": "Whitish when young, becoming purple-brown to black with white 'veins' as it ages.",
+        "sporePrint": "",
+        "taste": "",
+        "odor": "",
+        "microscopicFeatures": "Spores are spherical and spiked. Spore mass is grayish, becoming purply-black and powdery. Outer skin ruptures to release spores."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Scleroderma areolatum"
+        },
+        {
+          "binomialNomenclature": "Calvatia spp."
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "First described by Persoon in 1801. Scleroderma means 'hard skin', and citrinum refers to its 'lemon-yellow' color. Close relatives of boletes."
+    }
+  },
+  "33_Gyromitra_esculenta": {
+    "category": "inedible",
+    "path": "D:\\Data\\PTIT\\XuLyAnh\\Dataset\\Inedible\\33_Gyromitra_esculenta\\metadata.json",
+    "metadata": {
+      "binomialNomenclature": "Gyromitra esculenta",
+      "commonNames": {
+        "en": [
+          "Brain mushroom"
+        ],
+        "vi": [
+          "Nấm não"
+        ]
+      },
+      "habitat": "Found in spring under conifers; widespread in Europe, North America, and Asia.",
+      "shortDescription": "Highly poisonous fungus with a brain-like appearance, often mistaken for edible morels.",
+      "edibility": "Highly poisonous",
+      "isPoisonous": "True",
+      "benefitsOrToxicity": "Highly toxic. Contains gyromitrin, which converts to MMH (monomethylhydrazine) in the body, damaging red blood cells and the liver. Can cause symptoms from nausea to death. Boiling may reduce toxins but inhaling vapors is hazardous.",
+      "identification": {
+        "cap": "4-8 cm high, 3-12 cm wide; irregular, convoluted, brain-like shape. Pinkish-tan to reddish-brown, becoming darker with age.",
+        "gills": "No gills - this is a false morel",
+        "stem": "3-9 cm long, 1-3.5 cm thick; pale yellowish-tan to rose-tinted.",
+        "flesh": "Thin, brittle, whitish to tan.",
+        "sporePrint": "Yellowish buff",
+        "taste": "",
+        "odor": "",
+        "microscopicFeatures": "Spores 19-28 x 10-13 µ, smooth, fusiform or nearly ellipsoid."
+      },
+      "lookAlikes": [
+        {
+          "binomialNomenclature": "Morchella esculenta"
+        },
+        {
+          "binomialNomenclature": "Helvella crispa"
+        },
+        {
+          "binomialNomenclature": "Gyromitra infula"
+        },
+        {
+          "binomialNomenclature": "Gyromitra montana"
+        },
+        {
+          "binomialNomenclature": "Gyromitra californica"
+        }
+      ],
+      "medicinalProperties": "",
+      "note": "First described by Persoon in 1800 as Helvella esculenta, renamed by Fries in 1849. 'Esculenta' ironically means 'edible'. Belongs to the Discinaceae family."
+    }
+  }
+}

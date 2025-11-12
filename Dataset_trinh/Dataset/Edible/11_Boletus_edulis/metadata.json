@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Boletus edulis",
+  "commonNames": {
+    "en": [
+      "cep",
+      "penny bun",
+      "porcino"
+    ],
+    "vi": [
+      "Nấm thông"
+    ]
+  },
+  "habitat": "Conifer, oak, June to October",
+  "isPoisonous": "False",
+  "benefits": "",
+  "identification": {
+    "cap": "5-20cm yellowish-brown convex",
+    "pores": "absent",
+    "stem": "white to light brown, bulbous",
+    "sporePrint": "Olive-brown"
+  }
+}

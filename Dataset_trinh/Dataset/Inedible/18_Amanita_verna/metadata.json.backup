@@ -1,0 +1,29 @@
+{
+  "binomialNomenclature": "Amanita verna",
+  "commonNames": {
+    "en": ["Fool's Mushroom"],
+    "vi": ["Nấm độc tán trắng"]
+  },
+  "habitat": "Grows in European woodlands and hardwood forests in springtime.",
+  "shortDescription": "A deadly poisonous white mushroom with a silky, shiny cap, stocky stem, and volva, very similar to Amanita phalloides but completely white or light-colored.",
+  "edibility": "Deadly poisonous, contains alpha-amanitin causing liver failure.",
+  "isPoisonous": "True",
+  "benefitsOrToxicity": "Fatal dose of alpha-amanitin causes liver failure, phallotoxins. Symptoms appear 6-24 hours later: unease, cramps, diarrhea, then kidney and liver failure.",
+  "identification": {
+    "cap": "5-10 cm diameter, pure white, egg-shaped to bell-shaped or flat with broad umbo, silky shiny, yellowish with age.",
+    "gills": "White, free, crowded.",
+    "stem": "9-15 cm tall, 0.6-2 cm diameter, white, fibrous, fragile ring high up, large sack-like volva buried in soil.",
+    "flesh": "White.",
+    "sporePrint": "White.",
+    "taste": "Not distinctive.",
+    "odor": "None, unpleasant when aged.",
+    "microscopicFeatures": "Spores spherical or subglobose, 7-8 μm."
+  },
+  "lookAlikes": [
+    { "binomialNomenclature": "Amanita citrina" },
+    { "binomialNomenclature": "Amanita virosa" },
+    { "binomialNomenclature": "Amanita phalloides" }
+  ],
+  "medicinalProperties": "None, highly toxic.",
+  "note": "One of the most deadly mushrooms, implicated in several serious or fatal poisonings."
+}

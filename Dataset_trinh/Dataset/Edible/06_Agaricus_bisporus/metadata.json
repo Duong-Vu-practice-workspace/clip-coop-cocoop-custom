@@ -1,0 +1,21 @@
+{
+  "binomialNomenclature": "Agaricus bisporus",
+  "commonNames": {
+    "en": [
+      "Button mushroom",
+      "White mushroom"
+    ],
+    "vi": [
+      "Nấm mỡ"
+    ]
+  },
+  "habitat": "Grasslands, after rain",
+  "isPoisonous": "False",
+  "benefits": "antioxidant, immune support, anti-inflammatory",
+  "identification": {
+    "cap": "2.5-14cm white or brown convex",
+    "gills": "pink to black free gills",
+    "stem": "white, ring",
+    "sporePrint": "Dark brown"
+  }
+}

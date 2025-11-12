@@ -1,0 +1,22 @@
+{
+  "binomialNomenclature": "Auricularia auricula-judae",
+  "commonNames": {
+    "en": [
+      "Black wood ear",
+      "Wood ear mushroom",
+      "Jelly ear mushroom"
+    ],
+    "vi": [
+      "Nấm mộc nhĩ"
+    ]
+  },
+  "habitat": "Hardwood, year-round",
+  "isPoisonous": "False",
+  "benefits": "antibacterial, antitumor, antioxidant",
+  "identification": {
+    "cap": "up to 9cm purplish-brown ear-shaped",
+    "gills": "absent",
+    "stem": "absent",
+    "sporePrint": "White"
+  }
+}
